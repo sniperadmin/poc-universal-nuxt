@@ -1,0 +1,28 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --dotenv .env.staging",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@auth/firebase-adapter": "^2.0.0",
+    "@firebase/app-types": "^0.9.1",
+    "@pinia/nuxt": "^0.5.1",
+    "@sidebase/nuxt-auth": "latest",
+    "firebase": "^10.11.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^4.9.0",
+    "next-auth": "4.21.1",
+    "nuxt": "^3.11.2",
+    "pinia": "^2.1.7",
+    "scrypt-js": "^3.0.1",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "zod": "^3.23.3"
+  }
+}
