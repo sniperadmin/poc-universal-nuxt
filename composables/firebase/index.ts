@@ -3,10 +3,11 @@ import { useFirebaseAuthHelpers } from '~/composables/firebase/auth/firebase-aut
 
 export function initFirebaseApi() {
   const {getAllFirebaseJournalists} = useFirebaseJournalists()
-  const {loginWithCreds, signUpWithCreds} = useFirebaseAuthHelpers()
+  const {loginWithCreds, signUpWithCreds, logout} = useFirebaseAuthHelpers()
   return {
     getAllFirebaseJournalists,
     loginWithCreds,
-    signUpWithCreds
+    signUpWithCreds,
+    logout
   }
 }
