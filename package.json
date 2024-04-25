@@ -12,6 +12,7 @@
   "dependencies": {
     "@auth/firebase-adapter": "^2.0.0",
     "@firebase/app-types": "^0.9.1",
+    "@nuxtjs/i18n": "latest",
     "@pinia/nuxt": "^0.5.1",
     "@sidebase/nuxt-auth": "latest",
     "firebase": "^10.11.0",
@@ -20,9 +21,11 @@
     "next-auth": "4.21.1",
     "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
+    "sass": "^1.75.0",
     "scrypt-js": "^3.0.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
+    "vuetify-nuxt-module": "latest",
     "zod": "^3.23.3"
   }
 }

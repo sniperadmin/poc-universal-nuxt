@@ -26,6 +26,7 @@ definePageMeta({
 </script>
 
 <template>
+  <p>{{$t('welcome.title')}}</p>
   <input v-model="username" type="text" placeholder="username" />
   <input v-model="email" type="email" placeholder="email" />
   <input v-model="password" type="password" placeholder="password" />

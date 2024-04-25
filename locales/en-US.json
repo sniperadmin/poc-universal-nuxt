@@ -1,0 +1,1721 @@
+{
+  "auth": {
+    "create-pitches": "Want to create pitches?",
+    "form": {
+      "actions": {
+        "continue": "continue",
+        "login": "login"
+      },
+      "email": {
+        "hint": "Can't find your company? Please, {openTag} register here {closeTag}",
+        "label": "{type} email"
+      },
+      "error": {
+        "disabled": "This account is disabled by an administrator, please contact Egab team for more info",
+        "exists": "This account exists with different credentials",
+        "inuse": "Email address is already in use, please try login instead",
+        "many": "Too many requests, please try again after a while",
+        "notfound": "User not found",
+        "popup": "The popup has been closed by the user before finalizing the operation",
+        "timeout": "Service timeout",
+        "wrong": "Invalid password, please make sure you enter the correct password for your account"
+      },
+      "name": {
+        "label": "first and last name"
+      },
+      "password": {
+        "guides": {
+          "four": "Special character",
+          "one": "Lowercase character",
+          "three": "Number",
+          "title": "password should have at least one of the following:",
+          "two": "Uppercase character"
+        },
+        "hint": {
+          "login": "Forgot Password {openTag} Reset Password {closeTag}",
+          "register": "Must have at least 6 characters"
+        },
+        "label": "password"
+      },
+      "survey": {
+        "label": "How did you hear about us?",
+        "option1": "Search Engine (Google, Yahoo, etc...)",
+        "option2": "Recommended by a friend or a colleague",
+        "option3": "Social media",
+        "option4": "Blog or publication",
+        "option5": "Other",
+        "other": {
+          "label": "Tell us more",
+          "placeholder": "e.g. Radio, TV, Newspaper"
+        },
+        "placeholder": "Select an option"
+      },
+      "validation": {
+        "alpha": "Only letters are allowed",
+        "email": "* Invalid e-mail.",
+        "fullNameMinChars": "* First and Last name required",
+        "hasLowercase": "* password must have at least 1 lowercase character",
+        "hasNumber": "* password must have at least one number",
+        "hasSpecial": "* password must have at least one special character {'('}e.g. {'@'}{'*'}{'!'}{'#'}{'$'}{'%'}{'^'}{')'}",
+        "hasUppercase": "* password must have at least 1 uppercase character",
+        "intCode": "* Wrong format (i.e 5555555555 or +45555555555)",
+        "ip": "* Wrong IP format",
+        "minchars": "* password must have at least 6 characters",
+        "port": "* Port number should be between 1 and 65535",
+        "required": "* required",
+        "titleMinChars": "* title must have at least 5 words"
+      }
+    },
+    "google": "google",
+    "has-account": "Already have an account?",
+    "illustration": "Create inspiring stories for global audiences",
+    "login-here": "Log in here",
+    "looking-for-pitches": "Are you looking for pitches?",
+    "new": "New to Egab?",
+    "personas": {
+      "admin": "egab",
+      "editor": "editor",
+      "journalist": "journalist"
+    },
+    "resetpassword": {
+      "btn": "send me a reset link",
+      "confirm": "An Email has been sent to",
+      "hint": "You will receive an Email with a password recovery link",
+      "label": "Email",
+      "placeholder": "Type your Email address here",
+      "title": "Reset Password"
+    },
+    "signup-here": "Sign up here",
+    "status": {
+      "contact": "contact",
+      "continue": "continue",
+      "create": "create",
+      "login": "login",
+      "work": "work",
+      "your": "your"
+    },
+    "subtitle": "{status} with your google account",
+    "subtitle1": "Or use email address and password",
+    "title": "{status} {persona} account"
+  },
+  "chat": {
+    "alert": "Messages are now available!",
+    "message": {
+      "back": "back",
+      "label": "write your message here"
+    }
+  },
+  "combobox": {
+    "empty": "No results matching",
+    "enter": "enter",
+    "press": "Press",
+    "to": "to create a new one"
+  },
+  "common": {
+    "admin": "admin",
+    "agree": "I agree",
+    "all": "All",
+    "as": "as",
+    "back": "Back",
+    "choose": "Choose an answer",
+    "clear": "clear",
+    "close": "close",
+    "connectionError": "Oops! The request took longer than expected, let us check connection and try again!",
+    "day": "Day",
+    "editor": "editor",
+    "error": "An error occurred",
+    "example": "Example",
+    "format": "Format",
+    "hook": "Hook",
+    "journalist": "journalist",
+    "leave": "leave",
+    "month": "Month",
+    "next": "next",
+    "no": "No",
+    "open-new": "Open in new tab",
+    "or": "Or",
+    "pitchLeave": "Are you sure you want to leave without saving? Any changes will be lost.",
+    "refreshRequest": "refresh request",
+    "status": "Status",
+    "stay": "stay",
+    "success": "Successful",
+    "theme": "Theme",
+    "year": "Year",
+    "yes": "Yes"
+  },
+  "confirm": {
+    "delete": {
+      "agree": "yes, delete everything",
+      "cancel": "No, go back to settings",
+      "description": "Deleting your account is an irreversible process, which we can't revert even if you perform it by accident.",
+      "title": "Do you really want to delete your settings?"
+    },
+    "remind": "close",
+    "setup": "Setup my settings",
+    "sorry": "Sorry you cannot start pitching unless you complete your settings. ",
+    "sorry1": "This information is going to help Egab promote your pitches."
+  },
+  "e-bar": {
+    "commission-chip": "new",
+    "commissioned": "Commissioned Pitch",
+    "story-title": "story",
+    "version": "version"
+  },
+  "e-chat-list": {
+    "empty": {
+      "btn": "start a new one?",
+      "text": "start a new one?",
+      "title": "No chats yet!"
+    },
+    "maintain": "This Feature is in progress.\n Thanks for your patience.",
+    "tabs": {
+      "one": {
+        "title": "Recent Rooms"
+      },
+      "two": {
+        "title": "Available Users"
+      }
+    },
+    "title": "Chats"
+  },
+  "e-filter": {
+    "dateRange": "Select Date Range",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "per": "Pitches per page"
+  },
+  "e-input": {
+    "phone": {
+      "chars": "Invalid characters found",
+      "country": "Country",
+      "error": "Number is not correct",
+      "example": "Example",
+      "label": "Phone number",
+      "required": "Please add a phone number"
+    }
+  },
+  "e-pitch-form": {
+    "alert": {
+      "create": "Thank you for submitting your pitch. It will be reviewed by our team and we will notify you. Meanwhile, keep submitting new pitches. No need to wait until you hear back from the team."
+    },
+    "form": {
+      "actions": {
+        "cancel": "cancel",
+        "save": "save",
+        "submit": "submit"
+      },
+      "additional": "Additional info",
+      "confirm": "You will not be able to edit the pitch once its Submitted. Are you sure you want to submit?",
+      "error": "Form is not complete yet! Please confirm required inputs.",
+      "format": {
+        "head": "Format"
+      },
+      "language": {
+        "label": "select language(s)",
+        "title": "In which language(s) can you deliver the story you are pitching?"
+      },
+      "location": {
+        "label": "location"
+      },
+      "pitch": {
+        "info": {
+          "btn": "see pitch examples",
+          "disclaimer": "DISCLAIMER: Following these guidelines will increase the chance of your pitch’s acceptance",
+          "li": {
+            "four": "(Why you are the best person to cover this story ?) Why you ?",
+            "one": "What is the story?",
+            "three": "Why now ? (Sometimes there is a peg like a forthcoming international day or event. But in most times the mere passage of enough time to be able to evaluate an initiative is enough)",
+            "two": "Why this story ? (Why should global audiences care ? Or simply: So What ?)"
+          },
+          "one": "Every pitch needs to have a main character and start with a strong hook that sums up the story.",
+          "three": {
+            "one": "How it works ? (What’s new or different about this solution & why it works)",
+            "text": "In the case of solutions journalism(Egab’s speciality), the pitch needs to answer another question:"
+          },
+          "title": "How to create a perfect pitch",
+          "two": "The pitch should explain in no more than 300 words:"
+        },
+        "label": "Write your pitch here.",
+        "placeholder": "You need to consider the guidelines above when writing the description for your pitch",
+        "title": "Pitch"
+      },
+      "support": {
+        "head": "Egab's support",
+        "technical": "technical",
+        "translation": "translation"
+      },
+      "themes": {
+        "label": "themes"
+      },
+      "title": {
+        "description": "The title should tell us what the story is about. Remember it's the first thing the editor sees and based on it, he/she decides whether to read your pitch or not. So, give your pitch a clear and engaging headline. ",
+        "head": "Title",
+        "label": "title",
+        "placeholder": "Give your pitch a headline",
+        "unique": "You have a pitch with the same title. Title must be unique"
+      },
+      "upload": {
+        "audio": "Audio",
+        "documents": "Documents",
+        "files": "File(s)",
+        "head": "Upload Files",
+        "images": "Images",
+        "placeholder": "Upload any supporting files for the pitch (i.e. photos, documents, audio)",
+        "videos": "Videos"
+      }
+    },
+    "subtitle": {
+      "general": "General Info"
+    },
+    "title": {
+      "create": "Create Pitch",
+      "edit": "Edit Pitch"
+    }
+  },
+  "e-profile-progress": {
+    "confirm": "Congratulations! Your profile settings are now complete!",
+    "sections": {
+      "account": "Setup your account information",
+      "professional-info": "Setup your professional info",
+      "profile": "Setup your profile"
+    },
+    "title-1": "Complete the settings",
+    "title-2": "to unlock all features"
+  },
+  "e-rich-text": {
+    "cancel": "Cancel",
+    "count": {
+      "chars": "Characters",
+      "words": "Words"
+    },
+    "image": {
+      "tabs": {
+        "upload": {
+          "alt": "Alt Text",
+          "btn": "Add image(s)",
+          "label": "Click to upload here",
+          "title": "Upload"
+        },
+        "url": {
+          "btn": "Add image",
+          "title": "Image URL"
+        }
+      },
+      "title": "Add Image"
+    },
+    "link": {
+      "btn": "Add Link",
+      "label": "Link",
+      "title": "Add link"
+    },
+    "toolbar": {
+      "blockquote": "Blockquote",
+      "bold": "Bold",
+      "bulletlist": "BulletList",
+      "center": "Align text center",
+      "code": "Code",
+      "heading1": "Heading 1",
+      "heading2": "Heading 2",
+      "heading3": "Heading 3",
+      "horizontalline": "Horizontal Line",
+      "image": "Image",
+      "italic": "Italic",
+      "justify": "Justify",
+      "left": "Align text left",
+      "link": "Link",
+      "ltr": "Text Direction LTR",
+      "orderedlist": "Ordered List",
+      "right": "Align text right",
+      "rtl": "Text Direction RTL",
+      "strike": "Strike through"
+    }
+  },
+  "e-terms": {
+    "p1": "Welcome to Egab! Your platform to have your journalism pitches reach global editors.",
+    "p2": "These Terms of Service (“ToS”) primarily aim to draw the relationship between Egab and you, as a journalist. It constitutes your agreement with us for the usage of our services.",
+    "p3": "Accordingly, if you accept our ToS, you understand that you agree to be bound by it and also by our Privacy Policy, accessible through this link:",
+    "p4": "You are also well aware that both documents may be amended from time to time in accordance with Egab’s sole discretion, as these amendments shall come into effect from the moment of sending you a notification of their occurrence via email or the platform.",
+    "p5": "Further, you agree to comply with any additional posted guidelines or rules including regarding the usage of our platforms, services, and features.",
+    "p6": "Therefore, if you do not agree on such, you have the freedom to – unfortunately – quit using our services.",
+    "p7": "The ToS are applicable over all of Egab’s directly affiliated websites and mobile applications, if existed, and to the extent permissible. Further, the ToS do not extend to any third-party websites, mobile applications, and platforms.",
+    "s1": {
+      "p1": "This platform is operated by Egab for Digital Content, a limited liability company incorporated in the Arab Republic of Egypt, with commercial register No. 146658.",
+      "p2": "Reference to “Egab” under the ToS shall be employed for both the company mentioned under section 1.1 and the online platform, as may be understood from the context.",
+      "title": "About Egab"
+    },
+    "s10": {
+      "p1": "All information exchanged with Egab shall remain confidential and shall not be disclosed to a third-party except where the disclosure is for the purposes of performing the obligations underlying the ToS or to fulfill a legal obligation.",
+      "p2": "Consequently, and without prejudice to sub-section ‎6.2, You shall not hold Egab liable for sharing and/or disclosing any relevant Content in the present or in the future to Content Buyers.",
+      "title": "Confidentiality"
+    },
+    "s11": {
+      "p1": "All content included on the website and mobile application, including but not limited to text, graphics, Egab’s logos, button icons, images, colors, audio clips, digital downloads, data compilations, and software, is the exclusive property and copyright work of Egab or its licensors, and is protected by copyright, trademarks, patents or other intellectual property rights’ laws and regulations. The compilation of the content on the website and mobile application is the exclusive property and copyright of Egab and is protected by copyright, trademarks, patents, or other intellectual property rights and laws.",
+      "p2": "All other trademarks and/or copyrights not owned by Egab that appear on the website and/or mobile application are the property of their respective owners, who may or may not be affiliated with, connected to, or sponsored by, Egab.",
+      "title": "Intellectual Property Rights of Egab"
+    },
+    "s12": {
+      "p1": "The failure of Egab to exercise any rights, power or privilege under the ToS shall not constitute by itself a waiver of any subsequent or further exercise of that or any other right, power of privilege or the exercise.",
+      "title": "Waiver of Rights"
+    },
+    "s13": {
+      "p1": "You may not assign or transfer any of their rights or obligations under the ToS, or as provided to their respective accounts.",
+      "p2": "Egab has an absolute right to transfer any of its rights and obligations.",
+      "title": "Assignment"
+    },
+    "s14": {
+      "p1": "All notices and correspondences between you and Egab shall be via the platform or via e-mail, and shall maintain a full legal effect.",
+      "title": "Notices"
+    },
+    "s15": {
+      "p1": "In no event shall Egab and/or the journalist be held liable for any failure or delay in the performance of their obligations hereunder in the event where the latter faced directly or indirectly an unforeseeable, irresistible force that was beyond its control.  Provided that, the defaulting party immediately notifies the other party in writing of the existence of an event of force majeure.",
+      "title": "Force Majeure"
+    },
+    "s16": {
+      "p1": "The ToS is governed by, and construed in accordance with, the laws of the Arab Republic of Egypt.",
+      "p2": "In case you have any claims or complaints regarding any of our services, you are obliged to first communicate with our support team through: clientsupport{'@'}egab.co.                    In case your complaint has not been settled in a manner that is satisfactory to you within thirty (30) days, you may resort to arbitration in accordance with the following section.",
+      "p3": "Any dispute, controversy or claim arising out of or relating to this contract, its interpretation, execution, the termination or invalidity thereof, shall be settled by arbitration in accordance with the Rules of Arbitration of the Cairo Regional Centre for International Commercial Arbitration (CRCICA). The seat of arbitration shall be in Egypt; the tribunal shall be composed of a sole arbitrator; and the proceedings shall be in Arabic.",
+      "title": "Applicable Law & Dispute Resolution Mechanism"
+    },
+    "s17": {
+      "p1": "The original language of the ToS is English. Where we have provided a translation of the English version of the ToS, you agree that the translation is provided for your convenience only and that the English language version of the ToS will govern your relationship with us. If there is any contradiction between what the English language version of the ToS say and what a translation says, then the English language version will take precedence.",
+      "title": "Language"
+    },
+    "s2": {
+      "p1": {
+        "li1": "“Content” shall refer to any articulated copyrights, whether registered or not, thoughts, ideas, analysis, data, research, information, images, graphics, sounds, texts, any similar material relevant to journalism, or other domains accepted by Egab, submitted by the journalist for Egab’s services.",
+        "li2": "“Content Buyers” means third-party media outlets, publishers, journals, and portals.",
+        "li3": "“You” or “Journalist” shall refer to Egab’s journalists registered over its website.",
+        "li4": "“Services” shall be inclusive of sections 2.2 to 2.5.",
+        "title": "For the purposes of this ToS:"
+      },
+      "p2": {
+        "li1": "Evaluating the Content of the Journalist to determine if Egab, in its sole and entire judgment, believes it is able to pitch such Content to Content Buyers;",
+        "li2": "Following Egab’s evaluation, placing the Content of the Journalist in an appropriate format and standard, with the aim of presenting it to Content Buyers;",
+        "li3": "Working to show and present the Content of the Journalist to the Content Buyer, with the aim of selling them for the purposes of publication;",
+        "li4": "Negotiating the fees payable for the Content with the Content Buyer;",
+        "li5": "Gaining approval for the fees payable for the Content from the Journalist, before proceeding with the Content Buyer.",
+        "title": "Egab is a platform that undertakes the following:"
+      },
+      "p3": "Egab shall collect the full payment from the Content Buyer and transfer it to the  journalist, after deducting its Commission (as defined under section 5.1).",
+      "p4": "Egab, without changing the essence of the Content, may need to adjust, edit and place the Content in a suitable and professional format to present these work to the Content Buyers in the best possible manner.",
+      "p5": "In order to render our Services, you explicitly delegate Egab to physically and electronically sign on, and agree to, Content sale and purchase agreements vis-à-vis Content Buyers, on Your behalf.",
+      "title": "Our Services"
+    },
+    "s3": {
+      "p1": "You understand and acknowledge that our Services are offered on an obligation of means basis, as Egab will deploy its reasonable efforts in order to sell Your Content to Content Buyers. For the avoidance of doubt, Egab does not guarantee that any of the Content Buyers that reviews the Content owned by the Journalist will accept or agree to purchase or publish this Content, with no liability whatsoever incurred by Egab in this respect.",
+      "p2": "Pursuant to the ToS, you understand that Egab is only an enabler, and that our Services are exclusive of buying your Content for our own benefit; as Egab does not hold any proprietary rights in anytime over the Content. Thus, and without prejudice to sub-section 2.5and 6.2, the Content remains the ownership of the Journalist until a final exclusive sale and purchase agreement is concluded with the Content Buyer, upon which the Journalist transfers all of its proprietary rights over the Content to the concerned Content Buyer, without an option to revoke the Content for any reason.",
+      "p3": "In rendering the Services, Egab does not offer any explicit or implicit legal advice or services of any kind.",
+      "title": "Disclaimers"
+    },
+    "s4": {
+      "p1": {
+        "li1": "First and last name;",
+        "li2": "Place of residence;",
+        "li3": "Active cellphone number;",
+        "li4": "E-mail;",
+        "li5": "Payment information;",
+        "li6": "Languages, whether spoken or written.",
+        "title": "To use our Services, you must onboard over Egab and provide to us the required information details to ensure the due performance of our Services, including, but not limited to:"
+      },
+      "p2": "Some information remain optional for you to provide, such as interests, previous experience, and any other information displayed over the onboarding page that does not have an asterisk (*) beside them. Please note that providing this information, even if optional, would increase your chances in having your Content sold to Content Buyers.",
+      "p3": "You have the right to cancel your registration on our platform at any time, provided that; there are no present and uncompleted Services; otherwise, your account shall be upheld until settling all reciprocal financial and non-financial obligations and entitlements.",
+      "p4": "Egab shall have the right to cancel your account at its sole discretion in case of your violation to any provisions of the ToS, or any applicable laws and regulations. The regulation of your entitlements post-cancellation shall be in accordance with our discretion, in the light of the concerned violation and the caused damage.",
+      "title": "Onboarding"
+    },
+    "s5": {
+      "p1": {
+        "li1": "Post the conclusion of the Content purchase agreement between the Content Buyer and the journalist, Egab shall receive the agreed-upon consideration through its own bank account. Afterwards, Egab shall deduct at least thirty percent (30%) of the agreed-upon payment as a commission, subject to increase given the nature of effort conducted by Egab in performing its Services and/or in case of tax increase (“Commission”).",
+        "li2": "The Commission is calculated on the gross total consideration of the aforementioned purchase agreement.",
+        "li3": "The Commission is a net amount that is exclusive of any transfer fees and/or governmental taxes, deductions, fees, charges, and entitlements, imposed at any time prior to making the final transfer to the journalist.",
+        "title": "Commission:"
+      },
+      "p2": {
+        "li1": "Your entitlements may only be transferred through cashless methods. The types of transfer methods available over Egab may differ from time to time. However, and without prejudice to any applicable laws and regulations, in case this arrangement is not suitable per your case, you are invited to contact us to reach an alternative and feasible solution through this e-mail: accounting{'@'}egab.co",
+        "li2": "The responsibility of providing a secured and feasible transfer mechanism totally lies upon you. Thus, Egab would never be liable for the failure or delay of the transfer mechanism you chose in transferring your entitlements. Any disputes in this regard should be raised against your payment service provider.",
+        "li3": "Upon transferring your entitlements, Egab is obliged to provide to you a proof of transfer.",
+        "title": "Transfer Mechanism:"
+      },
+      "title": "Commission & Payment Method"
+    },
+    "s6": {
+      "p1": "You understand and acknowledge that our Services are offered on a non-exclusive basis; as our Services are accessible for any journalists or editors without any limitation.",
+      "p2": "Without prejudice to section ‎‎8, you understand and acknowledge that by submitting your Content to Egab, Egab benefits of an exclusive right over the Content and its disposal, and that you may not sell, dispose, present, disclose, display, publish, submit, circulate, or pitch the Content to any third-party in any way, directly or indirectly, for a financial consideration or not, as long as Egab did not waive such a right explicitly in writing at its sole discretion or did not explicitly reject to receive the Content in writing. In case of violating this exclusivity right from your side, Egab shall have the right to impose penalties, and to claim compensation to the maximum extent available under the applicable law ",
+      "p3": "In case of violating this exclusivity right from your side, Egab shall have the right to impose penalties, and to claim compensation to the maximum extent available under the applicable law.",
+      "title": "Exclusivity"
+    },
+    "s7": {
+      "p1": "Without prejudice to any provision on the limitation of liability under the ToS, Egab commits to comply with all applicable laws and regulations in respect of making transfers and its Services; further, Egab shall not hold any liability for the non-performance of the transfer or Services pursuant to applicable rules and orders.",
+      "p2": "In rendering the Services, Egab may not be held liable except for gross negligence, willful misconduct, and illegitimate actions, all to the minimum extent applicable under Egyptian law.",
+      "p3": "Egab does not hold any liability in respect of the conduct and actions of the Content Buyers.",
+      "p4": "The Journalist acknowledges that Egab does not hold any legal liability in the event of any loss in profit or business, damage to the commercial reputation, or similar damage or losses, or in the event that data or information is destroyed, lost or in the event of gross economic loss, exceptional, indirect or consequential loss or the event that any costs, compensation, fees or expenses incurred, regardless of how they fall within the framework of this Agreement ",
+      "p5": "The Journalist is obliged to defend, indemnify, and spare Egab from any damages of any type arising from any claims, cases, procedures, losses, expenses or costs (including in general but not limited to judicial costs and legal fees), which may arise due to the Journalist’s violation of any terms of the ToS or any laws or local regulations or codes of ethics.",
+      "title": "Limitation of Liability"
+    },
+    "s8": {
+      "p1": "You represent that you have full legal capacity to agree on the ToS, in accordance with your local laws and regulations.",
+      "p2": "The Journalist shall comply with all agreed deadlines and deliverables set forth by Egab via the platform or communicated via e-mail . In case of failure to deliver upon the agreed deadlines without written approval from Egab beforehand, the Journalist may be charged a penalty fee equivalent to the article’s fees agreed upon between Egab and the Content Buyer as liquidated damages.",
+      "p3": "The Journalist acknowledges full liability and ownership for the Content submitted to Egab and further acknowledges that Egab is not liable for any Content that may violate the law or the copyrights of a third-party.",
+      "p4": "The Journalist must follow all applicable local and international laws and regulations regarding Journalist’s activities and services. Further the Journalist must adhere and commit to all recognized professional norms and principles.",
+      "p5": "The Journalist acknowledges the credibility, accuracy, originality, and ownership of the Content provided to Egab, and in the event that it was proven to Egab that the aforementioned Content is plagiarized, not factual, has been modified from previous content, then Egab shall have the right to immediately terminate its dealings with the concerned Journalist and cancel its account, without need for any notices, or judicial procedures or procuring a judgment or an arbitral award. Further, Egab shall inform the Content Buyers it deals with of the violations which could impact the reputation of Egab. The Journalist acknowledges that plagiarism affects Egab’s reputation and on that basis Egab could seek financial compensation from the Journalist in the case of plagiarism or fake Content offered to Egab ",
+      "p6": "The Journalist acknowledges that Egab does not hold any legal liability in the event of any loss in profit or business, damage to the commercial reputation, or similar damage or losses, or in the event that data or information is destroyed, lost or in the event of gross economic loss, exceptional, indirect or consequential loss or the event that any costs, compensation, fees or expenses incurred, regardless of how they fall within the framework of this ToS.",
+      "title": "Representations & Warranties"
+    },
+    "s9": {
+      "p1": "Each of Egab and the journalist is an independent contractor; and their relationship may not be perceived as an employment or agency agreement, or anything but a service agreement.",
+      "title": "Relationship between the Parties"
+    }
+  },
+  "e-toolbar": {
+    "logout": "logout"
+  },
+  "e-upload": {
+    "btn": "Choose Files",
+    "delete": {
+      "btn": "Delete",
+      "cancel": "Cancel",
+      "text": "Are you sure you want to delete the file?"
+    },
+    "label": "Drop your file(s) here, or click the \"Choose Files\" button to select them."
+  },
+  "editor": {
+    "blockquote": {
+      "tooltip": "Blockquote"
+    },
+    "bold": {
+      "tooltip": "Bold"
+    },
+    "bulletlist": {
+      "tooltip": "Bullet List"
+    },
+    "clear": {
+      "tooltip": "Clear"
+    },
+    "code": {
+      "tooltip": "Code"
+    },
+    "codeblock": {
+      "tooltip": "Code block"
+    },
+    "color": {
+      "tooltip": "Color"
+    },
+    "fontFamily": {
+      "tooltip": "Font family"
+    },
+    "fonts": {
+      "arial": "Arial",
+      "arial-black": "Arial Black",
+      "courier-new": "Courier New",
+      "default": "Default",
+      "georgia": "Georgia",
+      "helvetica": "Helvetica",
+      "impact": "Impact",
+      "monaco": "Monaco",
+      "monospace": "Monospace",
+      "tahoma": "Tahoma",
+      "times-new-roman": "Times New Roman",
+      "verdana": "Verdana"
+    },
+    "fullscreen": {
+      "tooltip": {
+        "exit": "Exit",
+        "fullscreen": "Fullscreen"
+      }
+    }
+  },
+  "emergency": "Pitches will be on maintenance mode and be back shortly",
+  "emergencyTitle": "Pitches under maintenance",
+  "faq": {
+    "eight": {
+      "answer": "After approving your pitch and editing the final version, it will be circulated to the various media outlets we work with and you will be notified as soon as any of the platforms commissions it in order to confirm your acceptance of the offer and the submission date.   Acceptance of your pitch does not mean that it has been commissioned. Therefore, do not start working on the story until the team has officially notified you of the commissioning offer through email.   After accepting the offer submitted by the media outlet, you  will produce the story that will be published under your name. After that, Egab receives the financial compensation provided by the media outlet in exchange for the story, deducts its commission and then transfers the rest of the money to your bank account.  ",
+      "question": "What are the steps that follow the acceptance of the pitch?"
+    },
+    "eighteen": {
+      "answer": "No, Egab gives priority to original stories that have not been covered before. We are against the recycling of journalistic stories that will quickly become obsolete with the widespread use of artificial intelligence. Therefore, if your proposed story is covered in global or regional media, your pitch will be rejected. However, if the coverage of the story is limited to local media, you can pitch the story but we ask that you include links to this local coverage along with your pitch.  ",
+      "question": "Can I submit pitches that have already been published in regional or international platforms?"
+    },
+    "eleven": {
+      "answer": "Yes, the platform provides a professional translation service for pitch and stories that are produced through us. In this case, Egab’s commission increases.  ",
+      "question": "Does Egab provide translation services for the pitches & stories submitted through it?"
+    },
+    "fifteen": {
+      "answer": "No, we only pitch stories to regional and international media outlets.  ",
+      "question": "Do you work with local media outlets?"
+    },
+    "five": {
+      "answer": "Yes, several pitches can be submitted. But each pitch must be sent separately. It is not permissible to combine more than one pitch within a single submission. ",
+      "question": "Is it possible to submit more than one pitch?"
+    },
+    "four": {
+      "answer": "All fields in the Settings section must be filled in: account data, personal data and professional data must all be completed. ",
+      "question": "The account information was filled out, and I could not create a pitch?"
+    },
+    "fourteen": {
+      "answer": "Egab works with global and regional media outlets interested in publishing news and stories from the Middle East and Africa. ",
+      "question": "What are the media outlets  that Egab deal with?"
+    },
+    "nine": {
+      "answer": "When we reject any pitch, the team will inform you of the reasons. We expect you to take these reasons into account when drafting your next pitch. One of Egab's goals is to help local journalists develop their skills, including pitch writing. Acquiring any new skill takes time, so we hope that you will not despair if we reject more than one pitch.  ",
+      "question": "Can I submit other pitches after my pitch has been rejected?"
+    },
+    "nineteen": {
+      "answer": "No, you cannot submit the same pitch or a similar pitch to any other platform unless Egab rejects your pitch. In accordance with the terms and conditions of using the platform, which you agree to by signing up on the platform, we have the exclusive right to pitches and stories that are submitted to the platform.     The rules and conditions for using the platform are available for you to read on the platform. ",
+      "question": "Can I send the same pitch I submitted to Egab to other outlets or platforms?"
+    },
+    "one": {
+      "answer": "No, signing up on the platform and submission of pitches are free of charge. You also receive feedback on your pitch - even the rejected ones - for free.  ",
+      "question": "Is there any cost to register on the platform?"
+    },
+    "seven": {
+      "answer": "Whether your pitch is accepted or rejected , you will receive a response from Egab’s team. You will also receive a notification via e-mail. Therefore, it is important to ensure that all correspondence from Egab reaches you. Please make sure that emails from Egab not go to the \"spam\" folder of your e-mail.     Most of the time, before rejecting or accepting a pitch, the team will need more information. Therefore, please log into your account on a daily basis and make sure to respond to any inquiries so that work on your proposal is not unnecessarily delayed. We expect journalists to respond to our questions within the time specified by the Egab editor, which will be indicated in the comments section.   You will also receive an email notification when the team sends you any questions about your pitch.  ",
+      "question": "How do I know if the pitch has been accepted or rejected?"
+    },
+    "seventeen": {
+      "answer": "Egab specializes in solutions journalism, but sometimes we accept other pitches in the following cases: The pitch is about a new story that has not been covered by the media before and that explains something unknown about this society or country. The pitch is submitted in response to a call for pitches that Egab circulated on behalf of a media outlets looking for non-sojo stories. In this case, journalists registered on the platform will be notified via e-mail about this request. ",
+      "question": "Does Egab only accept solutions journalism (sojo) pitches?"
+    },
+    "six": {
+      "answer": "We seek to respond to pitches as soon as possible but we can’t set an exact timeframe as this depends on several factors like receiving many pitches at the same time. If your pitch is urgent, i.e. is pegged to a forthcoming event, please indicate that in the headline so the team can prioritize reviewing it.  ",
+      "question": "What is the expected time for a response to my proposal?"
+    },
+    "sixteen": {
+      "answer": "Yes, we believe that locals know their communities best and to align with our mission to support local journalists, the journalist must submit a proposal from the country in which he is located or the country to which he belongs. In other words, if you are, for example, an Egyptian living in London, you can send pitches about Egypt or the Arab community in London.  ",
+      "question": "Do I have to submit a proposal idea related to the country in which I live/reside?"
+    },
+    "ten": {
+      "answer": "The pitches can be submitted in Arabic, English or French.  ",
+      "question": "In what language can the pitch be submitted?"
+    },
+    "thirteen": {
+      "answer": "The journalist cannot choose the possible platform to publish on, but he/she can exclude platforms on which he / she does not wish to publish. There is a question about this on the create pitches page that allows you to type in the names of the media outlets that you do not wish to send your pitch to. ",
+      "question": "Can I choose the platform through which I want to publish?"
+    },
+    "three": {
+      "answer": "You must fill in all the required data in the settings section in order to be able to create pitches on the platform.  ",
+      "question": "I have signed up but I still cannot create any pitches?"
+    },
+    "title": "FAQ",
+    "twelve": {
+      "answer": "No, Egab accepts pitches for stories to be produced in all formats: Text, Video, Radio, etc.  ",
+      "question": "Does Egab only accept pitches for text formats?"
+    },
+    "twenty": {
+      "answer": "No, Egab has an exclusive right to all content submitted to it by the journalist. Please review the answer to the previous question for more details. ",
+      "question": "Can I publish the same or a very similar story to the one that was commissioned through Egab on other outlets ?"
+    },
+    "twenty-one": {
+      "answer": "Developing your journalism skills by learning and receiving guidance directly from veteran international journalists who worked for top media outlets like the BBC, Bloomberg  and the Wall Street Journal.  Enhancing your career prospects by filling your CV with bylines in top media outlets.  Getting paid fairly for your work.  ",
+      "question": "What are the benefits of signing up on Egab?"
+    },
+    "twenty-three": {
+      "answer": "Yes, you can. But if there are any pending pitches or pitches that we have accepted, Egab continues to have exclusive rights to them. In other words, you cannot send the pitches you submitted to Egab to any other outlet or platform, unless the pitch has been clearly rejected by Egab.  ",
+      "question": "Can I delete my account on Egab?"
+    },
+    "twenty-two": {
+      "answer": "For editorial queries, you can message the relevant editor directly via the messaging feature on the platform.  For technical queries, email tech{'@'}egab.co For financial queries, email accounting{'@'}egab.co For general queries before signing up on the platform, email enquiries{'@'}egab.co For general queries after signing up on the platform, email clientsupport{'@'}egab.co ",
+      "question": "Who can I contact if I have any further queries?"
+    },
+    "two": {
+      "answer": "First, you have to create a new account by clicking on sign up, where you can register through your Google account or by filling in your email and password information.   After that, you will be requested to verify your email address by clicking on the link sent to the email address registered with Egab.    Once you do that, you will be able to access the platform to complete setting up your account so that you can start pitching your stories to Egab.  ",
+      "question": "What are the steps to sign up on the platform?"
+    }
+  },
+  "formats": {
+    "audio": "audio",
+    "photos": "photos",
+    "text": "text",
+    "video": "video"
+  },
+  "languages": {
+    "Afrikaans": "Afrikaans",
+    "Albanian": "Albanian",
+    "Amharic": "Amharic",
+    "Arabic": "Arabic",
+    "Armenian": "Armenian",
+    "Aymara": "Aymara",
+    "Azerbaijani": "Azerbaijani",
+    "Basque": "Basque",
+    "Belarusian": "Belarusian",
+    "Bengali": "Bengali",
+    "Bislama": "Bislama",
+    "Bosnian": "Bosnian",
+    "Bulgarian": "Bulgarian",
+    "Burmese": "Burmese",
+    "Cambodian": "Cambodian",
+    "Catalan": "Catalan",
+    "Chamorro": "Chamorro",
+    "Chichewa": "Chichewa",
+    "Chinese": "Chinese",
+    "Croatian": "Croatian",
+    "Czech": "Czech",
+    "Danish": "Danish",
+    "Divehi": "Divehi",
+    "Dutch": "Dutch",
+    "Dzongkha": "Dzongkha",
+    "English": "English",
+    "Estonian": "Estonian",
+    "Faroese": "Faroese",
+    "Fijian": "Fijian",
+    "Finnish": "Finnish",
+    "French": "French",
+    "Galician": "Galician",
+    "Georgian": "Georgian",
+    "German": "German",
+    "Greek": "Greek",
+    "Greenlandic": "Greenlandic",
+    "Guarani": "Guarani",
+    "Haitian": "Haitian",
+    "Hebrew": "Hebrew",
+    "Hindi": "Hindi",
+    "Hungarian": "Hungarian",
+    "Icelandic": "Icelandic",
+    "Indonesian": "Indonesian",
+    "Irish": "Irish",
+    "Italian": "Italian",
+    "Japanese": "Japanese",
+    "Kazakh": "Kazakh",
+    "Kirundi": "Kirundi",
+    "Kongo": "Kongo",
+    "Korean": "Korean",
+    "Kurdish": "Kurdish",
+    "Kyrgyz": "Kyrgyz",
+    "Laotian": "Laotian",
+    "Latin": "Latin",
+    "Latvian": "Latvian",
+    "Lingala": "Lingala",
+    "Lithuanian": "Lithuanian",
+    "Luba-Katanga": "Luba-Katanga",
+    "Luxembourgish": "Luxembourgish",
+    "Macedonian": "Macedonian",
+    "Malagasy": "Malagasy",
+    "Malay": "Malay",
+    "Maltese": "Maltese",
+    "Manx": "Manx",
+    "Maori": "Maori",
+    "Marshallese": "Marshallese",
+    "Mongolian": "Mongolian",
+    "Nauruan": "Nauruan",
+    "Nepali": "Nepali",
+    "North Ndebele": "North Ndebele",
+    "Norwegian": "Norwegian",
+    "Norwegian Bokmål": "Norwegian Bokmål",
+    "Norwegian Nynorsk": "Norwegian Nynorsk",
+    "Occitan": "Occitan",
+    "Panjabi / Punjabi": "Panjabi / Punjabi",
+    "Pashto": "Pashto",
+    "Persian": "Persian",
+    "Peul": "Peul",
+    "Polish": "Polish",
+    "Portuguese": "Portuguese",
+    "Quechua": "Quechua",
+    "Romanian": "Romanian",
+    "Russian": "Russian",
+    "Rwandi": "Rwandi",
+    "Samoan": "Samoan",
+    "Sango": "Sango",
+    "Serbian": "Serbian",
+    "Shona": "Shona",
+    "Sinhalese": "Sinhalese",
+    "Slovak": "Slovak",
+    "Slovenian": "Slovenian",
+    "Somalia": "Somalia",
+    "South Ndebele": "South Ndebele",
+    "Southern Sotho": "Southern Sotho",
+    "Spanish": "Spanish",
+    "Swahili": "Swahili",
+    "Swati": "Swati",
+    "Swedish": "Swedish",
+    "Tajik": "Tajik",
+    "Tamil": "Tamil",
+    "Thai": "Thai",
+    "Tigrinya": "Tigrinya",
+    "Tonga": "Tonga",
+    "Tsonga": "Tsonga",
+    "Tswana": "Tswana",
+    "Turkish": "Turkish",
+    "Turkmen": "Turkmen",
+    "Ukrainian": "Ukrainian",
+    "Urdu": "Urdu",
+    "Uzbek": "Uzbek",
+    "Venda": "Venda",
+    "Vietnamese": "Vietnamese",
+    "Xhosa": "Xhosa",
+    "Zulu": "Zulu"
+  },
+  "loading": {
+    "comet": {
+      "connect": "connecting to chat",
+      "login": "logging in chat",
+      "signup": "registering chat"
+    },
+    "email": "sending an email to the journo",
+    "get-conversations": "getting conversations",
+    "get-users": "loading chat users",
+    "journalist": {
+      "activate": "activating account",
+      "add-admin": "adding admin",
+      "create": "creating journalist account",
+      "deactivate": "deactivating account",
+      "delete-user": "deleting user",
+      "get": "getting profile data",
+      "get-all": "getting journalists data",
+      "remove-admin": "Removing admin",
+      "update": "updating profile"
+    },
+    "pitches": {
+      "commissioned": {
+        "get": "getting commissioned pitches"
+      },
+      "create": "creating pitch",
+      "get": "getting pitches",
+      "get-one": "requesting pitch data",
+      "update": "updating pitch"
+    },
+    "versions": {
+      "create": "creating version",
+      "get": "getting versions",
+      "get-one": "getting version details",
+      "update": "updating version"
+    }
+  },
+  "locations": {
+    "afghanistan": "afghanistan",
+    "albania": "albania",
+    "algeria": "algeria",
+    "american samoa": "american samoa",
+    "andorra": "andorra",
+    "angola": "angola",
+    "anguilla": "anguilla",
+    "antarctica": "antarctica",
+    "antigua and barbuda": "antigua and barbuda",
+    "argentina": "argentina",
+    "armenia": "armenia",
+    "aruba": "aruba",
+    "australia": "australia",
+    "austria": "austria",
+    "azerbaijan": "azerbaijan",
+    "bahamas": "bahamas",
+    "bahrain": "bahrain",
+    "bangladesh": "bangladesh",
+    "barbados": "barbados",
+    "belarus": "belarus",
+    "belgium": "belgium",
+    "belize": "belize",
+    "benin": "benin",
+    "bermuda": "bermuda",
+    "bhutan": "bhutan",
+    "bolivia": "bolivia",
+    "bonaire": "bonaire",
+    "bosnia and herzegovina": "bosnia and herzegovina",
+    "botswana": "botswana",
+    "bouvet island": "bouvet island",
+    "brazil": "brazil",
+    "british indian ocean territory": "british indian ocean territory",
+    "british virgin islands": "british virgin islands",
+    "brunei": "brunei",
+    "bulgaria": "bulgaria",
+    "burkina faso": "burkina faso",
+    "burundi": "burundi",
+    "cambodia": "cambodia",
+    "cameroon": "cameroon",
+    "canada": "canada",
+    "cape verde": "cape verde",
+    "cayman islands": "cayman islands",
+    "central african republic": "central african republic",
+    "chad": "chad",
+    "chile": "chile",
+    "china": "china",
+    "christmas island": "christmas island",
+    "cocos [keeling] islands": "cocos [keeling] islands",
+    "colombia": "colombia",
+    "comoros": "comoros",
+    "cook islands": "cook islands",
+    "costa rica": "costa rica",
+    "croatia": "croatia",
+    "cuba": "cuba",
+    "curacao": "curacao",
+    "cyprus": "cyprus",
+    "czech republic": "czech republic",
+    "democratic republic of the congo": "democratic republic of the congo",
+    "denmark": "denmark",
+    "djibouti": "djibouti",
+    "dominica": "dominica",
+    "dominican republic": "dominican republic",
+    "east timor": "east timor",
+    "ecuador": "ecuador",
+    "egypt": "egypt",
+    "el salvador": "el salvador",
+    "equatorial guinea": "equatorial guinea",
+    "eritrea": "eritrea",
+    "estonia": "estonia",
+    "ethiopia": "ethiopia",
+    "falkland islands": "falkland islands",
+    "faroe islands": "faroe islands",
+    "fiji": "fiji",
+    "finland": "finland",
+    "france": "france",
+    "french guiana": "french guiana",
+    "french polynesia": "french polynesia",
+    "french southern territories": "french southern territories",
+    "gabon": "gabon",
+    "gambia": "gambia",
+    "georgia": "georgia",
+    "germany": "germany",
+    "ghana": "ghana",
+    "gibraltar": "gibraltar",
+    "greece": "greece",
+    "greenland": "greenland",
+    "grenada": "grenada",
+    "guadeloupe": "guadeloupe",
+    "guam": "guam",
+    "guatemala": "guatemala",
+    "guernsey": "guernsey",
+    "guinea": "guinea",
+    "guinea-bissau": "guinea-bissau",
+    "guyana": "guyana",
+    "haiti": "haiti",
+    "heard island and mcdonald islands": "heard island and mcdonald islands",
+    "honduras": "honduras",
+    "hong kong": "hong kong",
+    "hungary": "hungary",
+    "iceland": "iceland",
+    "india": "india",
+    "indonesia": "indonesia",
+    "iran": "iran",
+    "iraq": "iraq",
+    "ireland": "ireland",
+    "isle of man": "isle of man",
+    "israel": "israel",
+    "italy": "italy",
+    "ivory coast": "ivory coast",
+    "jamaica": "jamaica",
+    "japan": "japan",
+    "jersey": "jersey",
+    "jordan": "jordan",
+    "kazakhstan": "kazakhstan",
+    "kenya": "kenya",
+    "kiribati": "kiribati",
+    "kosovo": "kosovo",
+    "kuwait": "kuwait",
+    "kyrgyzstan": "kyrgyzstan",
+    "laos": "laos",
+    "latvia": "latvia",
+    "lebanon": "lebanon",
+    "lesotho": "lesotho",
+    "liberia": "liberia",
+    "libya": "libya",
+    "liechtenstein": "liechtenstein",
+    "lithuania": "lithuania",
+    "luxembourg": "luxembourg",
+    "macao": "macao",
+    "madagascar": "madagascar",
+    "malawi": "malawi",
+    "malaysia": "malaysia",
+    "maldives": "maldives",
+    "mali": "mali",
+    "malta": "malta",
+    "marshall islands": "marshall islands",
+    "martinique": "martinique",
+    "mauritania": "mauritania",
+    "mauritius": "mauritius",
+    "mayotte": "mayotte",
+    "mexico": "mexico",
+    "micronesia": "micronesia",
+    "moldova": "moldova",
+    "monaco": "monaco",
+    "mongolia": "mongolia",
+    "montenegro": "montenegro",
+    "montserrat": "montserrat",
+    "morocco": "morocco",
+    "mozambique": "mozambique",
+    "myanmar [burma]": "myanmar [burma]",
+    "namibia": "namibia",
+    "nauru": "nauru",
+    "nepal": "nepal",
+    "netherlands": "netherlands",
+    "new caledonia": "new caledonia",
+    "new zealand": "new zealand",
+    "nicaragua": "nicaragua",
+    "niger": "niger",
+    "nigeria": "nigeria",
+    "niue": "niue",
+    "norfolk island": "norfolk island",
+    "north korea": "north korea",
+    "north macedonia": "north macedonia",
+    "northern mariana islands": "northern mariana islands",
+    "norway": "norway",
+    "oman": "oman",
+    "pakistan": "pakistan",
+    "palau": "palau",
+    "palestine": "palestine",
+    "panama": "panama",
+    "papua new guinea": "papua new guinea",
+    "paraguay": "paraguay",
+    "peru": "peru",
+    "philippines": "philippines",
+    "pitcairn islands": "pitcairn islands",
+    "poland": "poland",
+    "portugal": "portugal",
+    "puerto rico": "puerto rico",
+    "qatar": "qatar",
+    "republic of the congo": "republic of the congo",
+    "romania": "romania",
+    "russia": "russia",
+    "rwanda": "rwanda",
+    "réunion": "réunion",
+    "saint barthélemy": "saint barthélemy",
+    "saint helena": "saint helena",
+    "saint kitts and nevis": "saint kitts and nevis",
+    "saint lucia": "saint lucia",
+    "saint martin": "saint martin",
+    "saint pierre and miquelon": "saint pierre and miquelon",
+    "saint vincent and the grenadines": "saint vincent and the grenadines",
+    "samoa": "samoa",
+    "san marino": "san marino",
+    "saudi arabia": "saudi arabia",
+    "senegal": "senegal",
+    "serbia": "serbia",
+    "seychelles": "seychelles",
+    "sierra leone": "sierra leone",
+    "singapore": "singapore",
+    "sint maarten": "sint maarten",
+    "slovakia": "slovakia",
+    "slovenia": "slovenia",
+    "solomon islands": "solomon islands",
+    "somalia": "somalia",
+    "south africa": "south africa",
+    "south georgia and the south sandwich islands": "south georgia and the south sandwich islands",
+    "south korea": "south korea",
+    "south sudan": "south sudan",
+    "spain": "Spain",
+    "sri lanka": "sri lanka",
+    "sudan": "sudan",
+    "suriname": "suriname",
+    "svalbard and jan mayen": "svalbard and jan mayen",
+    "swaziland": "swaziland",
+    "sweden": "sweden",
+    "switzerland": "switzerland",
+    "syria": "syria",
+    "são tomé and príncipe": "são tomé and príncipe",
+    "taiwan": "taiwan",
+    "tajikistan": "tajikistan",
+    "tanzania": "tanzania",
+    "thailand": "thailand",
+    "togo": "togo",
+    "tokelau": "tokelau",
+    "tonga": "tonga",
+    "trinidad and tobago": "trinidad and tobago",
+    "tunisia": "tunisia",
+    "turkey": "turkey",
+    "turkmenistan": "turkmenistan",
+    "turks and caicos islands": "turks and caicos islands",
+    "tuvalu": "tuvalu",
+    "u.s. minor outlying islands": "u.s. minor outlying islands",
+    "u.s. virgin islands": "u.s. virgin islands",
+    "uganda": "uganda",
+    "united arab emirates": "united arab emirates",
+    "united kingdom": "united kingdom",
+    "united states": "united states",
+    "uruguay": "uruguay",
+    "uzbekistan": "uzbekistan",
+    "vanuatu": "vanuatu",
+    "vatican city": "vatican city",
+    "venezuela": "venezuela",
+    "vietnam": "vietnam",
+    "wallis and futuna": "wallis and futuna",
+    "western sahara": "western sahara",
+    "yemen": "yemen",
+    "zambia": "zambia",
+    "zimbabwe": "zimbabwe",
+    "åland": "åland"
+  },
+  "maintenance": {
+    "text": "We are applying maintenance to the portal. It will be back shortly",
+    "title": "Ongoing Maintenance"
+  },
+  "navigation": {
+    "about": "about",
+    "editor": "editor",
+    "journalist": "journalist",
+    "login": "log in",
+    "pricing": "pricing",
+    "signup": "sign up"
+  },
+  "onboarding": {
+    "commissioned": "When your pitch is commissioned by an editor, it will appear here and you can start working on your story.",
+    "five": "You can edit your info and settings here",
+    "four": "You can browse your profile info here",
+    "one": "Here you will see call for pitches from the editors of regional and international media outlets.",
+    "pitches": "Tell the world what is going on around you. Here you will see the pitches you submitted and their status.",
+    "settings": "You will need to complete all required profile settings to be able to start pitching",
+    "three": "You can now use messages"
+  },
+  "pages": {
+    "calls": {
+      "empty": {
+        "text": "We will notify you once a call is created.",
+        "title": "No Calls yet!"
+      },
+      "loading": "Getting All Calls",
+      "maintain": "This Feature is under construction.\n Thanks for your patience.",
+      "title": "Calls for Pitches",
+      "top-btn": "new call"
+    },
+    "commissioned": {
+      "empty": {
+        "text": "We will notify you when any of your pitches gets commissioned.",
+        "title": "No Commissioned Pitches yet!"
+      },
+      "loading": "Getting All Pitches",
+      "maintain": "This Feature is under construction.Thanks for your patience.",
+      "title": "Commissioned Pitches"
+    },
+    "delete": {
+      "cancel": "Do not delete my profile, go back to Egab",
+      "delete-btn": "delete profile",
+      "label": "Your feedback matters. Is there anything else you’d like us to know?",
+      "line1": "Did you know you can choose which emails receive from Egab and how often? Visit your",
+      "line2": "Notification settings",
+      "line3": "to control what you’re getting.",
+      "placeholder": "Some text should be here",
+      "question": "Tell us why you're closing your account:",
+      "reason1": "I received a job offer",
+      "reason2": "Not happy with the quality of work provided by Egab",
+      "reason3": "Poor customer service",
+      "reason4": "I’m getting too many emails ",
+      "reason5": "I no longer work as a journalist",
+      "reason6": "I have privacy concern",
+      "reason7": "Others",
+      "title": "We are sorry to see you go :("
+    },
+    "journalists": {
+      "deleteAccount": "Delete Account",
+      "disableJournalistAccount": "Disable Journalist Account",
+      "enableJournalistAccount": "Enable Journalist Account",
+      "makeAdmin": "Make Admin",
+      "notAvailable": "N/A",
+      "notVerified": "not verified",
+      "search": "search",
+      "title": "Journalists",
+      "verified": "verified",
+      "visitJournalistProfile": "Visit Journalist Profile"
+    },
+    "pitch": {
+      "details": {
+        "edit": "add changes to pitch",
+        "format": "Format",
+        "language": "Language",
+        "location": "Location",
+        "posted-date": "Pitch Posted Date",
+        "title": "Details"
+      }
+    },
+    "pitches": {
+      "empty": {
+        "btn": "create your first pitch",
+        "text": "Write, submit and change pitches here",
+        "title": "No Pitches Yet"
+      },
+      "examples": {
+        "action": "Back to my pitch",
+        "approve": "I have read and follow all recommendations",
+        "header": "Example Pitch",
+        "s1": {
+          "card": {
+            "body": "A strong hook that sums up the story and explains to me the founder’s backstory. It helps me connect with the character."
+          },
+          "text": "After failing to convince a victim of sextortion that she should report the incident to police and learning about her suicide, Mohamed al-Yamani decided to create an online platform to help women against this growing phenomenon.",
+          "title": "After the suicide of a sextortion victim, this online group is saving hundreds from the same destiny in Egypt"
+        },
+        "s10": {
+          "card": {
+            "text": "How it works? What’s new or different about it?",
+            "title": "How it works?"
+          },
+          "text": "The “Electoral Awareness Ambassador” programme came as the war-torn country inches closer to holding its first presidential elections since the downfall of Colonel Gaddafi, and its first legislative race since 2014. While politicians' differences have once again postponed the polls, the awareness campaign's impact is seen to last, with many Libyan women hoping the elections will bring an end to their political exclusion."
+        },
+        "s11": {
+          "card": {
+            "text": "Why should we care? Why this story? So what? ",
+            "title": "Why this story?"
+          },
+          "text": "Libya’s decade-long conflict has scaled down women’s political participation despite their role in the February revolution- women hold only 16% of parliament seats and five posts in a 32-portfolio cabinet. Additionally, women’s issues have been side-lined, and those fighting for change are harassed, even killed, by extremists. \n"
+        },
+        "s12": {
+          "card": {
+            "text": "What’s new or different? + Impact",
+            "title": "Impact"
+          },
+          "text": "Having been carefully selected and trained, each outreach ambassador crafted the strategy suitable for her district’s culture and size. The outcome is 1.22 million enrolled female voters during the registration period which ended on August 17, double the 603,708 registered female voters before the 2014 legislative race."
+        },
+        "s13": {
+          "card": {
+            "text": "This paragraph shows that the journo will be objective in her reporting and will cover limitations too.",
+            "title": "How it works?"
+          },
+          "text": "However, women rights activists say that social and cultural hurdles still stand in the way of women's political participation in Libya, but welcome the programme's achievement."
+        },
+        "s14": {
+          "card": {
+            "text": "Treatment + why you?",
+            "title": "Why You?"
+          },
+          "text": "The Libya-based journalist proposes a feature that includes insights from women’s rights activists and officials on the Outreach Ambassador programme, what it entailed, its achievements and shortcomings, as well as the voices of women who registered as voters because of the programme, all while outlining the other ways women’s political rights remain breached in Libya."
+        },
+        "s2": {
+          "card": {
+            "text": "Why now? (it’s been operating for more than a year; enough time to evaluate) And why this story? (the scale of the problem and the impact of their work)",
+            "title": "Why now?"
+          },
+          "text": "Since launching the Qawem (Resist in Arabic) group on Facebook and Telegram in August 2020, al-Yamani says they’ve been receiving hundreds of reports of sextortion incidents everyday. \n                 Qawem, which has over 200,000 followers on Facebook, says it resolves 200 cases every week."
+        },
+        "s3": {
+          "card": {
+            "text": "How it works?",
+            "title": "How it works?"
+          },
+          "text": "Through a network of volunteers, the group relies on reversing the threat of defamation towards the culprit to force him to stop his actions, while empowering the victim by showing the culprit that she’s not alone. \n                 The group ensures the victim’s anonymity, making it a more appealing option to most victims compared to reporting the incident to the police, which usually takes a long time and requires women to come forward, revealing their identity."
+        },
+        "s4": {
+          "card": {
+            "text": "The treatment. Every pitch should explain how you intend to cover the story. This is important as it answers the question:                   Why You? You could present a creative treatment. In this pitch, the reporter opted for a comparison between two victims’ paths. It also shows you have access to the main characters of the story.",
+            "title": "Why you?"
+          },
+          "text": "The Cairo-based journalist is proposing a story featuring the founder of the group and two sextortion victims; one who received help through Qawem and another who went through the path of filing an official complaint. A legal expert will also be interviewed to comment on the current legal provisions for sextortion crimes and where reforms may be needed. A psychologist will comment on why Qawem’s approach is more appealing to victims than the official complaint route."
+        },
+        "s5": {
+          "card": "The hook. What is the story + the impact.",
+          "text": "An initiative to clean the Nile through trash fishing and special cleaning events has managed to clear about 50,000 kilos of waste.                 Two Egyptian environment-focused startups - Greenish and Bassita -  launched  VeryNile in 2018 with the aim to raise  environmental awareness among Egyptians and reduce plastic pollution in the river.",
+          "title": "Egypt: “Cleaning the Nile, One Kilo at a Time”"
+        },
+        "s6": {
+          "card": {
+            "text": "Why now?\n Tip: They’ve been operating for more than 3 years, i.e. enough time to evaluate their work",
+            "title": "Why now?"
+          },
+          "text": "According to a recent report by the Egyptian Environmental Affairs Agency, around 150 million tons of industrial waste goes into the Nile every year. This does not count the plastic waste that gets dumped into the river as well. According to studies, the Nile is one of ten rivers that contribute to 90% of the plastic that ends up in oceans."
+        },
+        "s7": {
+          "card": {
+            "text": "This paragraph answers “Why this story?” or “why should we care?”",
+            "title": "Why this story?"
+          },
+          "text": "VeryNile collects trash through periodic cleaning events, where volunteers collect the waste from the surface of the water, and through collaboration with fishermen.                 The fishermen collect plastic and aluminum waste from the river while fishing and VeryNile pays them money in return for every kilo of trash.                 After taking the trash from the fishermen, VeryNile gives it to recycling companies. Most of VeryNile's work is around Cairo and Giza, but some of its cleaning events took place in other governorates, such as Luxor and Aswan."
+        },
+        "s8": {
+          "card": {
+            "text": "The treatment, which also highlights why you are the best person to cover this story. (Tip: Have access to all these people & know how to cover the story)",
+            "title": "Why You?"
+          },
+          "text": "The Cairo-based reporter is proposing a multimedia feature or a video report, featuring representatives of the VeryNile initiative, environment pundits and officials and some of the fishermen paid by the initiative to fish for plastic to gauge the effectiveness of the initiative and the main challenges facing it."
+        },
+        "s9": {
+          "card": "The hook. What is the story?",
+          "text": "Libya’s High National Elections Commission (HNEC) said twice as many women have registered as voters compared to 2014, largely thanks to its outreach programme.                  Conducted in partnership with the International Foundation for Electoral Systems, around 100 female representatives from 23 districts were tasked with raising the awareness of women eligible to vote, of their electoral rights.",
+          "title": "Libyan outreach program doubles registered female voters ahead of milestone polls"
+        }
+      },
+      "filter": "Filters",
+      "filter-date": "Sort By Date",
+      "filter-stats": "Total pitches retrieved",
+      "loading": "Loading data",
+      "title": "Pitches",
+      "top-button": "new pitch"
+    },
+    "profile": {
+      "about": "About",
+      "activity": {
+        "approved": "approved pitches",
+        "btn": "write a pitch",
+        "commissioned": "total commissioned pitches",
+        "rejected": "rejected pitches",
+        "submitted": "submitted pitches",
+        "text": "Submit your first Pitch to see your activity stats",
+        "title": "Your Activity"
+      },
+      "empty": {
+        "btn": "setup your profile",
+        "title": "Time to add more details to your profile"
+      },
+      "format": "Formats working with",
+      "info": {
+        "email": "Email",
+        "links": "Links",
+        "member": "Member",
+        "phone": "Phone",
+        "since": "Since",
+        "title": "Info",
+        "whatsapp": "Whatsapp"
+      },
+      "languages": "Languages ",
+      "location": "Edit your current location",
+      "locations": "Locations",
+      "maintain": "Under development",
+      "name": "Add your name",
+      "position": "Edit your current job position",
+      "resume": "Resume & CV",
+      "skills": "Skills",
+      "stories": "Stories",
+      "theme": "Topics"
+    },
+    "settings": {
+      "e-account": {
+        "edit": "edit profile",
+        "error": {
+          "btn": "refresh request"
+        },
+        "form": {
+          "deactivate": {
+            "btn": "delete my profile",
+            "text": "You can delete your account from within Egab. Deleting your account is an irreversible process, which we can't \n revert even if you perform it by accident.",
+            "title": "account deactivation"
+          },
+          "email": {
+            "alternative": {
+              "btn": "add alternative email",
+              "label": "alternative email"
+            },
+            "primary": {
+              "hint": "Must confirm password when changing your primary email",
+              "label": "contact email"
+            }
+          },
+          "password": {
+            "hint": "It is mandatory to confirm your password for changing email address",
+            "label": "password"
+          },
+          "phone": {
+            "label": "phone"
+          },
+          "social": {
+            "facebook": "connect with facebook account",
+            "linkedin": "connect with linkedin account",
+            "title": "connected social accounts",
+            "twitter": "connect with twitter account"
+          },
+          "whatsapp": {
+            "label": "Whatsapp"
+          }
+        },
+        "member": "member since",
+        "name": "name",
+        "next": "next",
+        "save": "save",
+        "subtitle": "about you",
+        "title": "your account settings"
+      },
+      "notifications": {
+        "approved": {
+          "text": "Email when Egab approved my pitch and it get live",
+          "title": "Approved pitches"
+        },
+        "commissions": {
+          "text": "Email + notification inside system when an editor commissions your pitch or requests working with you.",
+          "title": "Commisioned pitches"
+        },
+        "edits": {
+          "text": "Email + notification inside system when my pitch is ready for review after Egab edit it.",
+          "title": "Edited pitches"
+        },
+        "maintain": "This Feature is under construction. \n Thanks for your patience.",
+        "news": {
+          "text": "News about our product and feature updates",
+          "title": "News and updates"
+        },
+        "rejected": {
+          "text": "Email when my pitch is rejected by some critical reason",
+          "title": "Rejected Pitches"
+        },
+        "research": {
+          "text": "Get involved in our beta testing program to make Egab better",
+          "title": "User research"
+        },
+        "subtitle1": "Email Notifications",
+        "subtitle2": "Obligatory notifications by email",
+        "subtitle3": "On platform",
+        "tips": {
+          "text": "Tips on getting more out from Egab",
+          "title": "Tips and tutorials"
+        },
+        "title": "Notifications"
+      },
+      "payments": {
+        "email": {
+          "label": "Send to my contact email",
+          "subheader": "Where should invoices be sent?",
+          "title": "Billing email"
+        },
+        "history": {
+          "headers": {
+            "actions": "Actions",
+            "date": "Commission Date",
+            "fee": "Total Fee",
+            "income": "Total Income",
+            "info": "Pitch Info",
+            "received": "Received",
+            "status": "Status"
+          },
+          "paid": "Paid",
+          "pending": "Pending",
+          "search": "Search by Pitch or story"
+        },
+        "maintain": "This Feature is under construction. \n Thanks for your patience.",
+        "payment": {
+          "bank": "Accept payments with Bank transfer",
+          "btn": "add new card",
+          "cards": "Your cards",
+          "default": "Select default payment method.",
+          "label": "Accept payments with Bank card",
+          "paypal": "Accept payments with Paypal",
+          "subheader": "Select payment method to receive money",
+          "title": "Payment details"
+        },
+        "subheader": "Update your payment details and address",
+        "subtitle": "My payment methods",
+        "title": "Payments"
+      },
+      "professional": {
+        "form": {
+          "format": {
+            "title": "Formats you produce work in"
+          },
+          "languages": {
+            "label": "Languages (Only Proficient Level)"
+          },
+          "outlet": {
+            "hint": "List all media outlets that you don't prefer to sell your pitch to",
+            "label": "Non-Preferred Media Outlet",
+            "select": "Is there any media outlet that you don’t wish your pitch to be offered to?",
+            "text": "List the names of the media outlets you wish your story not to be offered to"
+          },
+          "resume": {
+            "label": "Please upload a PDF, word or powerpoint file",
+            "required": "* required",
+            "size": "File(s)",
+            "title": "Resume / CV",
+            "validation": "* File must be a PDF document"
+          },
+          "skills": {
+            "label": "Tell us about about your professional skills"
+          },
+          "topics": {
+            "label": "Tell us about topics you Cover"
+          }
+        },
+        "next": "next",
+        "save": "save",
+        "subtitle": "Professional info",
+        "title": "Your Professional Info Settings"
+      },
+      "profile": {
+        "form": {
+          "about": "tell us a little bit about yourself",
+          "birth": {
+            "one": "We collect this data",
+            "text": "Your date of birth",
+            "three": "demographics of our users.",
+            "two": "to better understand the"
+          },
+          "current-location": {
+            "label": "current location"
+          },
+          "current-position": {
+            "label": "current position",
+            "tooltip": {
+              "p1": "Tell us a few words about your",
+              "p2": "current position. Are you",
+              "p3": "a freelance journalist,",
+              "p4": "or student ? Let us know."
+            }
+          },
+          "gender": {
+            "four": "language addressing you",
+            "man": "Male",
+            "not-listed": "Not listed",
+            "one": "We collect this data for the",
+            "prefer-not-to-say": "Prefer not to say",
+            "text": "gender",
+            "three": "use the most respectful",
+            "two": "purpose of helping our staff",
+            "woman": "Female"
+          },
+          "location": {
+            "title": "Country of residence"
+          },
+          "locations": {
+            "btn": "add more locations",
+            "label": "working locations (optional)",
+            "p1": "Please add extra locations",
+            "p2": "only in case you are living in",
+            "p3": "more than one country."
+          },
+          "name": {
+            "label": "your first name and surname"
+          },
+          "nationality": "Nationality"
+        },
+        "next": "next",
+        "photo": "your profile photo",
+        "save": "save",
+        "subtitle": "personal info",
+        "tip": "click on the avatar to upload your photo",
+        "title": "your profile settings"
+      },
+      "security": {
+        "confirm-reset": "We've sent you a password reset link to your primary email address",
+        "header": "Security",
+        "maintain": "Under construction",
+        "password": {
+          "current": "type current password",
+          "new": "type new password"
+        },
+        "reset": "Reset your password",
+        "save": "save new password",
+        "subheader": "Change password",
+        "text": "Create a new, strong password that you don't use for the other  websites",
+        "verify": {
+          "title": "Verification"
+        }
+      },
+      "tabs": {
+        "account": "Account",
+        "notifications": "Notifications",
+        "payments": "Payments",
+        "professional": "Professional Info",
+        "profile": "Profile",
+        "security": "Security"
+      },
+      "title": "Settings"
+    },
+    "verification": {
+      "confirm": "Verification link sent!",
+      "error": "Error sending verification link",
+      "login": "Return to login page",
+      "p1": "We sent an email to",
+      "p2": "with confirmation link",
+      "resend": "Resend Verification Link",
+      "title": "Thank you for submitting the form. Check your email for link confirmation"
+    },
+    "version": {
+      "attached": "Attached Files",
+      "badge": "Version",
+      "comment": "Posted Date: ",
+      "date": "Version date",
+      "modal-btn": "see other versions",
+      "no-other": "No other versions available",
+      "other": "Other Versions"
+    }
+  },
+  "preauth": {
+    "construction": "Under Development",
+    "title-login": "How do you want to log in?",
+    "title-signup": "How do you want to sign up?"
+  },
+  "privacy": {
+    "agree": "I agree",
+    "and": "and",
+    "cancel": "cancel",
+    "doc": {
+      "one": "This privacy policy (“Privacy Policy”) covers how EGAB (“We, Us, Our”)         handles the personal data of its users (“User(s), You”),         whenever You interact with Us via EGAB’s platform.",
+      "s1": {
+        "p1": "We reserve the right to modify this Privacy Policy at any given time for any given reason               (i.e., to comply with new laws and regulations and/or include any new activity for EGAB).               You shall be notified of any changes in respect to this Privacy Policy               (via email or via notification on Our Platform), it shall also be specified through the               “Last updated” date of this Privacy Policy.",
+        "p2": "Any changes or modifications to this Privacy Policy shall be effective immediately upon               posting them on Our Platform. Your use of and/or access to Our Platform and/or App after               such modification, constitutes by itself Your consent to be bound by the last updated version.               Upon such approval, You hereby waive the right to receive any further notifications or alerts of the               relevant modification or change.",
+        "title": "Policy Changes"
+      },
+      "s10": {
+        "p": "We do not use nor recourse to any third-party services in Our relationship. Therefore, We do not disclose Your personal information to third parties.  Please note that the inclusion of any link on Our Platform and/or App does not imply endorsement of the linked website by Us.  ",
+        "title": "Third Parties"
+      },
+      "s11": {
+        "p": "You shall have the right to modify, delete and/or add any personal information as You wish on Your account in the aim of keeping all data accurate and up to date. Please keep Us informed if any of Your personal data changes.  EGAB shall comply with all applicable data protection laws and regulations in Our relationship.  ",
+        "title": "Your Rights over Your Personal Data"
+      },
+      "s12": {
+        "last": "Please note that You cannot opt-out of receiving communications from Us in the midst of Your service providing from EGAB.",
+        "li1": "Changing Your account’s registration preference from Our Platform and/or, App’s settings;",
+        "li2": "Contacting Us via the contact information provided below",
+        "p1": "Communication to You shall be made via Our Platform and/or App notifications.    ",
+        "p2": "In the event where You no longer wish to receive correspondences, emails or other communications from Us, You may opt-out by;  ",
+        "title": "Communications"
+      },
+      "s13": {
+        "p1": "If you have questions or comments about this Privacy Policy, please contact Us at;",
+        "p2": "Email: [clientsupport{'@'}egab.co]",
+        "p3": "Business Transfer",
+        "p4": "Please note that as Your personal data constitutes one of EGAB’s company assets,                 in the event where EGAB, or substantially all of its assets, were acquired,                 or goes out of business or enters bankruptcy, Your information shall be transferred or acquired by a third party.                 ",
+        "p5": "You acknowledge that such transfers may occur, and that any acquirer of EGAB may continue to use Your personal information as set forth in this policy.",
+        "title": "Contact Us"
+      },
+      "s2": {
+        "li1": {
+          "p1": "EGAB collects non-personally identifiable information of                         all Platform’s visitors, that includes without limitation;                         the browser type, language preference, referring site,                         and the date and time of each visitor request,                         the pages You have viewed directly before and after accessing Our Platform                         and other interactions with the website and other users via server log files,                         as well as any other information You choose to provide Us.",
+          "p2": "That is for the purpose of understanding how Our visitors use Our Platform.",
+          "p3": "From time to time, EGAB may release non-personally-identifying information                       in the aggregate, e.g., by publishing a report on trends in the usage of its website.",
+          "title": "Non –Personally Identifiable Information of Visitors"
+        },
+        "li2": {
+          "p1": "We collect personally identifiable information (“PII”) including                         without limitation the following; Your first and last name,                         Your country of residence, Your email address, Your telephone number,                         Your age, Your gender, Your payment details (i.e., an active bank account in Your name);                         that you voluntarily give to Us when You choose to register on Our Platform or,                         when You request the use of Our services.",
+          "p2": "You are under no obligation to provide Us with the required PII,                         however Your refusal may prevent You from using any of Our Services.",
+          "title": "Personally Identifiable Information of Users"
+        },
+        "p1": "We may collect and use information about You where it is necessary for our                   legitimate interest and ensure that it shall be used in a fair and balanced way                   for a variety of purposes. The information we may collect on the Platform includes;",
+        "p2": "Personal Data",
+        "p3": "We collect non personally identifiable information of Our Platform’s visitors                   (A) as well as personally identifiable information of Our Platform’s Users (B)",
+        "title": "The Collection of Personal Data"
+      },
+      "s3": {
+        "li1": "Create Your User’s account",
+        "li10": "To send You marketing and non-marketing communications",
+        "li11": "To use in any relevant legal proceedings",
+        "li12": "Perform necessary analysis and operations to maintain Our services, such as fixing bugs and/or operational problems",
+        "li2": "To provide You with Our services, as provided under the Terms of Service published here: ",
+        "li3": "Customize Your repayment plan",
+        "li4": "Email You in respect to Your use of our services or Your repayment plan",
+        "li5": "Generate a personal profile for You that allows You to have more personalized future visits to Our Platform",
+        "li6": "Increase the efficiency and operation of Our Platform",
+        "li7": "Notify You of any updates to Our Platform",
+        "li8": "Offer You any additional services, promotions and special offers",
+        "li9": "Request feedback and contact You about Your use of Our Platform and/or, App",
+        "p": "Collecting accurate information about You permits Us to:",
+        "title": "Purpose for Processing Your Data"
+      },
+      "s4": {
+        "p1": "We neither collect nor store any sensitive personal data regarding Our Users                   or Platform visitors, which include personal data that pertain to their                   psychological, mental, physical or genetic health, biometric data, religious beliefs,                   political opinions, financial status and security status.",
+        "p2": "Consequently, EGAB shall not assume any liability of any sensitive personal data                   disclosed from Your side, whether voluntarily or not, without Our prior request.",
+        "title": "Sensitive Information"
+      },
+      "s5": {
+        "p": "Please note that EGAB does not knowingly collect or use any children’s personal                   information that are below the age of 18. EGAB shall thus not be held liable for                   any children’s data you willingly and voluntarily provide to Us.",
+        "title": "Privacy Policy for Children"
+      },
+      "s6": {
+        "last": "If You do not wish to have Your information collected through the use of cookies, Our Platform                   allows You to decline the use of cookies.",
+        "li1": "Distinguish You from other Users on Our Platform and/or App, which help Us provide You                     with an enhanced and unique browsing experience. We use Cookies without limitation for                     the following purposes;",
+        "li2": "Recognizing and counting the number of visitors and to see how visitors move around Our                     Platform and/or, App when they are using it (this helps us to improve the way our Platform                     and/or App works, for example by ensuring that users can find what they are looking for);",
+        "li3": "Identifying Your preferences and subscriptions (i.e., language settings, saved items,                     and preferred options regarding transactions);",
+        "li4": "Authenticating Users",
+        "li5": "Sending You newsletters and commercial/advertising messages tailored to Your interests.",
+        "p": "A cookie is a file that a website stores on a visitor’s computer where they agree to it.                   Cookies allow Us to perform the following;",
+        "title": "Cookies and How We Use Them"
+      },
+      "s7": {
+        "p1": "We have implemented reasonable technical, physical and administrative safeguards to help protect                   Your personal data from unlawful use and/or unauthorized disclosures.",
+        "p2": "Access to Your personal data is limited to Our workers, service providers, auditors, successors                   that must necessarily access it and that are bound by a contractual confidentiality obligation                   with Us or by the law.",
+        "p3": "While EGAB has taken reasonable steps to secure the personal information You provide, please be                   aware that despite Our efforts, no security measures are perfect or impenetrable, and no                   method of data transmission can be guaranteed against any interception or other type of misuse.                   Any information disclosed online is vulnerable to interception and misuse by unauthorized parties.                   Therefore, We cannot guarantee complete security if You provide personal information.",
+        "title": "Security"
+      },
+      "s8": {
+        "p1": "EGAB shall hold the collected personal information for as long as it is necessary for the completion of its services to You. Please note that in some circumstances, We may be legally required to retain Your personal information.  ",
+        "title": "Storing Your Personal Data"
+      },
+      "s9": {
+        "p": "EGAB will need to share Your collected information with the relevant content buyers while                   proceeding to commercialize Your content. We commit to ensuring that any third party that                   receives Your information complies with the corresponding Privacy Policy.",
+        "title": "Disclosing Your Personal Data"
+      },
+      "two": "We encourage You to read this Privacy Policy attentively as well as           Our Terms of service (“ToS”) before proceeding to interact with Us or           apply for and/or, use Our services."
+    },
+    "link": "Egab terms",
+    "policy": "privacy policy",
+    "text": "By clicking continue you agree to the",
+    "title": "EGAB – Privacy Policy"
+  },
+  "sidebar": {
+    "approved": "Approved Pitches",
+    "calls": "Calls for pitches",
+    "changes": "Requested Changes",
+    "commissioned": "Commissioned pitches",
+    "dashboard": "Dashboard",
+    "deleted": "Deleted Pitches",
+    "journalists": "Journalists",
+    "messages": "Messages",
+    "payments": "Payments",
+    "pitches": "Pitches",
+    "profile": "Profile",
+    "rejected": "Rejected Pitches",
+    "review": "In-review Pitches",
+    "settings": "Settings",
+    "submitted": "Pitches",
+    "support": "Support",
+    "terms": "Terms & Conditions"
+  },
+  "skills": {
+    "copy": "Copy editing",
+    "data": "Data journalism",
+    "investigative": "Investigative journalism",
+    "photography": "Photography",
+    "solutions": "Solutions journalism",
+    "videography": "Videography",
+    "writing": "Writing"
+  },
+  "status": {
+    "approved": "Approved",
+    "change": "Need changes",
+    "commissioned": "Commissioned",
+    "rejected": "Rejected",
+    "review": "Under review",
+    "saved": "Saved",
+    "submitted": "Submitted"
+  },
+  "support": {
+    "btn": "send message",
+    "header": "Contact Technical Support",
+    "label": "Type message to our technical support team",
+    "snackbar": "We have received your message"
+  },
+  "terms": "Terms & Conditions",
+  "themes": {
+    "agriculture": "Agriculture",
+    "animals": "Animals",
+    "art": "Art",
+    "beauty": "Beauty",
+    "biodiversity": "Biodiversity",
+    "children": "Children",
+    "climate": "Climate Change",
+    "conflict": "Conflict",
+    "economy": "Economy",
+    "education": "Education",
+    "energy": "Energy",
+    "entertainment": "Entertainment",
+    "environment": "Environment",
+    "extremism": "Extremism",
+    "faith": "Faith",
+    "family": "Family",
+    "fashion": "Fashion",
+    "films": "Films",
+    "food": "Food",
+    "gender": "Gender",
+    "health": "Health",
+    "human": "Human Rights",
+    "humanitarian": "Humanitarian",
+    "influencers": "Influencers",
+    "international": "International Relations",
+    "land": "Land",
+    "leader": "Leader",
+    "lifestyle": "Lifestyle",
+    "media": "Media",
+    "migration": "Migration",
+    "military": "Military",
+    "music": "Music",
+    "pharmaceuticals": "Pharmaceuticals",
+    "police": "Police",
+    "politics": "Politics",
+    "refugees": "Refugees",
+    "religion": "Religion",
+    "social": "Social Media",
+    "society": "Society",
+    "sports": "Sports",
+    "technology": "Technology",
+    "terrorism": "Terrorism",
+    "tradition": "Tradition",
+    "travel": "Travel",
+    "war": "War",
+    "water": "Water",
+    "wildlife": "Wildlife",
+    "women": "Women",
+    "work": "Work"
+  },
+  "welcome": {
+    "text": "We recommend you start from our onboarding tips",
+    "title": "Welcome to Egab"
+  }
+}

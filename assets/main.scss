@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Panton";
+  src: url("/_nuxt/fonts/panton/5920187ef0bf42859293e1ea01545b96.eot"); /* IE9*/
+  src: url("/_nuxt/fonts/panton/5920187ef0bf42859293e1ea01545b96.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("/_nuxt/fonts/panton/5920187ef0bf42859293e1ea01545b96.woff2") format("woff2"), /* chrome、firefox */
+  url("/_nuxt/fonts/panton/5920187ef0bf42859293e1ea01545b96.woff") format("woff"), /* chrome、firefox */
+  url("/_nuxt/fonts/panton/5920187ef0bf42859293e1ea01545b96.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("/_nuxt/fonts/panton/5920187ef0bf42859293e1ea01545b96.svg") format("svg"); /* iOS 4.1- */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ge";
+  src: url("/_nuxt/fonts/ge/ArbFONTS-59GE-SS-Two.otf"); /* IE9*/
+  src: url("/_nuxt/fonts/ge/ArbFONTS-59GE-SS-Two.otf?#iefix") format("opentype"); /* IE6-IE8 */
+  font-display: swap;
+}
+
+.v-select__content {
+  position: fixed;
+}

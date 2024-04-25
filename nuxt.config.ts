@@ -4,6 +4,8 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  css: ['./assets/main.scss'],
+
   runtimeConfig: {
     strapiToken: import.meta.env.STRAPI_STAGING_TOKEN,
     serverBaseUrl: import.meta.env.STRAPI_BASE_URL,
@@ -22,7 +24,12 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@pinia/nuxt', "@sidebase/nuxt-auth"],
+  modules: [
+    '@pinia/nuxt',
+    "@sidebase/nuxt-auth",
+    "@nuxtjs/i18n",
+    "vuetify-nuxt-module"
+  ],
 
   auth: {
     baseURL: '/api/auth',
@@ -51,5 +58,22 @@ export default defineNuxtConfig({
     globalAppMiddleware: {
       isEnabled: true
     }
+  },
+
+  i18n: {
+    vueI18n: './locales/i18n.config.ts'
+  },
+
+  vuetify: {
+    moduleOptions: {
+      styles: {
+        configFile: './assets/variables.scss'
+      }
+    },
+    vuetifyOptions: './vuetify.config.ts'
+  },
+
+  features: {
+    inlineStyles: false
   }
 })

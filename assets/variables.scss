@@ -1,0 +1,17 @@
+$font-family: 'Panton', sans-serif !default;
+
+@forward 'vuetify' with (
+  $typography: (
+    'h1': ('font-family': $font-family),
+    'h2': ('font-family': $font-family),
+    'h3': ('font-family': $font-family),
+    'headline': ('font-family': $font-family),
+    'title': ('font-family': $font-family),
+    'subtitle-2': ('font-family': $font-family),
+    'body-1': ('font-family': $font-family),
+    'body-2': ('font-family': $font-family),
+    'button': ('font-family': $font-family),
+    'caption': ('font-family': $font-family),
+    'overline': ('font-family': $font-family),
+  ),
+);
