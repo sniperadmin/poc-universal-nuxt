@@ -1,0 +1,54 @@
+<!-- This component is injected in Vuetify -->
+<!--eslint-ignore vue/no-parsing-error-->
+<template>
+  <svg
+    width="25"
+    height="24"
+    viewBox="0 0 25 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      width="24"
+      height="24"
+      transform="translate(0.5)"
+      fill="white"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M23.54 12.2615C23.54 11.446 23.4668 10.6619 23.3309 9.90918H12.5V14.3576H18.6891C18.4225 15.7951 17.6123 17.013 16.3943 17.8285V20.714H20.1109C22.2855 18.7119 23.54 15.7637 23.54 12.2615Z"
+      fill="#4285F4"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M12.4995 23.5005C15.6045 23.5005 18.2077 22.4708 20.1104 20.7144L16.3938 17.829C15.364 18.519 14.0467 18.9267 12.4995 18.9267C9.50425 18.9267 6.96902 16.9037 6.0647 14.1855H2.22266V17.1651C4.11493 20.9235 8.00402 23.5005 12.4995 23.5005Z"
+      fill="#34A853"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.06523 14.1855C5.83523 13.4955 5.70455 12.7584 5.70455 12.0005C5.70455 11.2425 5.83523 10.5055 6.06523 9.81548V6.83594H2.22318C1.44432 8.38844 1 10.1448 1 12.0005C1 13.8562 1.44432 15.6125 2.22318 17.165L6.06523 14.1855Z"
+      fill="#FBBC05"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M12.4995 5.07386C14.1879 5.07386 15.7038 5.65409 16.8956 6.79364L20.194 3.49523C18.2024 1.63955 15.5992 0.5 12.4995 0.5C8.00402 0.5 4.11493 3.07705 2.22266 6.83545L6.0647 9.815C6.96902 7.09682 9.50425 5.07386 12.4995 5.07386Z"
+      fill="#EA4335"
+    />
+  </svg>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'EIconGoogle',
+  data: () => ({})
+})
+</script>
+
+<style scoped>
+
+</style>
