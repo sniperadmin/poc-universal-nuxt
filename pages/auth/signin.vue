@@ -7,7 +7,9 @@ import { FirebaseError } from '@firebase/util'
 const username = ref('testuser')
 const email = ref('test-demo@meow.ww')
 const password = ref('Test*123')
-const { isRest, isFirebase } = useApiServiceStore()
+
+const { isRest } = useApiServiceStore()
+
 const { status, signOut, getSession, data, lastRefreshedAt } = useAuth()
 const session = await getSession()
 
