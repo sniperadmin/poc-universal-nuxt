@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useApiServiceStore } from '~/store/api-service'
-import { useApiServices } from '~/composables/api-services'
+import { useApiServiceStore } from '@/store/api-service'
+import { useApiServices } from '@/composables/api-services'
 import { ZodError } from 'zod'
 import { FirebaseError } from '@firebase/util'
 

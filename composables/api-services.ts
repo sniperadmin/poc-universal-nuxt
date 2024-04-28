@@ -1,6 +1,6 @@
-import { useApiServiceStore } from '~/store/api-service'
-import { initFirebaseApi } from '~/composables/firebase'
-import { initRestApi } from '~/composables/rest'
+import { useApiServiceStore } from '@/store/api-service'
+import { initFirebaseApi } from '@/composables/firebase'
+import { initRestApi } from '@/composables/rest'
 
 let initialized = false
 

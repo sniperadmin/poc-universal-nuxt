@@ -7,9 +7,9 @@ import {
   bootstrapVueContext,
   compositeConfiguration,
   mountWrapper
-} from '~/test-utils'
+} from '@/test-utils'
 
-let wrapper: VueWrapper<typeof ETextField>
+let wrapper: VueWrapper<typeof ETextField & { appendIcon: string, showPass: boolean, progress: number }>
 let vueContext: any
 
 const findAsterisk = () => wrapper.find('[data-test="input-asterisk"]')
