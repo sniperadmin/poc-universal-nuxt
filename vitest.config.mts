@@ -9,15 +9,7 @@ import Components from 'unplugin-vue-components/vite'
 
 export default {
   plugins: [
-    vue(
-      {
-      template: {
-        compilerOptions: {
-          isCustomElement: tag => tag.startsWith('e-'),
-        }
-      }
-    }
-    ),
+    vue(),
     tsconfigPaths(),
     vuetify(),
     Components({

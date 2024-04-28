@@ -4,8 +4,8 @@ import { createVuetify } from 'vuetify'
 import * as vueTestUtils from '@vue/test-utils'
 import { createApp } from 'vue'
 import { createI18n } from 'vue-i18n'
-import ar from '~/locales/ar-SA.json'
-import en from '~/locales/en-US.json'
+import ar from '@/locales/ar-SA.json'
+import en from '@/locales/en-US.json'
 import App from './app.vue'
 
 export const addVuetify = (context: any) => {
@@ -100,6 +100,7 @@ export const mountWrapper = (component: any, context: any) => {
     slots: context.slots,
     global: context.global,
     components: context.components,
-    attachTo: context.attachTo
+    attachTo: context.attachTo,
+    provide: context.provide
   })
 }

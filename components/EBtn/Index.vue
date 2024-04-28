@@ -1,12 +1,5 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useLanguageStore } from '~/store/language'
-import { type RouteLocationRaw } from 'vue-router'
-import type { IconsOptions } from 'vuetify-nuxt-module'
-// import { ButtonViewReturnComponentProps } from '~/utils/rich-text/constants/type'
-// import { getIcon, IconsOptions } from '~/utils/rich-text/constants/icons'
-// import { isString } from '~/utils/rich-text/utils'
 
 export default defineComponent({
   name: 'EBtn',
@@ -154,11 +147,6 @@ export default defineComponent({
     },
   },
   emits: ['click'],
-  setup() {
-    const languageStore = useLanguageStore()
-    const {getDir} = storeToRefs(languageStore)
-    return {getDir}
-  },
   data: () => ({}),
   computed: {
     // btnIcon() {
@@ -204,9 +192,8 @@ export default defineComponent({
     @click="action ? action() : $emit('click', $event)"
   >
     <v-icon
-      :left="
-        !(fab || icon) && getDir($i18n.locale) && getDir($i18n.locale) === 'ltr'
-      "
+      :left="!(fab || icon) && $i18n.locale === 'en'"
+      :right="!(fab || icon) && $i18n.locale === 'ar'"
       :icon="icon"
     />
 
