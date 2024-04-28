@@ -35,8 +35,8 @@ export default defineComponent({
       type: String as () => any,
       default: undefined
     },
-    itemText: {
-      type: String,
+    itemTitle: {
+      type: String as () => any,
       default: undefined
     },
     fullWidth: {
@@ -74,7 +74,7 @@ export default defineComponent({
     :eager="true"
     density="compact"
     :item-value="itemValue"
-    :item-text="itemText"
+    :item-title="itemTitle"
     @update:menu="handleUpdateMenu"
   >
     <template

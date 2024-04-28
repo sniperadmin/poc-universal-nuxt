@@ -3,6 +3,7 @@ defineEmits(['click'])
 </script>
 
 <script lang="ts">
+import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'EState',
 
@@ -28,7 +29,7 @@ export default defineComponent({
       default: '25%'
     },
     imageHeight: {
-      type: [String, Number],
+      type: [String as () => any, Number],
       default: undefined
     },
     withButton: {

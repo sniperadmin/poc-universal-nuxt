@@ -1,3 +1,7 @@
+<script setup lang="ts">
+// const { locale } = useI18n()
+</script>
+
 <script lang="ts">
 import { defineComponent } from 'vue'
 

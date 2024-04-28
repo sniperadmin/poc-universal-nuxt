@@ -30,7 +30,7 @@ export const addI18n = (context: any): any => {
     locale: 'en',
     legacy: true,
     globalInjection: true,
-    allowComposition: false,
+    allowComposition: true,
     messages: { en, ar }
   })
   context.vue.use(context.i18nInstance)

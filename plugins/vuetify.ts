@@ -1,3 +1,4 @@
+import '@/assets/variables.scss'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import { VBtn } from 'vuetify/components/VBtn'

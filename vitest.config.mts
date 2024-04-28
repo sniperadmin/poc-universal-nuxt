@@ -24,9 +24,9 @@ export default {
     //   vueTemplate: true
     // }),
     // VueI18nPlugin({
-    //   globalSFCScope: false,
-    //   fullInstall: false,
-    //   runtimeOnly: false,
+    //   globalSFCScope: true,
+    //   fullInstall: true,
+    //   runtimeOnly: true,
     //   useVueI18nImportName: true,
     //   allowDynamic: true,
     //   forceStringify: false,

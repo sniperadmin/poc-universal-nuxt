@@ -1,7 +1,7 @@
 import { describe, beforeEach, afterEach, it, expect } from 'vitest'
 import { VueWrapper } from '@vue/test-utils'
 import EBtn from './Index.vue'
-import { addI18n, addPinia, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '~/test-utils'
+import { addI18n, addPinia, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 
 let wrapper: VueWrapper<typeof EBtn>
 let vueContext: any
@@ -9,7 +9,8 @@ let vueContext: any
 const findBtn = () => wrapper.find('[data-test="btn"]')
 
 describe('EBtn', function () {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addI18n, addPinia))
+  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addPinia, addI18n))
+
   beforeEach(() => {
     wrapper = mountWrapper(EBtn, vueContext)
   })
