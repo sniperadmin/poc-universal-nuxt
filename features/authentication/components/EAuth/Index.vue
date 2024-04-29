@@ -43,8 +43,7 @@ export default defineComponent({
 
   methods: {
     async handleAuthUsingEmailAndPassword(form: any) {
-      const { loaderFunction } = useApiServices()
-      const { loginWithCreds, signUpWithCreds } = loaderFunction()
+      const { loginWithCreds, signUpWithCreds } = useApiServices()
       if (this.isRegister) {
         console.log('registering user')
         await signUpWithCreds(form)

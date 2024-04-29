@@ -1,9 +1,11 @@
+export type IGetAll = () => Promise<any>
+
 export function useRestJournalists() {
-  async function getAllUsers() {
+  const getAll: IGetAll = async () => {
     return useAsyncData('journalists', () => $fetch('/api/rest/users/all', {method: 'get'}))
   }
 
   return {
-    getAllRestJournalists: getAllUsers
+    getAll
   }
 }

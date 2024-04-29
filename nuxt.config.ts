@@ -36,7 +36,8 @@ export default defineNuxtConfig({
       })
     },
     // '@byjohann/nuxt-i18n',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@vueuse/nuxt'
   ],
 
   auth: {

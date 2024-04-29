@@ -15,9 +15,9 @@ const session = await getSession()
 
 async function signInWithCredentials() {
   //  call composable here
-  const {loaderFunction} = useApiServices()
-  const {loginWithCreds} = loaderFunction()
-  const res: boolean | ZodError | FirebaseError = await loginWithCreds({ email: email.value, password: password.value })
+  const { loginWithCreds } = useApiServices()
+
+  const res = await loginWithCreds({ email: email.value, password: password.value })
   if (res instanceof ZodError || res instanceof FirebaseError) {
     console.log(res)
     //  TODO: show the error in the UI somehow

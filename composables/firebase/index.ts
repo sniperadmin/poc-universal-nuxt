@@ -1,10 +1,22 @@
-import { useFirebaseJournalists } from '@/composables/firebase/journalists'
-import { useFirebaseAuthHelpers } from '@/composables/firebase/auth/firebase-auth-helpers'
+//  Import types
+import type { FirebaseOptions } from '@firebase/app-types'
+import { type IFirebaseApi } from '@/utils/types'
+//  Import methods
+import { getAuth } from 'firebase/auth'
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
-import type { FirebaseOptions } from '@firebase/app-types'
-import { getAuth } from 'firebase/auth'
+import { useFirebaseAuthComposables } from '@/composables/firebase/auth/firebase-auth-helpers'
 
+/**
+ * @method useFirebase
+ * Initializes Firebase client SDK
+ * @typeDef {Object} firebaseApp
+ * @typeDef {Object} firebaseAuth
+ * @typeDef {Object} firestore
+ * @return firebaseApp
+ * @return firebaseAuth
+ * @return firestore
+ */
 export const useFirebase = () => {
   const config = useRuntimeConfig()
   const { firebase } = config.public
@@ -19,13 +31,8 @@ export const useFirebase = () => {
   }
 }
 
-export function initFirebaseApi() {
-  const {getAllFirebaseJournalists} = useFirebaseJournalists()
-  const {loginWithCreds, signUpWithCreds, logout} = useFirebaseAuthHelpers()
+export function initFirebaseApi(): IFirebaseApi {
   return {
-    getAllFirebaseJournalists,
-    loginWithCreds,
-    signUpWithCreds,
-    logout
+    ...useFirebaseAuthComposables()
   }
 }

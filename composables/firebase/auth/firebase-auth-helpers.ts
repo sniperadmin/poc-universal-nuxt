@@ -1,3 +1,13 @@
+//  Import Types
+import {
+  UserCredentialSchema,
+  type ICreds,
+  type ILogin,
+  type ILogout,
+  type ISignUp
+} from '@/utils/types'
+import { ZodError } from 'zod'
+//  Import methods
 import {
   createUserWithEmailAndPassword,
   getIdToken,
@@ -5,15 +15,17 @@ import {
   signOut as signOutFromFirebase,
   updateProfile,
 } from '@firebase/auth'
-import { UserCredentialSchema } from '@/utils/types'
-import { ZodError } from 'zod'
 import { useFirebase } from '@/composables/firebase'
 
-export function useFirebaseAuthHelpers() {
+/**
+ * @method useFirebaseAuthComposables
+ * returns all the auth composables needed in this project
+ */
+export function useFirebaseAuthComposables() {
   const { firebaseAuth } = useFirebase()
   const { signIn, signUp, signOut } = useAuth()
 
-  const signUpWithCreds = async (credentials: { name: string, email: string, password: string }) => {
+  const signUpWithCreds: ISignUp = async (credentials: ICreds) => {
     try {
       //  validate credentails before sending them to firebase
       const validatedCreds = UserCredentialSchema.safeParse(credentials)
@@ -37,7 +49,7 @@ export function useFirebaseAuthHelpers() {
     }
   }
 
-  const loginWithCreds = async (credentials: any) => {
+  const loginWithCreds: ILogin = async (credentials: ICreds) => {
     try {
       //  validate credentails before sending them to firebase
       const validatedCreds = UserCredentialSchema.safeParse(credentials)
@@ -55,7 +67,7 @@ export function useFirebaseAuthHelpers() {
     }
   }
 
-  const logout = async () => {
+  const logout: ILogout = async () => {
     try {
       await signOutFromFirebase(firebaseAuth)
       await signOut({ callbackUrl: '/auth/signin', external: true })
