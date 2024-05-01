@@ -1,4 +1,4 @@
-import FirebaseServer from '~/server/utils/firebase-server'
+// import FirebaseServer from '~/server/utils/firebase-server'
 import { createPinia, setActivePinia } from 'pinia'
 import { useApiServiceStore } from '~/store/api-service'
 import { TokenCredentialSchema } from '~/utils/types'
@@ -12,10 +12,9 @@ const { isFirebase } = useApiServiceStore()
 // }
 
 export default eventHandler(async (event) => {
-  FirebaseServer()
+  // FirebaseServer()
   if (isFirebase) {
     const validationResult = TokenCredentialSchema.safeParse(await readBody(event))
-    console.log(validationResult)
     if (!validationResult.success) {
       throw createError({ statusCode: 403, statusMessage: 'Unauthorized, invalid token sent' })
     }

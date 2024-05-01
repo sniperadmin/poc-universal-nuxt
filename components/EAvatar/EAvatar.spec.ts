@@ -1,7 +1,7 @@
 import { VueWrapper } from '@vue/test-utils'
 import { describe, beforeEach, afterEach, it, expect } from 'vitest'
 import EAvatar from './Index.client.vue'
-import { addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '~/test-utils'
+import { addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 
 let wrapper: VueWrapper
 let vueContext: any

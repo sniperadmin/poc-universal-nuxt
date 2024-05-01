@@ -1,5 +1,3 @@
-import {defineNuxtRouteMiddleware} from '#app'
-
 export default defineNuxtRouteMiddleware((to) => {
   const { status, data } = useAuth()
 

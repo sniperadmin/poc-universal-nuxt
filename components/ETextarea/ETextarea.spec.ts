@@ -1,7 +1,7 @@
 import { VueWrapper } from '@vue/test-utils'
 import { beforeEach, afterEach, describe, it, expect } from 'vitest'
 import ETextarea from './Index.vue'
-import { addI18n, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '~/test-utils'
+import { addI18n, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 
 let wrapper: VueWrapper<typeof ETextarea>
 let vueContext: any

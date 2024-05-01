@@ -54,7 +54,8 @@ export function useFirebaseAuthComposables() {
       //  validate credentails before sending them to firebase
       const validatedCreds = UserCredentialSchema.safeParse(credentials)
       if (!validatedCreds.success) {
-        return new ZodError(validatedCreds.error.issues)
+        const zodErr = new ZodError(validatedCreds.error.issues)
+        return zodErr
       }
       const res = await signInWithEmailAndPassword(firebaseAuth, credentials.email, credentials.password)
       const firebaseIdToken = await getIdToken(res.user)

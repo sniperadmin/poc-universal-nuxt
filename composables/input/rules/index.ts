@@ -1,4 +1,4 @@
-import * as ruleSpecs from '~/utils/allRules'
+import * as ruleSpecs from '@/utils/input-rules/allRules'
 
 export function useRules() {
   /**
@@ -16,13 +16,11 @@ export function useRules() {
    */
   // const finalRules: any = []
   const handleRules = (rules: Array<string>) => {
-    const finalRules = rules.map((ruleName: string) => {
+      // console.log('final rules should be => ', finalRules)
+    return rules.map((ruleName: string) => {
       // @ts-ignore
-      const func = (val: string) => ruleSpecs[ruleName](val, `auth.form.validation.${ruleName}`)
-      return func
+      return (val: string) => ruleSpecs[ruleName](val, `auth.form.validation.${ruleName}`)
     })
-    // console.log('final rules should be => ', finalRules)
-    return finalRules
   }
 
   return { handleRules }

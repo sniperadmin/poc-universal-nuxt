@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import ETextField from '~/components/ETextField/Index.client.vue'
+import ETextField from '@/components/ETextField/Index.client.vue'
 
-defineEmits(['auth', 'update:password'])
+defineEmits(['auth', 'update:modelValue'])
 </script>
 
 <script lang="ts">
@@ -18,8 +18,6 @@ export default defineComponent({
       required: true,
     },
   },
-
-  emits: ['update:modelValue'],
 
   data: () => ({
     svgTest: `
@@ -55,7 +53,7 @@ export default defineComponent({
     data-test="password"
     type="password"
     autocomplete="new-password"
-    :hint="isRegister ? $t('auth.form.password.hint.register') : $t('auth.form.password.hint.login', { openTag: `<a href='/auth/reset-password' target='_blank'>`, closeTag: '</a>' })"
+    :hint="isRegister ? '' : $t('auth.form.password.hint.login', { openTag: `<a href='/auth/reset-password' target='_blank'>`, closeTag: '</a>' })"
     dense
     loading
     persistent-hint

@@ -1,7 +1,7 @@
 import { VueWrapper } from '@vue/test-utils'
 import { it, expect, describe, afterEach, beforeEach, vi } from 'vitest'
 import ESelect from './Index.client.vue'
-import { addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '~/test-utils'
+import { addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 
 let wrapper: VueWrapper<typeof ESelect>
 let vueContext: any

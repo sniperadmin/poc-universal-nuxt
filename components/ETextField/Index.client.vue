@@ -1,17 +1,18 @@
 <script lang="ts" setup>
+import { useGetProgress } from '@/composables/input/input-progress'
+import { useRules } from '@/composables/input/rules'
 import { mdiEye, mdiEyeOff } from '@mdi/js'
-// import { useGetProgress } from '~/composables/input-progress'
-// const { getProgress } = useGetProgress()
 
-import { useRules } from '~/composables/input/rules'
+const { getProgress } = useGetProgress()
+
 const { handleRules } = useRules()
 
 defineEmits(['update:modelValue'])
 //  TODO: add the following to the text field
 // @keyup="type === 'password' ? initProgress($refs[id], rules) : false"
 // TODO: Enable the following when vuetify update the validate function for refs
-// const progress = ref(0)
-// const initProgress = async (inputRef: any, rules: string[]) => await getProgress(inputRef, rules, progress)
+const progress = ref(0)
+const initProgress = async (inputRef: any, rules: string[]) => await getProgress(inputRef, rules, progress)
 </script>
 
 <script lang="ts">
@@ -63,13 +64,16 @@ export default defineComponent({
     :ref="id"
     :model-value="modelValue"
     :append-inner-icon="type === 'password' ? `svg:${type === 'password' ? showPass ? mdiEye : mdiEyeOff : appendIcon}` : undefined"
-    density="compact"
     :type="showPass ? 'text' : type"
     :flat="true"
     :title="id"
-    variant="outlined"
+    :loading="loading"
     :rules="handleRules(rules)"
+    :max-errors="rules.length"
+    density="compact"
+    variant="outlined"
     @input="$emit('update:modelValue', $event.target.value)"
+    @keyup="type === 'password' ? initProgress($refs[id], rules) : false"
     @click:append-inner="showPass = !showPass"
   >
     <template
@@ -101,13 +105,9 @@ export default defineComponent({
       #loader
     >
       <v-progress-linear
-        v-for="(_rule, index) in rules"
-        :key="index"
         :model-value="progress"
         :color="progress === 100 ? 'primary' : progress < 50 ? 'error' : progress < 70 ? 'orange' : 'warning'"
-        :absolute="true"
-        height="5"
-        style="margin-top: 5px;"
+        height="4"
       />
     </template>
   </v-text-field>

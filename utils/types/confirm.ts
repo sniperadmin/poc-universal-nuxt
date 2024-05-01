@@ -1,12 +1,20 @@
 import type { InjectionKey } from 'vue'
 
-interface IConfirmProps {
+export interface IConfirmProps {
   type?: string
-  color: string
+  color?: string
   message: string
-  location?: string
+  location: string
   timeout?: number
 }
+
+export const createConfirm = (props: IConfirmProps): IConfirmProps => ({
+  type: props.type || 'snackbar',
+  location: props.location || 'bottom',
+  color: props.color || 'primary',
+  message: props.message || 'default',
+  timeout: props.timeout
+})
 
 export interface ConfirmEvent {
   show: (props: IConfirmProps) => void

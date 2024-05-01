@@ -1,7 +1,7 @@
 import { VueWrapper } from '@vue/test-utils'
 import { expect, it, describe, vi, beforeEach, afterEach } from 'vitest'
 import EAuthTitle from './Index.vue'
-import { addI18n, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '~/test-utils'
+import { addI18n, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 
 let wrapper: VueWrapper
 let vueContext: any

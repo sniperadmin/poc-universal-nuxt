@@ -5,10 +5,12 @@ import { useApiServiceStore } from '@/store/api-service'
 import { initFirebaseApi } from '@/composables/firebase'
 import { initRestApi } from '@/composables/rest'
 import { createGlobalState } from '@vueuse/core'
+import { createPinia, setActivePinia } from 'pinia'
 
 //  Create a union type for Api
 type IApi = IFirebaseApi & IRestApi
 //  Initializing config store
+setActivePinia(createPinia())
 const { isFirebase } = useApiServiceStore()
 //  Create the main composables
 const useFirebaseApi = createGlobalState((): IApi => ({ ...initFirebaseApi() }))

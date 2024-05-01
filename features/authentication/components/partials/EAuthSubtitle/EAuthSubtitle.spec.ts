@@ -1,7 +1,7 @@
 import { VueWrapper } from '@vue/test-utils'
 import { expect, it, describe, vi, beforeEach, afterEach } from 'vitest'
 import EAuthSubtitle from './Index.vue'
-import { addI18n, addPinia, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '~/test-utils'
+import { addI18n, addPinia, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 import EBtn from '@/components/EBtn/Index.vue'
 
 let wrapper: VueWrapper

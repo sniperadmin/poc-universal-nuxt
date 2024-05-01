@@ -6,7 +6,7 @@ import { getAuth } from 'firebase-admin/auth'
 export default eventHandler(async (event) => {
   FirebaseServer()
   setActivePinia(createPinia())
-  const { isRest, isFirebase } = useApiServiceStore()
+  const { isFirebase } = useApiServiceStore()
 
   const payload = await readBody(event)
   if (isFirebase) {

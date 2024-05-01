@@ -58,6 +58,7 @@ export const bootstrapVueContext = (configureContext: (arg0: {}) => any) => {
   context.vueTestUtils.config.global.stubs.nuxt = { template: '<div />' }
   context.vueTestUtils.config.global.stubs['nuxt-link'] = { template: '<a><slot /></a>' }
   context.vueTestUtils.config.global.stubs['no-ssr'] = { template: '<span><slot /></span>' }
+  // @ts-ignore
   context.vue = createApp(App)
 
   vi.doMock('vue', () => context.vue)

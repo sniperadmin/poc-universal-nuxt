@@ -1,15 +1,15 @@
 import { nextTick } from 'vue'
 import { expect, it, describe, vi, beforeEach, afterEach } from 'vitest'
 import { flushPromises, VueWrapper } from '@vue/test-utils'
-import EAuth from './Index.vue'
+import EAuth from './Index.client.vue'
 import {
   addI18n, addPinia,
   addVuetify,
   bootstrapVueContext,
   compositeConfiguration,
   mountWrapper, shallowMount
-} from '~/test-utils'
-import { useAuth } from '~/features/authentication'
+} from '@/test-utils'
+// import { useAuth } from '@/features/authentication'
 
 type RelaxedVue = typeof EAuth & {
   form: {

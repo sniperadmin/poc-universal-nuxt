@@ -82,7 +82,6 @@ import { langs } from '@/utils/languages'
 const { setLocale, locale } = useI18n()
 
 const localeSelection = ref(langs.find(lang => lang.code === locale.value))
-console.log(localeSelection)
 const font = ref('Panton')
 
 const handleClick = (code: string) => {
