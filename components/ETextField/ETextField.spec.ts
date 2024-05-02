@@ -1,6 +1,6 @@
 import { VueWrapper } from '@vue/test-utils'
 import { it, expect, describe, afterEach, beforeEach, vi } from 'vitest'
-import ETextField from './Index.client.vue'
+import ETextField from './Index.vue'
 import {
   addI18n,
   addVuetify,

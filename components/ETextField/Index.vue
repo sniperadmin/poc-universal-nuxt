@@ -59,7 +59,6 @@ export default defineComponent({
 
 <template>
   <v-text-field
-    v-bind="$props"
     :id="id"
     :ref="id"
     :model-value="modelValue"

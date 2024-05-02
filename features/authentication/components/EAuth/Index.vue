@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import { EAuthTitle, EAuthSubtitle, EAuthPassword } from '@/features/authentication/components/partials'
-import ETextField from '@/components/ETextField/Index.client.vue'
+import ETextField from '@/components/ETextField/Index.vue'
 const {mobile} = useDisplay()
 // import ESelect from '@/components/ESelect/Index.vue'
 
@@ -45,10 +45,10 @@ const handleAuthUsingEmailAndPassword = async () => {
     const res = await loginWithCreds(form)
     if (res instanceof ZodError) {
       const issue = res.issues[0]
-      show({ color: 'secondary', message: issue.message })
+      show({ color: 'secondary', message: issue.message, location: 'bottom' })
       //  TODO: show the error in the UI somehow
     } else if (res instanceof FirebaseError) {
-      show(createConfirm({ color: 'secondary', message: res.message }))
+      show(createConfirm({ color: 'secondary', message: res.message, location: 'bottom' }))
     }
   }
 }
@@ -106,19 +106,17 @@ export default defineComponent({
           <v-row no-gutters>
             <!-- SECTION: Email field -->
             <v-col cols="12">
-              <client-only>
-                <e-text-field
-                  id="email"
-                  v-model="form.email"
-                  data-test="email"
-                  type="email"
-                  :hint="isRegister && isEditor ? $t('auth.form.email.hint', { openTag: '<a>', closeTag: '</a>' }) : undefined"
-                  :label="$t('auth.form.email.label', { type: isRegister ? isEditor ? $t('auth.status.work') : $t('auth.status.contact') : $t('auth.status.your') })"
-                  persistent-hint
-                  dense
-                  :rules="['required', 'email']"
-                />
-              </client-only>
+              <e-text-field
+                id="email"
+                v-model="form.email"
+                data-test="email"
+                type="email"
+                :hint="isRegister && isEditor ? $t('auth.form.email.hint', { openTag: '<a>', closeTag: '</a>' }) : undefined"
+                :label="$t('auth.form.email.label', { type: isRegister ? isEditor ? $t('auth.status.work') : $t('auth.status.contact') : $t('auth.status.your') })"
+                persistent-hint
+                dense
+                :rules="['required', 'email']"
+              />
             </v-col>
 
             <v-col cols="12">
@@ -129,7 +127,6 @@ export default defineComponent({
                 data-test="name-input"
                 autocomplete="name"
                 type="text"
-                persistent-hint
                 :label="$t('auth.form.name.label')"
                 counter
                 :counter-value="v => v.trim().split(' ').length"
@@ -146,14 +143,12 @@ export default defineComponent({
               * Id must be assigned as it will be used as a reference for progress calculation
             -->
             <v-col cols="12">
-              <client-only>
-                <e-auth-password
-                  v-model="form.password"
-                  type="password"
-                  data-test="password"
-                  :is-register="isRegister"
-                />
-              </client-only>
+              <e-auth-password
+                v-model="form.password"
+                type="password"
+                data-test="password"
+                :is-register="isRegister"
+              />
             </v-col>
 
 <!--            <e-select-->

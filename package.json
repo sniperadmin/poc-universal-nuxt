@@ -36,6 +36,7 @@
     "scrypt-js": "^3.0.1",
     "vue": "^3.4.26",
     "vue-router": "^4.3.2",
+    "vuetify-nuxt-module": "latest",
     "zod": "^3.23.5"
   },
   "devDependencies": {
@@ -49,6 +50,6 @@
     "vite-plugin-vuetify": "^2.0.3",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "latest",
-    "vuetify": "^3.5.17"
+    "vuetify": "^3.6.1"
   }
 }

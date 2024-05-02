@@ -1,7 +1,7 @@
 import { nextTick } from 'vue'
 import { expect, it, describe, vi, beforeEach, afterEach } from 'vitest'
 import { flushPromises, VueWrapper } from '@vue/test-utils'
-import EAuth from './Index.client.vue'
+import EAuth from './Index.vue'
 import {
   addI18n, addPinia,
   addVuetify,

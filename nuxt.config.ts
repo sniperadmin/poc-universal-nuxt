@@ -1,4 +1,4 @@
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+// import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
   devtools: { enabled: false },
 
-  css: ['./assets/main.scss'],
+  css: ['./assets/main.scss', './assets/variables.scss'],
 
   runtimeConfig: {
     strapiToken: import.meta.env.STRAPI_STAGING_TOKEN,
@@ -26,18 +26,30 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: [
-    '@pinia/nuxt',
-    '@sidebase/nuxt-auth',
-    (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }))
-      })
+  modules: ['@pinia/nuxt', '@sidebase/nuxt-auth', // (_options, nuxt) => {
+  //   nuxt.hooks.hook('vite:extendConfig', (config) => {
+  //     // @ts-expect-error
+  //     config.plugins.push(vuetify({ autoImport: true }))
+  //   })
+  // },
+  '@nuxtjs/i18n', '@vueuse/nuxt', "vuetify-nuxt-module"],
+
+  vuetify: {
+    moduleOptions: {
+      /* module specific options */
+      ssrClientHints: {
+        prefersColorScheme: true,
+        prefersColorSchemeOptions: {
+          darkThemeName: 'dark',
+          lightThemeName: 'light'
+        },
+        prefersReducedMotion: true,
+        reloadOnFirstRequest: true,
+        viewportSize: true
+      }
     },
-    '@nuxtjs/i18n',
-    '@vueuse/nuxt'
-  ],
+    vuetifyOptions: './vuetify.config.ts'
+  },
 
   auth: {
     baseURL: '/api/auth',
@@ -64,7 +76,7 @@ export default defineNuxtConfig({
       enableRefreshPeriodically: false
     },
     globalAppMiddleware: {
-      isEnabled: true
+      isEnabled: false
     }
   },
 
@@ -93,9 +105,9 @@ export default defineNuxtConfig({
 
   vite: {
     vue: {
-      template: {
-        transformAssetUrls
-      }
+      // template: {
+      //   transformAssetUrls
+      // }
     }
   }
 })

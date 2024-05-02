@@ -1,30 +1,23 @@
 <script setup lang="ts">
-import { ConfirmEventKey, createConfirm, injectStrict } from '@/utils/types'
+import ETextField from '@/components/ETextField/Index.vue'
 
-const { show } = injectStrict(ConfirmEventKey)
-
-const pass = ref('')
-definePageMeta({
-  auth: {
-    unauthenticatedOnly: true
-  }
-})
+const text = ref('');
+const showPass = ref(false);
+const type = ref('password');
+const show = ref(true)
 </script>
 
 <template>
-  <h1>{{ $t('welcome.title') }}</h1>
-  <h3>{{ $t('welcome.text') }}</h3>
-  <v-btn class="mb-3" @click="show(createConfirm({ message: 'Yay! fired notification!', location: 'right' }))">
-    fire snackbar notification
-  </v-btn>
-
   <v-card width="50%">
     <v-card-text>
       <e-text-field
-        v-model="pass"
-        type="password"
-        label="password"
-        :rules="['required', 'minchars']"
+        v-model="text"
+        v-if="show"
+        label="password field"
+        :label="$t('auth.form.name.label')"
+        counter
+        :counter-value="v => v.trim().split(' ').length"
+        :rules="['required', 'alpha', 'fullNameMinChars']"
       />
     </v-card-text>
   </v-card>
