@@ -36,9 +36,9 @@ export default defineComponent({
         this.$emit('update:modelValue', newValue)
       },
     },
-    // checkHTML() {
-    //   return (message: any) => /<\/?[a-z][\s\S]*>/i.test(message)
-    // }
+    checkHTML() {
+      return (message: any) => /<\/?[a-z][\s\S]*>/i.test(message)
+    }
   }
 })
 </script>
@@ -64,9 +64,9 @@ export default defineComponent({
       'minchars'
     ] : ['required']"
     @keyup.enter="$emit('auth', $event)"
-  />
-<!--    <template #message="{ message }">-->
-      <!--          TODO: work on tooltips later -->
+  >
+    <template #message="{ message }">
+<!--                TODO: work on tooltips later -->
 <!--      <v-tooltip-->
 <!--        v-if="isRegister"-->
 <!--        data-test="password-tips"-->
@@ -92,18 +92,8 @@ export default defineComponent({
 <!--          <li>{{ $t('auth.form.password.guides.four') }}</li>-->
 <!--        </ul>-->
 <!--      </v-tooltip>-->
-
-<!--      <div v-else>-->
-<!--        <span-->
-<!--          v-if="checkHTML(message)"-->
-<!--          v-html="message"-->
-<!--        />-->
-<!--        <span v-else>-->
-<!--          {{ $t(message) }}-->
-<!--        </span>-->
-<!--      </div>-->
-<!--    </template>-->
-<!--  </e-text-field>-->
+    </template>
+  </e-text-field>
 </template>
 
 <style scoped>

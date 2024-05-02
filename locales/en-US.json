@@ -51,7 +51,7 @@
         "placeholder": "Select an option"
       },
       "validation": {
-        "alpha": "Only letters are allowed",
+        "alpha": "* Only letters are allowed",
         "email": "* Invalid e-mail.",
         "fullNameMinChars": "* First and Last name required",
         "hasLowercase": "* password must have at least 1 lowercase character",

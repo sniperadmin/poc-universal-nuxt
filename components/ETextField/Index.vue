@@ -53,7 +53,13 @@ export default defineComponent({
 
   data: () => ({
     showPass: false
-  })
+  }),
+
+  computed: {
+    checkHTML() {
+      return (message: any) => /<\/?[a-z][\s\S]*>/i.test(message)
+    }
+  }
 })
 </script>
 
@@ -83,6 +89,16 @@ export default defineComponent({
         :name="inputSlot"
         v-bind="{ ...slotScope }"
       />
+    </template>
+
+    <template #message="{message}">
+      <span
+        v-if="checkHTML(message)"
+        v-html="message"
+      />
+      <span v-else>
+        {{ $t(message) }}
+      </span>
     </template>
 
     <template #label="{label}">
