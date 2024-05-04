@@ -4,7 +4,7 @@ import { useRules } from '@/composables/input/rules'
 import { mdiEye, mdiEyeOff } from '@mdi/js'
 
 const { getProgress } = useGetProgress()
-
+const { t } = useI18n()
 const { handleRules } = useRules()
 
 defineEmits(['update:modelValue'])
@@ -25,7 +25,7 @@ export default defineComponent({
       type: String,
       default: 'test'
     },
-    hint: { type: String, default: undefined },
+    hint: { type: String as () => any, default: undefined },
     persistentHint: { type: Boolean, default: false },
     modelValue: {
       type: String,
@@ -38,6 +38,10 @@ export default defineComponent({
     type: {
       type: String,
       default: 'text'
+    },
+    autoFocus: {
+      type: Boolean,
+      default: false
     },
     loading: {
       type: Boolean,
@@ -68,9 +72,12 @@ export default defineComponent({
     :id="id"
     :ref="id"
     :model-value="modelValue"
-    :append-inner-icon="type === 'password' ? `svg:${type === 'password' ? showPass ? mdiEye : mdiEyeOff : appendIcon}` : undefined"
+    :append-inner-icon="type === 'password' ? showPass ? mdiEye : mdiEyeOff : appendIcon"
     :type="showPass ? 'text' : type"
     :flat="true"
+    :hint="hint"
+    :auto-focus="autoFocus"
+    :persistent-hint="persistentHint"
     :title="id"
     :loading="loading"
     :rules="handleRules(rules)"
@@ -97,7 +104,7 @@ export default defineComponent({
         v-html="message"
       />
       <span v-else>
-        {{ $t(message) }}
+        {{ t(message) }}
       </span>
     </template>
 

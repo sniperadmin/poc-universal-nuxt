@@ -16,6 +16,8 @@ const show = ref(true)
         label="password field"
         :label="$t('auth.form.name.label')"
         counter
+        hint="pass should be filled"
+        persistent-hint
         :counter-value="v => v.trim().split(' ').length"
         :rules="['required', 'alpha', 'fullNameMinChars']"
       />

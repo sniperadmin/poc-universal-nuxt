@@ -2,6 +2,8 @@
 import ETextField from '@/components/ETextField/Index.vue'
 
 defineEmits(['auth', 'update:modelValue'])
+
+const { t } = useI18n()
 </script>
 
 <script lang="ts">
@@ -50,11 +52,10 @@ export default defineComponent({
     data-test="password"
     type="password"
     autocomplete="new-password"
-    :hint="isRegister ? '' : $t('auth.form.password.hint.login', { openTag: `<a href='/auth/reset-password' target='_blank'>`, closeTag: '</a>' })"
-    dense
-    loading
+    :hint="isRegister ?  t('auth.form.password.hint.register', { icon: svgTest }) : t('auth.form.password.hint.login', { openTag: `<a href='/auth/reset-password' target='_blank'>`, closeTag: '</a>' })"
     persistent-hint
-    :label="$t('auth.form.password.label')"
+    loading
+    :label="t('auth.form.password.label')"
     :rules="isRegister ? [
       'required',
       'hasLowercase',
@@ -67,31 +68,41 @@ export default defineComponent({
   >
     <template #message="{ message }">
 <!--                TODO: work on tooltips later -->
-<!--      <v-tooltip-->
-<!--        v-if="isRegister"-->
-<!--        data-test="password-tips"-->
-<!--        right-->
-<!--      >-->
-<!--        <template #activator="{ on, attrs }">-->
-<!--          <span-->
-<!--            v-if="checkHTML(message)"-->
-<!--            v-bind="attrs"-->
-<!--            v-on="on"-->
-<!--            v-html="message"-->
-<!--          />-->
-<!--          <span v-else>-->
-<!--            {{ $t(message) }}-->
-<!--          </span>-->
-<!--        </template>-->
+      <v-tooltip
+        v-if="isRegister"
+        data-test="password-tips"
+        right
+      >
+        <template #activator="{ on, attrs }">
+          <span
+            v-if="checkHTML(message)"
+            v-bind="attrs"
+            v-on="on"
+            v-html="message"
+          />
+          <span v-else>
+            {{ t(message) }}
+          </span>
+        </template>
 
-<!--        <span>{{ $t('auth.form.password.guides.title') }}</span>-->
-<!--        <ul>-->
-<!--          <li>{{ $t('auth.form.password.guides.one') }}</li>-->
-<!--          <li>{{ $t('auth.form.password.guides.two') }}</li>-->
-<!--          <li>{{ $t('auth.form.password.guides.three') }}</li>-->
-<!--          <li>{{ $t('auth.form.password.guides.four') }}</li>-->
-<!--        </ul>-->
-<!--      </v-tooltip>-->
+        <span>{{ $t('auth.form.password.guides.title') }}</span>
+        <ul>
+          <li>{{ $t('auth.form.password.guides.one') }}</li>
+          <li>{{ $t('auth.form.password.guides.two') }}</li>
+          <li>{{ $t('auth.form.password.guides.three') }}</li>
+          <li>{{ $t('auth.form.password.guides.four') }}</li>
+        </ul>
+      </v-tooltip>
+
+      <div
+        v-else
+      >
+        <span
+          v-if="checkHTML(message)"
+          v-html="message"
+        />
+        <span v-else>{{ t(message) }}</span>
+      </div>
     </template>
   </e-text-field>
 </template>

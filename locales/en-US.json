@@ -75,7 +75,8 @@
     "personas": {
       "admin": "egab",
       "editor": "editor",
-      "journalist": "journalist"
+      "guest": "guest",
+      "user": "journalist"
     },
     "resetpassword": {
       "btn": "send me a reset link",
@@ -89,8 +90,8 @@
     "status": {
       "contact": "contact",
       "continue": "continue",
-      "create": "create",
       "login": "login",
+      "signup": "create",
       "work": "work",
       "your": "your"
     },

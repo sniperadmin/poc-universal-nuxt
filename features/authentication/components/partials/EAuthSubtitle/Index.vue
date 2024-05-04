@@ -2,6 +2,7 @@
 import { useDisplay } from 'vuetify'
 
 const { mobile } = useDisplay()
+const { t } = useI18n()
 </script>
 
 <script lang="ts">
@@ -40,7 +41,7 @@ export default defineComponent({
         class="text-center mx-auto"
         :class="mobile ? 'text-subtitle-2' : 'text-subtitle-1'"
       >
-        {{ $t('auth.subtitle', { status: isRegister ? $t('auth.status.create') : $t('auth.status.login') }) }}
+        {{ t('auth.subtitle', { status: isRegister ? t('auth.status.signup') : t('auth.status.login') }) }}
       </v-list-subheader>
 
       <v-col
@@ -55,7 +56,7 @@ export default defineComponent({
           outlined
           class="font-weight-bold text-body-1"
           color="grey"
-          :text="$t('auth.google')"
+          :text="t('auth.google')"
           @click="signinOrUpWithGoogle"
         />
       </v-col>
@@ -66,7 +67,7 @@ export default defineComponent({
         class="text-center mx-auto"
         :class="mobile ? 'text-body-2' : 'text-body-1'"
       >
-        {{ $t('auth.subtitle1') }}
+        {{ t('auth.subtitle1') }}
       </v-list-subheader>
       <v-divider class="mx-2" />
     </v-row>

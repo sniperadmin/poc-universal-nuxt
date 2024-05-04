@@ -3,6 +3,7 @@ import { reactive } from 'vue'
 import { EAuthTitle, EAuthSubtitle, EAuthPassword } from '@/features/authentication/components/partials'
 import ETextField from '@/components/ETextField/Index.vue'
 const {mobile} = useDisplay()
+const { t } = useI18n()
 // import ESelect from '@/components/ESelect/Index.vue'
 
 import { useDisplay } from 'vuetify'
@@ -111,11 +112,11 @@ export default defineComponent({
                 v-model="form.email"
                 data-test="email"
                 type="email"
-                :hint="isRegister && isEditor ? $t('auth.form.email.hint', { openTag: '<a>', closeTag: '</a>' }) : undefined"
-                :label="$t('auth.form.email.label', { type: isRegister ? isEditor ? $t('auth.status.work') : $t('auth.status.contact') : $t('auth.status.your') })"
+                :rules="['required', 'email']"
+                :hint="isRegister && isEditor ? t('auth.form.email.hint', { openTag: '<a>', closeTag: '</a>' }) : undefined"
+                :label="t('auth.form.email.label', { type: isRegister ? isEditor ? t('auth.status.work') : t('auth.status.contact') : t('auth.status.your') })"
                 persistent-hint
                 dense
-                :rules="['required', 'email']"
               />
             </v-col>
 

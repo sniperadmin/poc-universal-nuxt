@@ -2,6 +2,7 @@
 import { useDisplay } from 'vuetify'
 
 const { mobile } = useDisplay()
+const { t } = useI18n()
 </script>
 
 <script lang="ts">
@@ -32,9 +33,9 @@ export default defineComponent({
       class="mx-auto text-break text-center"
     >
       {{
-        $t('auth.title', {
-          status: $t('auth.status.create'),
-          persona: isEditor ? $t('auth.personas.editor') : $t('auth.personas.journalist')
+        t('auth.title', {
+          status: t('auth.status.signup'),
+          persona: isEditor ? t('auth.personas.editor') : t('auth.personas.user')
         })
       }}
     </p>
@@ -43,7 +44,7 @@ export default defineComponent({
       v-else
       class="mx-auto text-break text-center"
     >
-      {{ $t('auth.title', { status: $t('auth.status.login'), persona: isEditor ? $t('auth.personas.editor') : $t('auth.personas.journalist') }) }}
+      {{ t('auth.title', { status: t('auth.status.login'), persona: isEditor ? t('auth.personas.editor') : t('auth.personas.user') }) }}
     </p>
   </v-card-title>
 </template>
