@@ -3,7 +3,7 @@ import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { it, expect, describe, afterEach, beforeEach, vi } from 'vitest'
 import ESelect from './Index.client.vue'
 
-let wrapper: VueWrapper<any>
+let wrapper: VueWrapper
 
 const findLabelWrapper = () => wrapper.find('.v-label')
 const findAsterisk = () => wrapper.find('[data-test="select-asterisk"]')

@@ -3,15 +3,20 @@ import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { VueWrapper } from '@vue/test-utils'
 import EArticle from './Index.vue'
 
-let wrapper: VueWrapper<any>
+let wrapper: VueWrapper
 
 const text = 'this is a normal text to test the truncate'
 const findArticle = () => wrapper.find('[data-testid="article"]')
 
 describe('EArticle', () => {
   beforeEach(async () => {
-    wrapper = await mountSuspended(EArticle)
+    wrapper = await mountSuspended(EArticle, {
+      props: {
+        article: text
+      }
+    })
   })
+
   afterEach(() => {
     wrapper.unmount()
   })

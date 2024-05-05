@@ -20,6 +20,8 @@ const props = defineProps({
 })
 
 const signinOrUpWithGoogle = () => {}
+
+defineExpose({ t })
 </script>
 
 <script lang="ts">

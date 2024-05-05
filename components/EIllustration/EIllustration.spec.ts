@@ -3,7 +3,7 @@ import { describe, beforeEach, afterEach, it, expect } from 'vitest'
 import EIllustration from './Index.client.vue'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 
-let wrapper: VueWrapper<any>
+let wrapper: VueWrapper
 
 describe('EIllustration', () => {
   beforeEach(async () => {

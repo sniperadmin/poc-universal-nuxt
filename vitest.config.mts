@@ -12,6 +12,12 @@ export default defineVitestConfig({
   },
   test: {
     environment: 'nuxt',
+    poolOptions: {
+      threads: {
+        maxThreads: 5,
+        minThreads: 1
+      }
+    },
     // you can optionally set Nuxt-specific environment options
     // environmentOptions: {
     //   nuxt: {
@@ -36,8 +42,8 @@ export default defineVitestConfig({
       }
     },
     setupFiles: [
-      './vitest.setup.ts'
-      // '@vitest/web-worker'
+      './vitest.setup.ts',
+      '@vitest/web-worker'
     ]
   }
 })

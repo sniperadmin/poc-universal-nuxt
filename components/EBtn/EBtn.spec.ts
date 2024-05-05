@@ -3,7 +3,7 @@ import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { VueWrapper } from '@vue/test-utils'
 import EBtn from './Index.vue'
 
-let wrapper: VueWrapper<any>
+let wrapper: VueWrapper
 
 const findBtn = () => wrapper.find('[data-test="btn"]')
 

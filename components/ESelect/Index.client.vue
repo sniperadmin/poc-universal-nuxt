@@ -1,20 +1,6 @@
 <script lang="ts" setup>
 defineEmits(['input', 'update:modelValue'])
-const handleUpdateMenu = (open: boolean) => {
-  if (open) {
-    setTimeout(
-      () => window.dispatchEvent(new Event('resize')),
-      100
-    )
-  }
-}
-</script>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'ESelect',
-  props: {
+const props = defineProps({
     modelValue: {
       type: [Object, String, Array, Number],
       required: true
@@ -51,18 +37,22 @@ export default defineComponent({
       type: Boolean,
       default: false
     }
-  },
-  emits: ['update:modelValue'],
-  computed: {
-    reactiveModelValue: {
-      get () {
-        return this.modelValue
-      },
-      set (value: any) {
-        this.$emit('update:modelValue', value)
-      }
-    }
+  })
+
+const handleUpdateMenu = (open: boolean) => {
+  if (open) {
+    setTimeout(
+      () => window.dispatchEvent(new Event('resize')),
+      100
+    )
   }
+}
+</script>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'ESelect'
 })
 </script>
 
@@ -70,12 +60,13 @@ export default defineComponent({
   <v-select
     v-bind="$props"
     :id="id"
-    :model-value="reactiveModelValue"
+    :model-value="modelValue"
     :eager="true"
     density="compact"
     :item-value="itemValue"
     :item-title="itemTitle"
     @update:menu="handleUpdateMenu"
+    @update:modelValue="$emit('update:modelValue', $event)"
   >
     <template
       v-for="(_, inputSlot) in $slots"

@@ -21,7 +21,7 @@ describe('EState', () => {
   it('should load elements', () => {
     const image = wrapper.find('[data-test="state-image"]').find('img')
     expect(image.exists()).toBe(true)
-    expect(image.attributes('src')).toBe('/svg/empty.svg')
+    expect(image.attributes('src')).toBe('https://fakeimg.pl/400x400/cccccc/b8b8b8?text=Journalist&font=bebas')
   })
 
   it('should load btn', async () => {

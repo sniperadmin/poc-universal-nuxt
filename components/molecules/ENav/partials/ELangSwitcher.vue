@@ -1,3 +1,27 @@
+<script lang="ts" setup>
+import {ref} from 'vue'
+import { langs } from '@/utils/languages'
+
+const { setLocale, locale } = useI18n()
+
+const localeSelection = ref(langs.find(lang => lang.code === locale.value))
+const font = ref('Panton')
+
+const handleClick = (code: string) => {
+  setLocale(code)
+  localeSelection.value = langs.find(lang => lang.code === code)
+  font.value = code === 'ar' ? 'Ge' : 'Panton'
+}
+</script>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'ELangSwitcher'
+})
+</script>
+
 <template>
   <client-only>
     <v-select
@@ -53,43 +77,6 @@
     </v-select>
   </client-only>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'ELangSwitcher',
-  data: () => ({
-    // localeSelection: langs.find(lang => lang.code === vm.$i18n.locale),
-    // font: 'Panton',
-    // langs,
-  }),
-  methods: {
-    // handleClick(code: string) {
-    //   this.$i18n.setLocale(code)
-    //   this.localeSelection = langs.find(lang => lang.code === code)
-    //   this.font = this.localeSelection!.code === 'ar' ? 'Ge' : 'Panton'
-    // }
-  }
-})
-</script>
-
-<script lang="ts" setup>
-import {ref} from 'vue'
-import { useI18n } from 'vue-i18n'
-import { langs } from '@/utils/languages'
-
-const { setLocale, locale } = useI18n()
-
-const localeSelection = ref(langs.find(lang => lang.code === locale.value))
-const font = ref('Panton')
-
-const handleClick = (code: string) => {
-  setLocale(code)
-  localeSelection.value = langs.find(lang => lang.code === code)
-  font.value = code === 'ar' ? 'Ge' : 'Panton'
-}
-</script>
 
 <style scoped lang="scss">
 @use "assets/variables" with (

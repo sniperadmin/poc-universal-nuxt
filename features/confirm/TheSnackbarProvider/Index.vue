@@ -1,11 +1,3 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'TheSnackbarProvider'
-})
-</script>
-
 <script setup lang="ts">
 import { provide, ref } from 'vue';
 import { ConfirmEventKey, type IConfirmProps } from '@/utils/types'
@@ -26,6 +18,14 @@ provide(ConfirmEventKey, {
   hide() {
     show.value = false
   }
+})
+</script>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'TheSnackbarProvider'
 })
 </script>
 

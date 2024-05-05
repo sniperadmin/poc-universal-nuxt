@@ -2,15 +2,15 @@
 import { reactive } from 'vue'
 import { EAuthTitle, EAuthSubtitle, EAuthPassword } from '@/features/authentication/components/partials'
 import ETextField from '@/components/ETextField/Index.vue'
-const {mobile} = useDisplay()
-const { t } = useI18n()
-// import ESelect from '@/components/ESelect/Index.vue'
-
 import { useDisplay } from 'vuetify'
 import { ZodError } from 'zod'
 import { FirebaseError } from '@firebase/util'
-import { ConfirmEventKey, createConfirm, injectStrict } from '@/utils/types'
+// import { ConfirmEventKey, createConfirm, injectStrict } from '@/utils/types'
 
+// import ESelect from '@/components/ESelect/Index.vue'
+
+const {mobile} = useDisplay()
+const { t } = useI18n()
 const props = defineProps({
   isRegister: {
     type: Boolean,
@@ -22,19 +22,19 @@ const props = defineProps({
   }
 })
 
+// const openTerms = ref(false)
 const form = reactive({
   email: '',
   name: '',
   password: '',
   surveyValue: {id: null, data: null}
 })
-const openTerms = ref(false)
-const firestoreListener = ref(null as any)
 const valid = ref(true)
 const loading = ref(false)
-const error = ref(null as any)
+const err = ref(null as any)
 
-const { show } = injectStrict(ConfirmEventKey)
+//  TODO: Replace provide/inject flow with XState
+// const { show } = injectStrict(ConfirmEventKey)
 
 const handleAuthUsingEmailAndPassword = async () => {
   const { loginWithCreds, signUpWithCreds } = useApiServices()
@@ -46,10 +46,10 @@ const handleAuthUsingEmailAndPassword = async () => {
     const res = await loginWithCreds(form)
     if (res instanceof ZodError) {
       const issue = res.issues[0]
-      show({ color: 'secondary', message: issue.message, location: 'bottom' })
+      // show({ color: 'secondary', message: issue.message, location: 'bottom' })
       //  TODO: show the error in the UI somehow
     } else if (res instanceof FirebaseError) {
-      show(createConfirm({ color: 'secondary', message: res.message, location: 'bottom' }))
+      // show(createConfirm({ color: 'secondary', message: res.message, location: 'bottom' }))
     }
   }
 }
@@ -59,7 +59,7 @@ const handleAuthUsingEmailAndPassword = async () => {
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'EAuth',
+  name: 'EAuth'
 })
 </script>
 
@@ -84,12 +84,12 @@ export default defineComponent({
         :is-editor="isEditor"
         :is-register="isRegister"
         @loading="loading = $event"
-        @error="error = $event"
+        @error="err = $event"
       />
       <!-- SECTION ./Subheader with social media login -->
 
-      <!--      <v-alert v-if="error" data-test="error" type="error">-->
-      <!--        {{ error }}-->
+      <!--      <v-alert v-if="err" data-test="err" type="err">-->
+      <!--        {{ err }}-->
       <!--      </v-alert>-->
 
       <!-- SECTION: Form -->
@@ -128,7 +128,7 @@ export default defineComponent({
                 data-test="name-input"
                 autocomplete="name"
                 type="text"
-                :label="$t('auth.form.name.label')"
+                :label="t('auth.form.name.label')"
                 counter
                 :counter-value="v => v.trim().split(' ').length"
                 :rules="['required', 'alpha', 'fullNameMinChars']"
@@ -202,7 +202,7 @@ export default defineComponent({
             color="primary"
             rounded
             :loading="loading"
-            :text="isRegister ? $t('auth.form.actions.continue') : $t('auth.form.actions.login')"
+            :text="isRegister ? t('auth.form.actions.continue') : t('auth.form.actions.login')"
             @click="handleAuthUsingEmailAndPassword"
           />
         </v-card-actions>

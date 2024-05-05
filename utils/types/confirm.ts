@@ -1,4 +1,4 @@
-import type { InjectionKey } from 'vue'
+import { inject, type InjectionKey } from 'vue'
 
 export interface IConfirmProps {
   type?: string
@@ -30,4 +30,3 @@ export function injectStrict<T>(key: InjectionKey<T>, fallback?: T) {
   }
   return resolved
 }
-

@@ -5,6 +5,7 @@ const text = ref('');
 const showPass = ref(false);
 const type = ref('password');
 const show = ref(true)
+const selected = ref('California')
 </script>
 
 <template>
@@ -16,10 +17,14 @@ const show = ref(true)
         label="password field"
         :label="$t('auth.form.name.label')"
         counter
-        hint="pass should be filled"
-        persistent-hint
         :counter-value="v => v.trim().split(' ').length"
         :rules="['required', 'alpha', 'fullNameMinChars']"
+      />
+
+      <e-select
+        v-model="selected"
+        :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+        label="select"
       />
     </v-card-text>
   </v-card>

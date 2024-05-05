@@ -1,24 +1,25 @@
 <script lang="ts" setup>
 import { useDisplay } from 'vuetify'
 
-const { mobile } = useDisplay()
 const { t } = useI18n()
+const { mobile } = useDisplay()
+
+defineProps({
+  isRegister: {
+    type: Boolean,
+      required: true
+  },
+  isEditor: {
+    type: Boolean,
+      required: true
+  }
+})
 </script>
 
 <script lang="ts">
+import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'EAuthTitle',
-
-  props: {
-    isRegister: {
-      type: Boolean,
-      required: true
-    },
-    isEditor: {
-      type: Boolean,
-      required: true
-    }
-  }
+  name: 'EAuthTitle'
 })
 </script>
 

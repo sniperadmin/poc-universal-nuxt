@@ -1,18 +1,16 @@
+<script lang="ts" setup>
+defineProps({
+  imageName: {
+    type: String,
+  default: 'empty'
+  }
+})
+</script>
+
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'EIllustration',
-
-  props: {
-    imageName: {
-      type: String,
-      default: 'empty'
-    }
-  },
-
-  data() {
-    return {}
-  }
+  name: 'EIllustration'
 })
 </script>
 
