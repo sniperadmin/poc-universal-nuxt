@@ -24,7 +24,15 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@pinia/nuxt', '@sidebase/nuxt-auth', '@nuxtjs/i18n', '@vueuse/nuxt', 'vuetify-nuxt-module', '@nuxt/test-utils/module'],
+  modules: [
+    '@pinia/nuxt',
+    '@sidebase/nuxt-auth',
+    '@nuxtjs/i18n',
+    '@vueuse/nuxt',
+    'vuetify-nuxt-module',
+    '@nuxt/test-utils/module',
+    "nuxt-xstate"
+  ],
 
   vuetify: {
     moduleOptions: {

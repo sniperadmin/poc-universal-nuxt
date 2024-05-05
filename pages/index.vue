@@ -6,9 +6,19 @@ const showPass = ref(false);
 const type = ref('password');
 const show = ref(true)
 const selected = ref('California')
+
+const { state, send } = useMachine(loadingMachine)
 </script>
 
 <template>
+  <v-card width="50%">
+    <v-card-text>
+      <h1>Current state: {{ state.value }}</h1>
+      <button @click="send('CLICK')">
+        CLICK
+      </button>
+    </v-card-text>
+  </v-card>
   <v-card width="50%">
     <v-card-text>
       <e-text-field
