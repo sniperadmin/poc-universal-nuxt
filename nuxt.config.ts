@@ -1,5 +1,3 @@
-// import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
@@ -26,13 +24,7 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@pinia/nuxt', '@sidebase/nuxt-auth', // (_options, nuxt) => {
-  //   nuxt.hooks.hook('vite:extendConfig', (config) => {
-  //     // @ts-expect-error
-  //     config.plugins.push(vuetify({ autoImport: true }))
-  //   })
-  // },
-  '@nuxtjs/i18n', '@vueuse/nuxt', "vuetify-nuxt-module"],
+  modules: ['@pinia/nuxt', '@sidebase/nuxt-auth', '@nuxtjs/i18n', '@vueuse/nuxt', 'vuetify-nuxt-module', '@nuxt/test-utils/module'],
 
   vuetify: {
     moduleOptions: {
@@ -84,15 +76,6 @@ export default defineNuxtConfig({
     vueI18n: './locales/i18n.config.ts'
   },
 
-  // vuetify: {
-  //   moduleOptions: {
-  //     styles: {
-  //       configFile: './assets/variables.scss'
-  //     }
-  //   },
-  //   vuetifyOptions: './vuetify.config.ts'
-  // },
-
   features: {
     inlineStyles: false
   },
@@ -101,13 +84,5 @@ export default defineNuxtConfig({
 
   build: {
     transpile: ['vuetify'],
-  },
-
-  vite: {
-    vue: {
-      // template: {
-      //   transformAssetUrls
-      // }
-    }
   }
 })

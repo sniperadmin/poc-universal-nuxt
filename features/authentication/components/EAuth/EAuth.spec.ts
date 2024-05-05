@@ -1,74 +1,24 @@
 import { nextTick } from 'vue'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { expect, it, describe, vi, beforeEach, afterEach } from 'vitest'
-import { flushPromises, VueWrapper } from '@vue/test-utils'
+import { VueWrapper } from '@vue/test-utils'
 import EAuth from './Index.vue'
-import {
-  addI18n, addPinia,
-  addVuetify,
-  bootstrapVueContext,
-  compositeConfiguration,
-  mountWrapper, shallowMount
-} from '@/test-utils'
-// import { useAuth } from '@/features/authentication'
 
-type RelaxedVue = typeof EAuth & {
-  form: {
-    email: string
-    name: string
-  }
-}
-
-let wrapper: VueWrapper<RelaxedVue>
+let wrapper: VueWrapper<any>
 
 const findAuthWrapper = () => wrapper.find('[data-test="auth-wrapper"]')
 const findEmailInput = () => wrapper.find('[data-test="email"]')
 const findNameInput = () => wrapper.find('[data-test="name-input"]')
 const findCta = () => wrapper.find('[data-test="action-btn"]')
 
-let vueContext: any
 
 describe('EAuth', () => {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addI18n, addPinia))
-  vueContext.propsData = {
-    isRegister: true,
-    isEditor: true
-  }
-
-  vueContext.mocks = {
-    $fireModule: {
-      auth: {
-        GoogleAuthProvider: class GoogleAuthProvider {}
-      }
-    },
-    $fire: {
-      auth: {
-        signInWithPopup: vi.fn(() => new Promise(
-          (resolve, _reject) => resolve({
-            email: 'test@jest.io',
-            userId: '123',
-            isEmailVerified: false
-          }))
-        )
-      }
-    },
-    $route: {
-      params: {
-        persona: 'journalist'
-      },
-      query: {
-        action: 'login'
-      }
-    },
-    registerWithEmailAndPassword: vi.fn()
-  }
-  vueContext.vueTestUtils.config.global.stubs = ['e-btn', 'molecules-e-input-wrapper', 'molecules-e-input-wrapper-partials-e-text-field']
-
-  beforeEach(() => {
-    wrapper = mountWrapper(EAuth, vueContext)
+  beforeEach(async() => {
+    wrapper = await mountSuspended(EAuth)
   })
 
   afterEach(() => {
-    vueContext.teardownVueContext()
+    wrapper.unmount()
   })
 
   describe('DOM', () => {

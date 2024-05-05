@@ -1,25 +1,21 @@
 import { VueWrapper } from '@vue/test-utils'
 import { describe, beforeEach, afterEach, it, expect } from 'vitest'
 import EState from './Index.vue'
-import EBtn from '@/components/EBtn/Index.vue'
-import { addI18n, addPinia, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 
 let wrapper: VueWrapper<any>
-let vueContext: any
 
 describe('EState', () => {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addPinia, addI18n))
-  vueContext.components = {
-    'e-btn': EBtn
-  }
-  beforeEach(() => {
-    wrapper = mountWrapper(EState, vueContext)
+  beforeEach(async () => {
+    wrapper = await mountSuspended(EState)
   })
 
-  afterEach(() => { vueContext.teardownVueContext() })
+  afterEach(() => {
+    wrapper.unmount()
+  })
 
   it('should test the component', () => {
-    expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.exists()).toBeTruthy()
   })
 
   it('should load elements', () => {

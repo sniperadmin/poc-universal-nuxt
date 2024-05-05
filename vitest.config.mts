@@ -1,38 +1,8 @@
 import { fileURLToPath, URL } from 'url'
-import vue from '@vitejs/plugin-vue'
-import tsconfigPaths from 'vite-tsconfig-paths'
+import { defineVitestConfig } from '@nuxt/test-utils/config'
 
-import vuetify from 'vite-plugin-vuetify'
-import Components from 'unplugin-vue-components/vite'
-// import AutoImport from 'unplugin-auto-import/vite'
-// import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
-
-export default {
-  plugins: [
-    vue(),
-    tsconfigPaths(),
-    vuetify(),
-    Components({
-      dirs: ['~/components'],
-      directoryAsNamespace: true,
-      include: [/\.vue$/, /\.vue\?vue/, /\.stories\.ts$/, /\.[tj]s$/]
-    }),
-    // AutoImport({
-    //   include: [/\.vue$/, /\.vue\?vue/, /\.stories\.ts$/, /\.[tj]s$/],
-    //   imports: ['vue', 'vue-router'],
-    //   dirs: ['~/components'],
-    //   vueTemplate: true
-    // }),
-    // VueI18nPlugin({
-    //   globalSFCScope: true,
-    //   fullInstall: true,
-    //   runtimeOnly: true,
-    //   useVueI18nImportName: true,
-    //   allowDynamic: true,
-    //   forceStringify: false,
-    //   include: fileURLToPath(new URL('./locales/**', import.meta.url)) // provide a path to the folder where you'll store translation data (see below)
-    // })
-  ],
+export default defineVitestConfig({
+  plugins: [],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./', import.meta.url)),
@@ -41,7 +11,17 @@ export default {
     }
   },
   test: {
-    environment: 'happy-dom',
+    environment: 'nuxt',
+    // you can optionally set Nuxt-specific environment options
+    // environmentOptions: {
+    //   nuxt: {
+    //     rootDir: fileURLToPath(new URL('./playground', import.meta.url)),
+    //     domEnvironment: 'happy-dom', // 'happy-dom' (default) or 'jsdom'
+    //     overrides: {
+    //       // other Nuxt config you want to pass
+    //     }
+    //   }
+    // }
     globals: true,
     css: true,
     silent: true,
@@ -54,7 +34,10 @@ export default {
       deps: {
         inline: ['vuetify']
       }
-    }
-    // setupFiles: ['@vitest/web-worker']
+    },
+    setupFiles: [
+      './vitest.setup.ts'
+      // '@vitest/web-worker'
+    ]
   }
-}
+})

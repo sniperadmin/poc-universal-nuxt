@@ -1,20 +1,11 @@
 import { describe, beforeEach, afterEach, it, expect, vi } from 'vitest'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { VueWrapper } from '@vue/test-utils'
-import { addI18n, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 import TheSnackbarProvider from './Index.vue'
-import { ConfirmEventKey, injectStrict } from '@/utils/types'
 
-let wrapper: VueWrapper<typeof TheSnackbarProvider>
-let vueContext: any;
+let wrapper: VueWrapper
 
 describe('TheSnackbarProvider', () => {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addI18n))
-  vueContext.provide = {
-    snack: {
-      show: vi.fn(),
-      hide: vi.fn()
-    }
-  }
   const mockComponent = {
     template: `
       <v-app>
@@ -28,15 +19,15 @@ describe('TheSnackbarProvider', () => {
     }
   }
 
-  beforeEach(() => {
-    wrapper = mountWrapper(mockComponent, vueContext)
+  beforeEach(async () => {
+    wrapper = await mountSuspended(mockComponent)
   })
   afterEach(() => {
-    vueContext.teardownVueContext()
+    wrapper.unmount()
   })
 
   it('should mount', () => {
-    expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.exists()).toBeTruthy()
   })
 
   it.todo('cover provide and inject')

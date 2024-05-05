@@ -1,20 +1,20 @@
 import { VueWrapper } from '@vue/test-utils'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, beforeEach, afterEach, it, expect } from 'vitest'
 import EAvatar from './Index.client.vue'
-import { addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 
 let wrapper: VueWrapper
-let vueContext: any
 
 describe('EAvatar', () => {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify))
-  beforeEach(() => {
-    wrapper = mountWrapper(EAvatar, vueContext)
+  beforeEach(async () => {
+    wrapper = await mountSuspended(EAvatar)
   })
-  afterEach(() => { vueContext.teardownVueContext() })
+  afterEach(() => {
+    wrapper.unmount()
+  })
 
   it('should mount', async () => {
-    expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.exists()).toBeTruthy()
     await wrapper.setProps({ imgSrc: 'https://placehold.co/600x400' })
     expect(wrapper.find('img').attributes('src')).toEqual('https://placehold.co/600x400')
   })

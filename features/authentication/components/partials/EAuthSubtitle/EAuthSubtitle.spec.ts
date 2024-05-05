@@ -1,36 +1,19 @@
 import { VueWrapper } from '@vue/test-utils'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { expect, it, describe, vi, beforeEach, afterEach } from 'vitest'
 import EAuthSubtitle from './Index.vue'
-import { addI18n, addPinia, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
-import EBtn from '@/components/EBtn/Index.vue'
 
 let wrapper: VueWrapper
-let vueContext: any
 
 const findSubtitle = () => wrapper.find('[data-test="subtitle"]')
 const findGoogleBtn = () => wrapper.find('[data-test="google-btn"]')
 
 describe('EAuthSubtitle', () => {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addI18n, addPinia))
-  vueContext.propsData = {
-    isEditor: true,
-    isRegister: true,
-    form: {
-      email: '',
-      name: '',
-      password: '',
-      surveyValue: ''
-    }
-  }
-  vueContext.components = {
-    'e-btn': EBtn
-  }
-
-  beforeEach(() => {
-    wrapper = mountWrapper(EAuthSubtitle, vueContext)
+  beforeEach(async () => {
+    wrapper = await mountSuspended(EAuthSubtitle)
   })
 
-  afterEach(() => { vueContext.teardownVueContext() })
+  afterEach(() => { wrapper.unmount() })
 
   it('should not load subtitle', async () => {
     expect(findSubtitle().exists()).toBe(false)

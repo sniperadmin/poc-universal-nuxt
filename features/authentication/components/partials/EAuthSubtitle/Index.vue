@@ -3,30 +3,28 @@ import { useDisplay } from 'vuetify'
 
 const { mobile } = useDisplay()
 const { t } = useI18n()
+
+const props = defineProps({
+  isRegister: {
+    type: Boolean,
+    required: true
+  },
+  isEditor: {
+    type: Boolean,
+    required: true
+  },
+  form: {
+    type: Object,
+    required: true
+  }
+})
+
+const signinOrUpWithGoogle = () => {}
 </script>
 
 <script lang="ts">
 export default defineComponent({
-  name: 'EAuthSubtitle',
-  props: {
-    isRegister: {
-      type: Boolean,
-      required: true
-    },
-    isEditor: {
-      type: Boolean,
-      required: true
-    },
-    form: {
-      type: Object,
-      required: true
-    }
-  },
-  methods: {
-    signinOrUpWithGoogle() {
-      //   TODO: Implement this function in a separate API module
-    }
-  }
+  name: 'EAuthSubtitle'
 })
 </script>
 

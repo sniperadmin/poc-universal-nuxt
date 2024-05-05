@@ -1,30 +1,21 @@
 import { VueWrapper } from '@vue/test-utils'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { beforeEach, afterEach, describe, it, expect, vi } from 'vitest'
 import ELangSwitcher from './ELangSwitcher.vue'
-import {
-  addVuetify,
-  bootstrapVueContext,
-  compositeConfiguration,
-  addI18n,
-  addPinia,
-  mountWrapper,
-} from '@/test-utils'
 import { langs } from '@/utils/languages'
 
-let wrapper: VueWrapper<typeof ELangSwitcher & { localeSelection: any, font: string }>
-let vueContext: any
+let wrapper: VueWrapper<any>
 
 describe('ELangSwitcher', () => {
-  beforeEach(() => {
-    vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addI18n, addPinia))
-    wrapper = mountWrapper(ELangSwitcher, vueContext)
+  beforeEach(async () => {
+    wrapper = await mountSuspended(ELangSwitcher)
   })
   afterEach(() => {
-    vueContext.teardownVueContext()
+    wrapper.unmount()
   })
 
   it('should mount', async () => {
-    expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.exists()).toBeTruthy()
   })
 
   it('should try methods', async function () {

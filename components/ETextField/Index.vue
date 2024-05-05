@@ -3,67 +3,62 @@ import { useGetProgress } from '@/composables/input/input-progress'
 import { useRules } from '@/composables/input/rules'
 import { mdiEye, mdiEyeOff } from '@mdi/js'
 
-const { getProgress } = useGetProgress()
 const { t } = useI18n()
-const { handleRules } = useRules()
-
+//  Component Props
+const props = defineProps({
+  id: {
+    type: String,
+    default: 'test'
+  },
+  hint: { type: String as () => any, default: undefined },
+  persistentHint: { type: Boolean, default: false },
+  modelValue: {
+    type: String,
+    default: ''
+  },
+  rules: {
+    type: Array as () => Array<string>,
+    default: () => []
+  },
+  type: {
+    type: String,
+    default: 'text'
+  },
+  autoFocus: {
+    type: Boolean,
+    default: false
+  },
+  loading: {
+    type: Boolean,
+    default: false
+  },
+  appendIcon: {
+    type: String,
+    default: ''
+  },
+  counter: { type: Boolean, default: false },
+  counterValue: { type: Function, default: undefined }
+})
+//  HTML string checker
+const checkHTML = computed(() => {
+  return (message: any) => /<\/?[a-z][\s\S]*>/i.test(message)
+})
+//  Emits
 defineEmits(['update:modelValue'])
-//  TODO: add the following to the text field
-// @keyup="type === 'password' ? initProgress($refs[id], rules) : false"
-// TODO: Enable the following when vuetify update the validate function for refs
+//  Password Icon functionality
+const showPass = ref<boolean>(false)
+//  Input rules
+const { handleRules } = useRules()
+//  Input Progress
 const progress = ref(0)
+const { getProgress } = useGetProgress()
 const initProgress = async (inputRef: any, rules: string[]) => await getProgress(inputRef, rules, progress)
 </script>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'ETextField',
-
-  props: {
-    id: {
-      type: String,
-      default: 'test'
-    },
-    hint: { type: String as () => any, default: undefined },
-    persistentHint: { type: Boolean, default: false },
-    modelValue: {
-      type: String,
-      default: ''
-    },
-    rules: {
-      type: Array as () => Array<string>,
-      default: () => []
-    },
-    type: {
-      type: String,
-      default: 'text'
-    },
-    autoFocus: {
-      type: Boolean,
-      default: false
-    },
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    appendIcon: {
-      type: String,
-      default: ''
-    },
-    counter: { type: Boolean, default: false },
-    counterValue: { type: Function, default: undefined }
-  },
-
-  data: () => ({
-    showPass: false
-  }),
-
-  computed: {
-    checkHTML() {
-      return (message: any) => /<\/?[a-z][\s\S]*>/i.test(message)
-    }
-  }
+  name: 'ETextField'
 })
 </script>
 

@@ -1,24 +1,17 @@
 import { VueWrapper } from '@vue/test-utils'
-import { expect, it, describe, vi, beforeEach, afterEach } from 'vitest'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
+import { expect, it, describe, beforeEach, afterEach } from 'vitest'
 import EAuthTitle from './Index.vue'
-import { addI18n, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 
 let wrapper: VueWrapper
-let vueContext: any
 
 const findTitle = () => wrapper.find('[data-test="auth-title"]')
 
 describe('EAuthTitle', () => {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addI18n))
-  vueContext.propsData = {
-    isEditor: true,
-    isRegister: true
-  }
-
-  beforeEach(() => {
-    wrapper = mountWrapper(EAuthTitle, vueContext)
+  beforeEach(async () => {
+    wrapper = await mountSuspended(EAuthTitle)
   })
-  afterEach(() => { vueContext.teardownVueContext() })
+  afterEach(() => { wrapper.unmount() })
 
   it('should render title attributes correctly', async () => {
     const title = findTitle()

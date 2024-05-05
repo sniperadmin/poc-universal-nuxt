@@ -1,10 +1,9 @@
 import { VueWrapper } from '@vue/test-utils'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { it, expect, describe, afterEach, beforeEach, vi } from 'vitest'
 import ESelect from './Index.client.vue'
-import { addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 
-let wrapper: VueWrapper<typeof ESelect>
-let vueContext: any
+let wrapper: VueWrapper<any>
 
 const findLabelWrapper = () => wrapper.find('.v-label')
 const findAsterisk = () => wrapper.find('[data-test="select-asterisk"]')
@@ -12,15 +11,12 @@ const findSelectLabel = () => wrapper.find('[data-test="select-label"]')
 const findSelectInput = () => wrapper.find('.v-select')
 
 describe('ESelect', () => {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify))
-  vueContext.propsData = {
-    modelValue: 'test'
-  }
-
-  beforeEach(() => {
-    wrapper = mountWrapper(ESelect, vueContext)
+  beforeEach(async () => {
+    wrapper = await mountSuspended(ESelect)
   })
-  afterEach(() => vueContext.teardownVueContext())
+  afterEach(() => {
+    wrapper.unmount()
+  })
 
   describe('label', () => {
     it('should render label', async () => {
