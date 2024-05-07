@@ -34,6 +34,14 @@ export default defineNuxtConfig({
     "nuxt-xstate"
   ],
 
+  xState: {
+    autoImports: [
+      'createMachine',
+      'assign',
+      'send'
+    ]
+  },
+
   vuetify: {
     moduleOptions: {
       /* module specific options */

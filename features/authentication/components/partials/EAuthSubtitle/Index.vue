@@ -12,10 +12,6 @@ const props = defineProps({
   isEditor: {
     type: Boolean,
     required: true
-  },
-  form: {
-    type: Object,
-    required: true
   }
 })
 

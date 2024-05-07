@@ -37,7 +37,8 @@ const props = defineProps({
     default: ''
   },
   counter: { type: Boolean, default: false },
-  counterValue: { type: Function, default: undefined }
+  counterValue: { type: Function, default: undefined },
+  disabled: { type: Boolean, default: false }
 })
 //  HTML string checker
 const checkHTML = computed(() => {
@@ -77,6 +78,7 @@ export default defineComponent({
     :loading="loading"
     :rules="handleRules(rules)"
     :max-errors="rules.length"
+    :disabled="disabled"
     density="compact"
     variant="outlined"
     @input="$emit('update:modelValue', $event.target.value)"

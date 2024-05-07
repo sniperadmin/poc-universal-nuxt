@@ -29,6 +29,7 @@ const form = reactive({
   password: '',
   surveyValue: {id: null, data: null}
 })
+const authForm = ref(null)
 const valid = ref(true)
 const loading = ref(false)
 const err = ref(null as any)
@@ -36,36 +37,45 @@ const err = ref(null as any)
 //  TODO: Replace provide/inject flow with XState
 // const { show } = injectStrict(ConfirmEventKey)
 
-const handleAuthUsingEmailAndPassword = async () => {
-  const { loginWithCreds, signUpWithCreds } = useApiServices()
-  if (props.isRegister) {
-    console.log('registering user')
-    await signUpWithCreds(form)
-  } else {
-    console.log('logging in user')
-    const res = await loginWithCreds(form)
-    if (res instanceof ZodError) {
-      const issue = res.issues[0]
-      // show({ color: 'secondary', message: issue.message, location: 'bottom' })
-      //  TODO: show the error in the UI somehow
-    } else if (res instanceof FirebaseError) {
-      // show(createConfirm({ color: 'secondary', message: res.message, location: 'bottom' }))
-    }
-  }
-}
-
 const { state, send } = useMachine(authformMachine, {
   actions: {
     checkFormType: () => props.isRegister ? 'signup' : 'signin'
   },
   services: {
-    submitForm: () => {
-      //  Here you can call the composables you want
-      console.log('submitting form')
-      return new Promise((resolve, reject) => setTimeout(() => reject(true), 1500))
+    submitForm: async () => {
+      err.value = null
+      return await handleAuthUsingEmailAndPassword()
     }
   }
 })
+
+const handleAuthUsingEmailAndPassword = async () => {
+  //  Here you can call the composables you want
+  if (!authForm.value?.validate()) { throw new Error('validation failure') }
+
+  const { loginWithCreds, signUpWithCreds } = useApiServices()
+  if (props.isRegister) {
+    console.log('registering user')
+    await signUpWithCreds({ name: state.value.context.name, email: state.value.context.email, password: state.value.context.password })
+    //  TODO: add error handling
+  } else {
+    console.log('logging in user')
+    const res = await loginWithCreds({ email: state.value.context.email, password: state.value.context.password })
+    if (res instanceof ZodError) {
+      const issue = res.issues[0]
+      err.value = issue.message
+      throw new Error(issue.message)
+      // show({ color: 'secondary', message: issue.message, location: 'bottom' })
+      //  TODO: show the error in the UI somehow
+    } else if (res instanceof FirebaseError) {
+      // show(createConfirm({ color: 'secondary', message: res.message, location: 'bottom' }))
+      err.value = res.message
+      throw new Error(res.name)
+    } else {
+      return true
+    }
+  }
+}
 </script>
 
 <script lang="ts">
@@ -93,10 +103,8 @@ export default defineComponent({
 
       <!-- SECTION Subheader with social media login -->
       <e-auth-subtitle
-        :form="form"
         :is-editor="isEditor"
         :is-register="isRegister"
-        @loading="loading = $event"
         @error="err = $event"
       />
       <!-- SECTION ./Subheader with social media login -->
@@ -112,17 +120,25 @@ export default defineComponent({
         * within each, a simple data structure is used
       -->
       <v-form
-        ref="auth"
-        v-model="valid"
+        ref="authForm"
         data-test="form"
+        validate-on="submit"
       >
+        <v-alert
+          v-if="err"
+          type="error"
+          :text="err"
+          variant="outlined"
+          closable
+          :icon="false"
+        />
         <v-card-text>
           <v-row no-gutters>
             <!-- SECTION: Email field -->
             <v-col cols="12">
               <e-text-field
                 id="email"
-                v-model="state.context.email"
+                :model-value="state.context.email"
                 data-test="email"
                 type="email"
                 :rules="['required', 'email']"
@@ -130,6 +146,9 @@ export default defineComponent({
                 :label="t('auth.form.email.label', { type: isRegister ? isEditor ? t('auth.status.work') : t('auth.status.contact') : t('auth.status.your') })"
                 persistent-hint
                 dense
+                :loading="state.matches('pending')"
+                :disabled="state.matches('pending')"
+                @input="send({ type: 'FILL_EMAIL', value: $event.target.value })"
               />
             </v-col>
 
@@ -137,14 +156,17 @@ export default defineComponent({
               <e-text-field
                 v-if="isRegister"
                 id="name"
-                v-model="state.context.name"
+                :model-value="state.context.name"
                 data-test="name-input"
                 autocomplete="name"
                 type="text"
                 :label="t('auth.form.name.label')"
                 counter
+                :loading="state.matches('pending')"
+                :disabled="state.matches('pending')"
                 :counter-value="v => v.trim().split(' ').length"
                 :rules="['required', 'alpha', 'fullNameMinChars']"
+                @input="send({ type: 'FILL_NAME', value: $event.target.value })"
               />
             </v-col>
 
@@ -158,10 +180,13 @@ export default defineComponent({
             -->
             <v-col cols="12">
               <e-auth-password
-                v-model="state.context.password"
+                :model-value="state.context.password"
                 type="password"
                 data-test="password"
+                :disabled="state.matches('pending')"
                 :is-register="isRegister"
+                @auth="send({ type: 'submit' })"
+                @input="send({ type: 'FILL_PASSWORD', value: $event.target.value })"
               />
             </v-col>
 
@@ -216,7 +241,7 @@ export default defineComponent({
             rounded
             :loading="state.matches('pending')"
             :text="isRegister ? t('auth.form.actions.continue') : t('auth.form.actions.login')"
-            @click="send('submit')"
+            @click="send({ type: 'submit' })"
           />
         </v-card-actions>
       </v-form>

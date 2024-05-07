@@ -1,64 +1,78 @@
 export default createMachine({
   predictableActionArguments: true,
   context: {
+    email: "",
     errors: {},
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    formType: 'login',
+    formType: "login",
+    name: "",
+    password: "",
+    confirmPassword: "",
   },
-  id: 'authForm',
-  initial: 'idle',
+  id: "authForm",
+  initial: "idle",
   states: {
     idle: {
+      initial: "fill",
       on: {
         submit: {
-          target: 'pending',
+          target: "pending",
         },
       },
-      entry: [
-        {
-          type: 'checkFormType',
-        },
-        {
-          type: 'clearErrors',
-          params: {
-            errors: {},
-          },
-        },
-      ],
-      exit: {
-        type: 'submitForm',
-        params: {
-          errors: {},
-        },
+      entry: {
+        type: "checkFormType",
       },
       description:
-        'This is the idle state when loading the auth(login/signup) form\n\nIt checks the form type.',
+        "This is the idle state when loading\n\ntheauth(login/signup) form\n\nIt checks the form type.",
+      states: {
+        fill: {
+          on: {
+            FILL_NAME: {
+              target: "fill",
+              actions: {
+                type: "updateName",
+              },
+            },
+            FILL_EMAIL: {
+              target: "fill",
+              actions: {
+                type: "updateEmail",
+              },
+            },
+            FILL_PASSWORD: {
+              target: "fill",
+              actions: {
+                type: "updatePassword",
+              },
+            },
+          },
+        },
+      },
     },
     pending: {
       invoke: {
         // input: {},
         onDone: {
-          target: 'online',
+          target: "online",
         },
         onError: {
-          target: 'idle',
+          target: "idle",
         },
-        src: 'submitForm',
+        src: "submitForm",
       },
       description:
-        'This is the loading state where\n\nthe form submission is taking place',
+        "This is the loading state where\n\nthe form submission is taking place",
     },
     online: {
-      type: 'final',
+      type: "final",
       description:
-        'Nuxt auth handles the authentication\n\nfrom there. It has its own schemes and dynamics',
+        "Nuxt auth handles the authentication\n\nfrom there. It has its own schemes and dynamics",
     },
   },
 }).withConfig({
   actions: {
-    clearErrors: (context) => { context.errors = {} },
+    checkFormType: assign({ formType: (ctx, event) => event.value }),
+    updateName: assign({ name: (ctx, event) => event.value }),
+    updateEmail: assign({ email: (ctx, event) => event.value }),
+    updatePassword: assign({ password: (ctx, event) => event.value }),
   }
 })

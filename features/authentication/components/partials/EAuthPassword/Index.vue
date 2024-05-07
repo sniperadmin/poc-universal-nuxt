@@ -2,7 +2,7 @@
 import ETextField from '@/components/ETextField/Index.vue'
 import { useI18n } from 'vue-i18n'
 
-const emit = defineEmits(['auth', 'update:modelValue'])
+const emit = defineEmits(['auth', 'update:modelValue', 'input'])
 const props = defineProps({
   modelValue: {
     type: String,
@@ -12,6 +12,7 @@ const props = defineProps({
     type: Boolean,
       required: true,
   },
+  disabled: { type: Boolean, default: false }
 })
 
 const svgTest = `
@@ -58,7 +59,9 @@ export default defineComponent({
       'hasSpecial',
       'minchars'
     ] : ['required']"
+    :disabled="disabled"
     @keyup.enter="$emit('auth', $event)"
+    @input="$emit('input', $event)"
   >
     <template #message="{ message }">
 <!--                TODO: work on tooltips later -->
