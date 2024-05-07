@@ -7,30 +7,14 @@ const type = ref('password');
 const show = ref(true)
 const selected = ref('California')
 
-const { state, send } = useMachine(authformMachine, {
-  services: {
-    submitForm: () => {
-      //  Here you can call the composables you want
-      return new Promise((resolve, reject) => setTimeout(() => reject(true), 1500))
-    }
-  }
-})
 </script>
 
 <template>
   <v-card width="50%">
     <v-card-text>
-      <h1>Current state: {{ state.value }}</h1>
-      <button @click="send('SUBMIT')">
-        CLICK
-      </button>
-    </v-card-text>
-  </v-card>
-  <v-card width="50%">
-    <v-card-text>
       <e-text-field
-        v-model="text"
         v-if="show"
+        v-model="text"
         label="password field"
         :label="$t('auth.form.name.label')"
         counter

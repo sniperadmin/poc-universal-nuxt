@@ -53,6 +53,19 @@ const handleAuthUsingEmailAndPassword = async () => {
     }
   }
 }
+
+const { state, send } = useMachine(authformMachine, {
+  actions: {
+    checkFormType: () => props.isRegister ? 'signup' : 'signin'
+  },
+  services: {
+    submitForm: () => {
+      //  Here you can call the composables you want
+      console.log('submitting form')
+      return new Promise((resolve, reject) => setTimeout(() => reject(true), 1500))
+    }
+  }
+})
 </script>
 
 <script lang="ts">
@@ -109,7 +122,7 @@ export default defineComponent({
             <v-col cols="12">
               <e-text-field
                 id="email"
-                v-model="form.email"
+                v-model="state.context.email"
                 data-test="email"
                 type="email"
                 :rules="['required', 'email']"
@@ -124,7 +137,7 @@ export default defineComponent({
               <e-text-field
                 v-if="isRegister"
                 id="name"
-                v-model="form.name"
+                v-model="state.context.name"
                 data-test="name-input"
                 autocomplete="name"
                 type="text"
@@ -145,7 +158,7 @@ export default defineComponent({
             -->
             <v-col cols="12">
               <e-auth-password
-                v-model="form.password"
+                v-model="state.context.password"
                 type="password"
                 data-test="password"
                 :is-register="isRegister"
@@ -201,9 +214,9 @@ export default defineComponent({
             block
             color="primary"
             rounded
-            :loading="loading"
+            :loading="state.matches('pending')"
             :text="isRegister ? t('auth.form.actions.continue') : t('auth.form.actions.login')"
-            @click="handleAuthUsingEmailAndPassword"
+            @click="send('submit')"
           />
         </v-card-actions>
       </v-form>
