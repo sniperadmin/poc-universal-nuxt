@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
 import { EAuthTitle, EAuthSubtitle, EAuthPassword } from '@/features/authentication/components/partials'
 import ETextField from '@/components/ETextField/Index.vue'
 import { useDisplay } from 'vuetify'
-import { ZodError } from 'zod'
-import { FirebaseError } from '@firebase/util'
+import { useAuthWithMachine } from '@/features/authentication/composables/auth-with-machine'
 // import { ConfirmEventKey, createConfirm, injectStrict } from '@/utils/types'
-
 // import ESelect from '@/components/ESelect/Index.vue'
 
 const {mobile} = useDisplay()
@@ -23,59 +20,12 @@ const props = defineProps({
 })
 
 // const openTerms = ref(false)
-const form = reactive({
-  email: '',
-  name: '',
-  password: '',
-  surveyValue: {id: null, data: null}
-})
-const authForm = ref(null)
-const valid = ref(true)
-const loading = ref(false)
-const err = ref(null as any)
 
 //  TODO: Replace provide/inject flow with XState
 // const { show } = injectStrict(ConfirmEventKey)
 
-const { state, send } = useMachine(authformMachine, {
-  actions: {
-    checkFormType: () => props.isRegister ? 'signup' : 'signin'
-  },
-  services: {
-    submitForm: async () => {
-      err.value = null
-      return await handleAuthUsingEmailAndPassword()
-    }
-  }
-})
-
-const handleAuthUsingEmailAndPassword = async () => {
-  //  Here you can call the composables you want
-  if (!authForm.value?.validate()) { throw new Error('validation failure') }
-
-  const { loginWithCreds, signUpWithCreds } = useApiServices()
-  if (props.isRegister) {
-    console.log('registering user')
-    await signUpWithCreds({ name: state.value.context.name, email: state.value.context.email, password: state.value.context.password })
-    //  TODO: add error handling
-  } else {
-    console.log('logging in user')
-    const res = await loginWithCreds({ email: state.value.context.email, password: state.value.context.password })
-    if (res instanceof ZodError) {
-      const issue = res.issues[0]
-      err.value = issue.message
-      throw new Error(issue.message)
-      // show({ color: 'secondary', message: issue.message, location: 'bottom' })
-      //  TODO: show the error in the UI somehow
-    } else if (res instanceof FirebaseError) {
-      // show(createConfirm({ color: 'secondary', message: res.message, location: 'bottom' }))
-      err.value = res.message
-      throw new Error(res.name)
-    } else {
-      return true
-    }
-  }
-}
+//  Using auth with auth machine to strongly handle the states of the form
+const { send, state, err, authForm } = useAuthWithMachine(props.isRegister)
 </script>
 
 <script lang="ts">

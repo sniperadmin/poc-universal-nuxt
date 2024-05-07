@@ -1,4 +1,21 @@
-export default createMachine({
+type AuthFormContext = {
+  email: string
+  errors: any
+  formType: string
+  name: string
+  password: string
+  confirmPassword: string
+  surveyValue: any
+}
+
+type AuthFormEvent =
+  | { type: 'FILL_NAME', value: string }
+  | { type: 'FILL_EMAIL', value: string }
+  | { type: 'FILL_PASSWORD', value: string }
+  | { type: 'submit', value: string }
+
+
+export default createMachine<AuthFormContext, AuthFormEvent>({
   predictableActionArguments: true,
   context: {
     email: "",
@@ -7,6 +24,7 @@ export default createMachine({
     name: "",
     password: "",
     confirmPassword: "",
+    surveyValue: { id: null, data: null }
   },
   id: "authForm",
   initial: "idle",
@@ -17,9 +35,6 @@ export default createMachine({
         submit: {
           target: "pending",
         },
-      },
-      entry: {
-        type: "checkFormType",
       },
       description:
         "This is the idle state when loading\n\ntheauth(login/signup) form\n\nIt checks the form type.",
