@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-defineEmits(['input', 'update:modelValue'])
+const emit = defineEmits(['input', 'update:modelValue'])
 const props = defineProps({
     modelValue: {
       type: [Object, String, Array, Number],
@@ -38,15 +38,6 @@ const props = defineProps({
       default: false
     }
   })
-
-const handleUpdateMenu = (open: boolean) => {
-  if (open) {
-    setTimeout(
-      () => window.dispatchEvent(new Event('resize')),
-      100
-    )
-  }
-}
 </script>
 
 <script lang="ts">
@@ -65,8 +56,7 @@ export default defineComponent({
     density="compact"
     :item-value="itemValue"
     :item-title="itemTitle"
-    @update:menu="handleUpdateMenu"
-    @update:modelValue="$emit('update:modelValue', $event)"
+    @update:modelValue="emit('update:modelValue', $event)"
   >
     <template
       v-for="(_, inputSlot) in $slots"

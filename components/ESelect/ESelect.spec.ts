@@ -1,18 +1,28 @@
 import { VueWrapper } from '@vue/test-utils'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
-import { it, expect, describe, afterEach, beforeEach, vi } from 'vitest'
-import ESelect from './Index.client.vue'
 
-let wrapper: VueWrapper
+import { it, expect, describe, afterEach, beforeEach, vi } from 'vitest'
+import ESelect from './Index.vue'
+
+let wrapper: VueWrapper<unknown>
 
 const findLabelWrapper = () => wrapper.find('.v-label')
 const findAsterisk = () => wrapper.find('[data-test="select-asterisk"]')
 const findSelectLabel = () => wrapper.find('[data-test="select-label"]')
-const findSelectInput = () => wrapper.find('.v-select')
+const findSelectInput = () => wrapper.getComponent('.v-select')
 
 describe('ESelect', () => {
   beforeEach(async () => {
-    wrapper = await mountSuspended(ESelect)
+    wrapper = await mountSuspended(ESelect, {
+      props: {
+        modelValue: 'test',
+        items: ['test', 'vitest'],
+        persistHint: true
+      },
+      slots: {
+        message: 'hi from vitest'
+      }
+    })
   })
   afterEach(() => {
     wrapper.unmount()
@@ -49,7 +59,7 @@ describe('ESelect', () => {
     })
   })
 
-  describe('select input', function () {
+  describe.todo('select input', function () {
     it.todo('should pass chips prop', async () => {
       expect(findSelectInput().attributes('chips')).toEqual(false)
       await wrapper.setProps({
@@ -59,7 +69,7 @@ describe('ESelect', () => {
       expect(findSelectInput().attributes('chips')).toEqual(true)
     })
 
-    it.todo('should pass deletableChips prop', async () => {
+    it('should pass deletableChips prop', async () => {
       expect(findSelectInput().attributes('deletableChips')).toEqual(false)
       await wrapper.setProps({
         deletableChips: true

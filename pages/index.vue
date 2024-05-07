@@ -2,19 +2,26 @@
 import ETextField from '@/components/ETextField/Index.vue'
 
 const text = ref('');
-const showPass = ref(false);
+// const showPass = ref(false);
 const type = ref('password');
 const show = ref(true)
 const selected = ref('California')
 
-const { state, send } = useMachine(loadingMachine)
+const { state, send } = useMachine(authformMachine, {
+  services: {
+    submitForm: () => {
+      //  Here you can call the composables you want
+      return new Promise((resolve, reject) => setTimeout(() => reject(true), 1500))
+    }
+  }
+})
 </script>
 
 <template>
   <v-card width="50%">
     <v-card-text>
       <h1>Current state: {{ state.value }}</h1>
-      <button @click="send('CLICK')">
+      <button @click="send('SUBMIT')">
         CLICK
       </button>
     </v-card-text>

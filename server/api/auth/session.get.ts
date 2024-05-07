@@ -1,6 +1,5 @@
 import FirebaseServer from '~/server/utils/firebase-server'
 import { getAuth } from 'firebase-admin/auth'
-import { sendRedirect } from 'h3'
 
 export default eventHandler(async (event) => {
   FirebaseServer()

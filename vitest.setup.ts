@@ -36,3 +36,5 @@ const i18n = createI18n({
 })
 
 config.global.plugins.push(i18n)
+// @ts-ignore
+config.global.ResizeObserver = require('resize-observer-polyfill')
