@@ -14,14 +14,12 @@ const { locale } = useI18n()
 <template>
   <v-app>
     <molecules-e-nav />
-
-      <the-snackbar-provider>
         <v-main>
           <v-locale-provider :rtl="locale === 'ar'">
+            <the-snackbar-provider />
             <slot />
           </v-locale-provider>
         </v-main>
-      </the-snackbar-provider>
   </v-app>
 </template>
 

@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import ETextField from '@/components/ETextField/Index.vue'
+import { useSnackbarStore } from '@/store/snackbar'
 
 const text = ref('');
 // const showPass = ref(false);
 const type = ref('password');
 const show = ref(true)
 const selected = ref('California')
-
+const { addSnackbar } = useSnackbarStore()
 </script>
 
 <template>
@@ -28,6 +29,9 @@ const selected = ref('California')
         label="select"
       />
     </v-card-text>
+    <v-card-actions>
+      <v-btn @click="addSnackbar({ text: 'some message' })">add from pinia</v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
