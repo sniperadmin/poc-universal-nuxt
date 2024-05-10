@@ -6,10 +6,10 @@ import { getAuth } from 'firebase-admin/auth'
 export default eventHandler(async (event) => {
   FirebaseServer()
   setActivePinia(createPinia())
-  const { isFirebase } = useApiServiceStore()
+  const { apiService } = useApiServiceStore()
 
   const payload = await readBody(event)
-  if (isFirebase) {
+  if (apiService === 'firebase') {
     const verifyToken = await getAuth().verifyIdToken(payload.token)
     await getAuth().setCustomUserClaims(verifyToken.uid, {
       journalist: true

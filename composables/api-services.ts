@@ -11,11 +11,11 @@ import { createPinia, setActivePinia } from 'pinia'
 type IApi = IFirebaseApi & IRestApi
 //  Initializing config store
 setActivePinia(createPinia())
-const { isFirebase } = useApiServiceStore()
+const { apiService } = storeToRefs(useApiServiceStore())
 //  Create the main composables
 const useFirebaseApi = createGlobalState((): IApi => ({ ...initFirebaseApi() }))
 const useRestApi = createGlobalState((): IApi => ({ ...initRestApi() }))
 //  Return the initializer
 export function useApiServices() {
-  return isFirebase ? useFirebaseApi() : useRestApi()
+  return apiService.value === 'firebase' ? useFirebaseApi() : useRestApi()
 }

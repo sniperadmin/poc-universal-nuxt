@@ -4,7 +4,7 @@ import { useApiServiceStore } from '~/store/api-service'
 import { TokenCredentialSchema } from '~/utils/types'
 
 setActivePinia(createPinia())
-const { isFirebase } = useApiServiceStore()
+const { apiService } = useApiServiceStore()
 // const config = useRuntimeConfig()
 // function generateLoginEndpoint() {
 //   console.log('calling strapi')
@@ -13,7 +13,7 @@ const { isFirebase } = useApiServiceStore()
 
 export default eventHandler(async (event) => {
   // FirebaseServer()
-  if (isFirebase) {
+  if (apiService === 'firebase') {
     const validationResult = TokenCredentialSchema.safeParse(await readBody(event))
     if (!validationResult.success) {
       throw createError({ statusCode: 403, statusMessage: 'Unauthorized, invalid token sent' })
