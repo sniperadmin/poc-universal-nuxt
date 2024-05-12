@@ -1,7 +1,7 @@
 import { describe, beforeEach, afterEach, it, expect, vi } from 'vitest'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { VueWrapper } from '@vue/test-utils'
-import TheSnackbarProvider from './Index.vue'
+import TheSnackbar from './Index.vue'
 
 let wrapper: VueWrapper
 
@@ -9,13 +9,13 @@ describe('TheSnackbarProvider', () => {
   const mockComponent = {
     template: `
       <v-app>
-        <TheSnackbarProvider>
+        <TheSnackbar>
           <v-btn @click="show({ message: 'some message here', color: 'primary' })"></v-btn>
-        </TheSnackbarProvider>
+        </TheSnackbar>
       </v-app>
     `,
     components: {
-      TheSnackbarProvider
+      TheSnackbar
     }
   }
 

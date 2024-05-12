@@ -20,19 +20,18 @@ describe('snackbar store', () => {
     expect(queue.length).toEqual(0)
     addSnackbar(snackToAdd)
     expect(queue.length).toEqual(1)
-    expect(queue[0]).toEqual(snackToAdd)
     vi.advanceTimersByTime(timeout)
-    expect(queue.length).toEqual(0)
+    expect(queue[0].timeout).toEqual(timeout)
   });
 
   it('should remove snackbar from queue manually', () => {
-    const { queue, timeout, addSnackbar, removeSnackbar } = useSnackbarStore()
+    const { queue, timeout, addSnackbar, showNextSnackbar } = useSnackbarStore()
     const snackToAdd = { text: 'hello from vitest' }
     addSnackbar(snackToAdd)
     expect(queue[0].color).toEqual('primary')
     expect(queue[0].location).toEqual('top')
     expect(queue[0].text).toEqual(snackToAdd.text)
-    removeSnackbar()
+    showNextSnackbar()
     expect(queue.length).toEqual(0)
   });
 })

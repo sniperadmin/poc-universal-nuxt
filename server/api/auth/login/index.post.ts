@@ -5,11 +5,6 @@ import { TokenCredentialSchema } from '~/utils/types'
 
 setActivePinia(createPinia())
 const { apiService } = useApiServiceStore()
-// const config = useRuntimeConfig()
-// function generateLoginEndpoint() {
-//   console.log('calling strapi')
-//   return `${config.serverBaseUrl}/auth/local/`
-// }
 
 export default eventHandler(async (event) => {
   // FirebaseServer()
