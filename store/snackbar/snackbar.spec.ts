@@ -20,12 +20,12 @@ describe('snackbar store', () => {
     expect(queue.length).toEqual(0)
     addSnackbar(snackToAdd)
     expect(queue.length).toEqual(1)
-    vi.advanceTimersByTime(timeout)
+    // vi.advanceTimersByTime(timeout)
     expect(queue[0].timeout).toEqual(timeout)
   });
 
-  it('should remove snackbar from queue manually', () => {
-    const { queue, timeout, addSnackbar, showNextSnackbar } = useSnackbarStore()
+  it('should check showNextSnackbar with one message', () => {
+    const { queue, timeout, addSnackbar, showNextSnackbar, currentSnackbar } = useSnackbarStore()
     const snackToAdd = { text: 'hello from vitest' }
     addSnackbar(snackToAdd)
     expect(queue[0].color).toEqual('primary')
@@ -33,5 +33,19 @@ describe('snackbar store', () => {
     expect(queue[0].text).toEqual(snackToAdd.text)
     showNextSnackbar()
     expect(queue.length).toEqual(0)
+    expect(currentSnackbar).toBeNull()
+  });
+
+  it('should check showNextSnackbar with multiple messages', () => {
+    const { queue, timeout, addSnackbar, showNextSnackbar, currentSnackbar } = useSnackbarStore()
+    const snackOne = { text: 'hello from vitest' }
+    const snackTwo = { text: 'second hello from vitest' }
+    addSnackbar(snackOne)
+    addSnackbar(snackTwo)
+    expect(queue.length).toEqual(2)
+    vi.advanceTimersByTime(timeout)
+    showNextSnackbar()
+    expect(queue.length).toEqual(1)
+    expect(queue[0].text).toBe(snackTwo.text)
   });
 })

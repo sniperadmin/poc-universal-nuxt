@@ -40,7 +40,6 @@ export const useSnackbarStore = defineStore('snackbar', {
           }, this.timeout);
         }
       }
-
     },
   }
 })
