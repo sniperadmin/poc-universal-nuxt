@@ -84,7 +84,7 @@ export default defineNuxtConfig({
       enableRefreshPeriodically: false
     },
     globalAppMiddleware: {
-      isEnabled: false
+      isEnabled: true
     }
   },
 

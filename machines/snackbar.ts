@@ -1,4 +1,5 @@
 export default createMachine({
+  predictableActionArguments: true,
   context: {
     queue: [],
   },

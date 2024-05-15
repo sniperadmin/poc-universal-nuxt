@@ -4,11 +4,8 @@ import { useSnackbarStore } from '@/store/snackbar'
 
 const text = ref('');
 // const showPass = ref(false);
-const type = ref('password');
-const show = ref(true)
 const selected = ref('California')
 const { addSnackbar, queue } = useSnackbarStore()
-const { send, state } = useMachine(snackbarMachine)
 </script>
 
 <template>
