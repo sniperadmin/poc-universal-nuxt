@@ -4,6 +4,10 @@ export default defineNuxtConfig({
 
   devtools: { enabled: false },
 
+  nitro: {
+    preset: 'node-server'
+  },
+
   css: ['./assets/main.scss', './assets/variables.scss'],
 
   runtimeConfig: {
@@ -11,6 +15,7 @@ export default defineNuxtConfig({
     serverBaseUrl: import.meta.env.STRAPI_BASE_URL,
     firebaseIdentityEndpoint: import.meta.env.FIREBASE_IDENTITY_ENDPOINT,
     firebaseTokenVerifyURL: import.meta.env.FIREBASE_TOKEN_VER,
+    firebaseServiceAccount: import.meta.env.GOOGLE_APPLICATION_CREDENTIALS,
     public: {
       usingSSR: import.meta.env.USING_SSR,
       firebase: {
@@ -28,7 +33,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@sidebase/nuxt-auth',
     '@nuxtjs/i18n',
-    '@vueuse/nuxt',
     'vuetify-nuxt-module',
     '@nuxt/test-utils/module',
     "nuxt-xstate"

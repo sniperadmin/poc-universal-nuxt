@@ -1,5 +1,7 @@
 import {initializeApp, getApps, cert } from 'firebase-admin/app'
-import data from '../../service-account.json';
+
+const { firebaseServiceAccount } = useRuntimeConfig()
+const data = firebaseServiceAccount
 
 export default function FirebaseServer() {
   let app
