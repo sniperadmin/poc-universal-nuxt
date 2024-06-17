@@ -11,7 +11,7 @@ metadata:
     name: ingress-service
 spec:
   rules:
-  - host: 172-232-198-68.ip.linodeusercontent.com
+  - host: 172-232-199-68.ip.linodeusercontent.com
     http:
       paths:
       - pathType: Prefix
