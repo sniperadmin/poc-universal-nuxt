@@ -1,10 +1,9 @@
 version: "3"
-
 services:
-  egab-staging-nuxt3:
+  nuxt_service:
     container_name: egab-staging-nuxt3
     build:
-      context: ./
-      dockerfile: ./DockerFile
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
