@@ -1,32 +1,35 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { mdiAccountCircle } from '@mdi/js'
 
-export default defineComponent({
-  name: 'EAvatar',
-  props: {
-    imgSrc: {
-      type: String,
-      default: undefined
-    },
-    color: {
-      type: String,
-      default: ''
-    },
-    size: {
-      type: [String, Number],
-      default: 48
-    },
-    tile: {
-      type: Boolean,
-      default: false
-    },
-    rounded: {
-      type: [String, Number, Boolean],
-      default: true
-    }
+defineProps({
+  imgSrc: {
+    type: String,
+    default: undefined
   },
-  data: () => ({ mdiAccountCircle })
+  color: {
+    type: String,
+    default: ''
+  },
+  size: {
+    type: [String, Number],
+    default: 48
+  },
+  tile: {
+    type: Boolean,
+    default: false
+  },
+  rounded: {
+    type: [String, Number, Boolean],
+    default: true
+  }
+})
+</script>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'EAvatar'
 })
 </script>
 

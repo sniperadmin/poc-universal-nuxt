@@ -1,20 +1,19 @@
 import { describe, beforeEach, afterEach, it, expect } from 'vitest'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { VueWrapper } from '@vue/test-utils'
 import EBtn from './Index.vue'
-import { addI18n, addPinia, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 
-let wrapper: VueWrapper<typeof EBtn>
-let vueContext: any
+let wrapper: VueWrapper
 
 const findBtn = () => wrapper.find('[data-test="btn"]')
 
-describe('EBtn', function () {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addPinia, addI18n))
-
-  beforeEach(() => {
-    wrapper = mountWrapper(EBtn, vueContext)
+describe('EBtn', () => {
+  beforeEach(async () => {
+    wrapper = await mountSuspended(EBtn)
   })
-  afterEach(() => { vueContext.teardownVueContext() })
+  afterEach(() => {
+    wrapper.unmount()
+  })
 
   it('should render label', async () => {
     const btn = findBtn()

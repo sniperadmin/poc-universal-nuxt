@@ -6,7 +6,7 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import TheSnackbarProvider from '@/features/confirm/TheSnackbarProvider/Index.vue'
+import TheSnackbar from '@/features/confirm/TheSnackbar/Index.vue'
 
 const { locale } = useI18n()
 </script>
@@ -14,14 +14,12 @@ const { locale } = useI18n()
 <template>
   <v-app>
     <molecules-e-nav />
-
-      <the-snackbar-provider>
         <v-main>
           <v-locale-provider :rtl="locale === 'ar'">
+            <the-snackbar />
             <slot />
           </v-locale-provider>
         </v-main>
-      </the-snackbar-provider>
   </v-app>
 </template>
 

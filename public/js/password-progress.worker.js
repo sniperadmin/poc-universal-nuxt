@@ -3,13 +3,15 @@
  * placed heavy logic in here
  */
 
-function excessiveWork ({ rulesLength, errs }) {
-    const perRule = 100 / rulesLength
+function excessiveWork ({ rules, errs }) {
+    // const validationMessages = rules.map(rule => `auth.form.validation.${rule}`)
+    // console.log(validationMessages)
+    const perRule = 100 / rules.length
     const progress = Math.min(100, 100 - ((errs.length) * perRule))
     self.postMessage(progress)
 }
 
 self.addEventListener('message', ({ data }) => {
-    const { rulesLength, errs } = data
-    excessiveWork({ rulesLength, errs })
+    const { rules, errs } = data
+    excessiveWork({ rules, errs })
 })

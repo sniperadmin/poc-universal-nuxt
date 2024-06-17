@@ -1,20 +1,32 @@
 <script setup lang="ts">
-import { ConfirmEventKey, injectStrict } from '@/utils/types'
+import ETextField from '@/components/ETextField/Index.vue'
+import { useSnackbarStore } from '@/store/snackbar'
 
-const { show } = injectStrict(ConfirmEventKey)
-definePageMeta({
-  auth: {
-    unauthenticatedOnly: true
-  }
-})
+const text = ref('');
+// const showPass = ref(false);
+const selected = ref('California')
+const { addSnackbar, queue } = useSnackbarStore()
 </script>
 
 <template>
-  <h1>{{ $t('welcome.title') }}</h1>
-  <h3>{{ $t('welcome.text') }}</h3>
-  <v-btn @click="show({ message: 'some message here', color: 'primary' })">
-    Show
-  </v-btn>
+  <v-card width="50%">
+    <v-card-text>
+
+      <e-select
+        v-model="selected"
+        :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+        label="select"
+      />
+      <e-text-field
+        v-model="text"
+        label="text here"
+        counter
+      />
+    </v-card-text>
+    <v-card-actions>
+      <v-btn @click="addSnackbar({ text }); text = ''">add from pinia</v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <style scoped>

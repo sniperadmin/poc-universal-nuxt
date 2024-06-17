@@ -1,18 +1,21 @@
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
 
   devtools: { enabled: false },
 
-  css: ['./assets/main.scss'],
+  nitro: {
+    preset: 'node-server'
+  },
+
+  css: ['./assets/main.scss', './assets/variables.scss'],
 
   runtimeConfig: {
     strapiToken: import.meta.env.STRAPI_STAGING_TOKEN,
     serverBaseUrl: import.meta.env.STRAPI_BASE_URL,
     firebaseIdentityEndpoint: import.meta.env.FIREBASE_IDENTITY_ENDPOINT,
     firebaseTokenVerifyURL: import.meta.env.FIREBASE_TOKEN_VER,
+    firebaseServiceAccount: import.meta.env.GOOGLE_APPLICATION_CREDENTIALS,
     public: {
       usingSSR: import.meta.env.USING_SSR,
       firebase: {
@@ -29,15 +32,36 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
     '@sidebase/nuxt-auth',
-    (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }))
-      })
-    },
-    // '@byjohann/nuxt-i18n',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    'vuetify-nuxt-module',
+    '@nuxt/test-utils/module',
+    "nuxt-xstate"
   ],
+
+  xState: {
+    autoImports: [
+      'createMachine',
+      'assign',
+      'send'
+    ]
+  },
+
+  vuetify: {
+    moduleOptions: {
+      /* module specific options */
+      ssrClientHints: {
+        prefersColorScheme: true,
+        prefersColorSchemeOptions: {
+          darkThemeName: 'dark',
+          lightThemeName: 'light'
+        },
+        prefersReducedMotion: true,
+        reloadOnFirstRequest: true,
+        viewportSize: true
+      }
+    },
+    vuetifyOptions: './vuetify.config.ts'
+  },
 
   auth: {
     baseURL: '/api/auth',
@@ -72,15 +96,6 @@ export default defineNuxtConfig({
     vueI18n: './locales/i18n.config.ts'
   },
 
-  // vuetify: {
-  //   moduleOptions: {
-  //     styles: {
-  //       configFile: './assets/variables.scss'
-  //     }
-  //   },
-  //   vuetifyOptions: './vuetify.config.ts'
-  // },
-
   features: {
     inlineStyles: false
   },
@@ -89,13 +104,5 @@ export default defineNuxtConfig({
 
   build: {
     transpile: ['vuetify'],
-  },
-
-  vite: {
-    vue: {
-      template: {
-        transformAssetUrls
-      }
-    }
   }
 })

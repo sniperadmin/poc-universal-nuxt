@@ -1,4 +1,4 @@
-import { describe, it } from 'vitest'
+import { describe, it, vi } from 'vitest'
 import { flushPromises } from '@vue/test-utils'
 import { useGetProgress } from './input-progress'
 

@@ -1,4 +1,4 @@
-import { bench, vi, describe } from 'vitest'
+import { bench, describe } from 'vitest'
 import { useRules } from './index'
 
 describe('bench', function () {
@@ -15,7 +15,6 @@ describe('bench', function () {
       'hasUppercase',
       'hasSpecial'
     ]).forEach((fn: Function) => fn('SomeTestString'))
-
   })
 
   bench('parallel rules', () => {

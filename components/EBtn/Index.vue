@@ -1,13 +1,7 @@
 <script setup lang="ts">
-// const { locale } = useI18n()
-</script>
+defineEmits(['click'])
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'EBtn',
-  props: {
+defineProps({
     dataTest: {
       type: String,
       default: 'btn',
@@ -149,17 +143,14 @@ export default defineComponent({
       type: String as () => any,
       default: undefined,
     },
-  },
-  emits: ['click'],
-  data: () => ({}),
-  computed: {
-    // btnIcon() {
-    //   if (isString(this.icon)) {
-    //     return getIcon(this.icon)
-    //   }
-    //   return null
-    // },
-  },
+  })
+</script>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'EBtn'
 })
 </script>
 

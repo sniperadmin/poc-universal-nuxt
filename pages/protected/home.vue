@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { useApiServices } from '~/composables/api-services'
+import { useApiServices } from '@/composables/api-services'
 
 const { status, getSession, data, lastRefreshedAt } = useAuth()
 const session = await getSession()
 
 const signOutUser = async () => {
-  const {loaderFunction} = useApiServices()
-  const {logout} = loaderFunction()
+  const {logout} = useApiServices()
   await logout()
 }
 </script>

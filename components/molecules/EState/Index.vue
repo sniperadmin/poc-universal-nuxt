@@ -1,58 +1,58 @@
 <script setup lang="ts">
 defineEmits(['click'])
+
+defineProps({
+  imageName: {
+    type: String,
+  default: 'empty'
+  },
+  title: {
+    type: String,
+  default: 'Title here!'
+  },
+  text: {
+    type: String,
+  default: 'Some text here'
+  },
+  btnLabel: {
+    type: String,
+  default: 'btn label here'
+  },
+  imageWidth: {
+    type: [String, Number],
+  default: '25%'
+  },
+  imageHeight: {
+    type: [String as () => any, Number],
+  default: undefined
+  },
+  withButton: {
+    type: Boolean,
+  default: false
+  },
+  to: {
+    type: String,
+  default: null
+  },
+  btnOutlined: {
+    type: Boolean,
+  default: true
+  },
+  textCols: {
+    type: [String, Number],
+  default: undefined
+  },
+  btnCols: {
+    type: [String, Number],
+  default: undefined
+  }
+})
 </script>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'EState',
-
-  props: {
-    imageName: {
-      type: String,
-      default: 'empty'
-    },
-    title: {
-      type: String,
-      default: 'Title here!'
-    },
-    text: {
-      type: String,
-      default: 'Some text here'
-    },
-    btnLabel: {
-      type: String,
-      default: 'btn label here'
-    },
-    imageWidth: {
-      type: [String, Number],
-      default: '25%'
-    },
-    imageHeight: {
-      type: [String as () => any, Number],
-      default: undefined
-    },
-    withButton: {
-      type: Boolean,
-      default: false
-    },
-    to: {
-      type: String,
-      default: null
-    },
-    btnOutlined: {
-      type: Boolean,
-      default: true
-    },
-    textCols: {
-      type: [String, Number],
-      default: undefined
-    },
-    btnCols: {
-      type: [String, Number],
-      default: undefined
-    }
-  }
+  name: 'EState'
 })
 </script>
 

@@ -1,42 +1,42 @@
 <script lang="ts" setup>
 defineEmits(['update:modelValue'])
+defineProps({
+  id: {
+    type: String,
+  default: 'test'
+  },
+  hint: { type: String, default: undefined },
+  persistentHint: { type: Boolean, default: false },
+  modelValue: {
+    type: String,
+  default: ''
+  },
+  rules: {
+    type: Array as () => Array<string>,
+  default: () => []
+  },
+  type: {
+    type: String,
+  default: 'textarea',
+      validator: val => val === 'textarea'
+  },
+  loading: {
+    type: Boolean,
+  default: false
+  },
+  appendIcon: {
+    type: String,
+  default: ''
+  },
+  counter: { type: Boolean, default: false },
+  counterValue: { type: Function, default: undefined }
+})
 </script>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'ETextarea',
-  props: {
-    id: {
-      type: String,
-      default: 'test'
-    },
-    hint: { type: String, default: undefined },
-    persistentHint: { type: Boolean, default: false },
-    modelValue: {
-      type: String,
-      default: ''
-    },
-    rules: {
-      type: Array as () => Array<string>,
-      default: () => []
-    },
-    type: {
-      type: String,
-      default: 'textarea',
-      validator: val => val === 'textarea'
-    },
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    appendIcon: {
-      type: String,
-      default: ''
-    },
-    counter: { type: Boolean, default: false },
-    counterValue: { type: Function, default: undefined }
-  }
+  name: 'ETextarea'
 })
 </script>
 

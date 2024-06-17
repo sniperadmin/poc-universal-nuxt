@@ -1,20 +1,20 @@
 import { VueWrapper } from '@vue/test-utils'
 import { describe, beforeEach, afterEach, it, expect } from 'vitest'
 import EIllustration from './Index.client.vue'
-import { addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '~/test-utils'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 
-let wrapper: VueWrapper<typeof EIllustration>
-let vueContext: any
+let wrapper: VueWrapper
 
 describe('EIllustration', () => {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify))
-  beforeEach(() => {
-    wrapper = mountWrapper(EIllustration, vueContext)
+  beforeEach(async () => {
+    wrapper = await mountSuspended(EIllustration)
   })
-  afterEach(() => { vueContext.teardownVueContext() })
+  afterEach(() => {
+    wrapper.unmount()
+  })
 
   it('should load', () => {
-    expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.exists()).toBeTruthy()
     const image = wrapper.find('img')
     expect(image.attributes('src')).toEqual('/svg/empty.svg')
   })

@@ -1,28 +1,28 @@
 import { describe, beforeEach, afterEach, it, expect } from 'vitest'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { VueWrapper } from '@vue/test-utils'
-import { addI18n, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '@/test-utils'
 import EArticle from './Index.vue'
 
-let wrapper: VueWrapper<typeof EArticle>
-let vueContext: any
+let wrapper: VueWrapper
 
 const text = 'this is a normal text to test the truncate'
 const findArticle = () => wrapper.find('[data-testid="article"]')
 
 describe('EArticle', () => {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addI18n))
-  vueContext.propsData = {
-    article: text
-  }
-  beforeEach(() => {
-    wrapper = mountWrapper(EArticle, vueContext)
+  beforeEach(async () => {
+    wrapper = await mountSuspended(EArticle, {
+      props: {
+        article: text
+      }
+    })
   })
+
   afterEach(() => {
-    vueContext.teardownVueContext()
+    wrapper.unmount()
   })
 
   it('should mount', () => {
-    expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.exists()).toBeTruthy()
   })
 
   it.each`

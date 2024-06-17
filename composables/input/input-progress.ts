@@ -1,13 +1,13 @@
-import { Ref } from 'vue'
+import type { Ref } from 'vue'
 
 export function useGetProgress() {
   /**
    * DO NOT DELETE!
    * @method getProgress
-   * Uses a service worker to calculate the progress for passing password requirements
-   * This is engineered to ensure that the is no stress on the main browser thread
+   * Uses a web worker to calculate the progress for passing password requirements
+   * This is engineered to ensure that there is no stress on the main browser thread,
    * So it is preferable to assign this to another browser thread to avoid performance issues
-   * @returns {number} progress
+   * @returns progress
    */
   async function getProgress(inputRef: any, rules: string[], progress: Ref) {
     if (process.client) {
@@ -26,7 +26,7 @@ export function useGetProgress() {
 
       // initiating
       worker.postMessage({
-        rulesLength: rules.length,
+        rules,
         errs,
       })
       return progress

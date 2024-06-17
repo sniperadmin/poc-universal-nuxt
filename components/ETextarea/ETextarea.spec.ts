@@ -1,25 +1,23 @@
 import { VueWrapper } from '@vue/test-utils'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { beforeEach, afterEach, describe, it, expect } from 'vitest'
 import ETextarea from './Index.vue'
-import { addI18n, addVuetify, bootstrapVueContext, compositeConfiguration, mountWrapper } from '~/test-utils'
 
-let wrapper: VueWrapper<typeof ETextarea>
-let vueContext: any
+let wrapper: VueWrapper<any>
 
 const findAsterisk = () => wrapper.find('[data-test="input-asterisk"]')
 
 describe('ETextArea', () => {
-  vueContext = bootstrapVueContext(compositeConfiguration(addVuetify, addI18n))
-  vueContext.propsData = { id: 'vi' }
-
-  beforeEach(() => {
-    wrapper = mountWrapper(ETextarea, vueContext)
+  beforeEach(async () => {
+    wrapper = await mountSuspended(ETextarea)
   })
 
-  afterEach(() => { vueContext.teardownVueContext() })
+  afterEach(() => {
+    wrapper.unmount()
+  })
 
   it('should load the component', function () {
-    expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.exists()).toBeTruthy()
   })
 
   describe('Label', () => {

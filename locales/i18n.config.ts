@@ -1,5 +1,6 @@
 import en from './en-US.json'
 import ar from './ar-SA.json'
+import { ar as vuetifyAr, en as vuetifyEn } from "vuetify/locale"
 
 export default defineI18nConfig(() => ({
   legacy: true,
@@ -7,5 +8,14 @@ export default defineI18nConfig(() => ({
   globalInjection: true,
   detectBrowserLanguage: false,
   allowComposition: true,
-  messages: { en, ar }
+  messages: {
+    en: {
+      ...en,
+      $vuetify: vuetifyEn
+    },
+    ar: {
+      ...ar,
+      $vuetify: vuetifyAr
+    }
+  }
 }))
