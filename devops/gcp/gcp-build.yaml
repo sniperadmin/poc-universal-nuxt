@@ -1,0 +1,13 @@
+steps:
+  # Build container image
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "eu.gcr.io/project-name/image-name", "."]
+  # Push the container image to Artifact registry
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "eu.gcr.io/project-name/image-name"]
+
+  # Deploy image to cloud Run
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ["beta", "run", "deploy", "testservice", "--image", "eu.gcr.io/project-name/image-name", "--region", "us-central-1", "platform", "managed", "--allow-unauthenticated"]
+    images:
+      - eu.gcr.io/project-name/image-name
