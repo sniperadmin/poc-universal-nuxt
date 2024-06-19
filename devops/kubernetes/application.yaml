@@ -8,7 +8,9 @@ spec:
   source:
     repoURL: https://github.com/sniperadmin/poc-universal-nuxt.git
     targetRevision: HEAD
-    path: devops
+    path: devops/kubernetes
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
