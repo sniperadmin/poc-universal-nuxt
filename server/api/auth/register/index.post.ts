@@ -1,4 +1,4 @@
-import FirebaseServer from '~/server/utils/firebase-server'
+import { FirebaseServer } from '~/server/utils/firebase-server'
 import { createPinia, setActivePinia } from 'pinia'
 import { useApiServiceStore } from '~/store/api-service'
 import { getAuth } from 'firebase-admin/auth'

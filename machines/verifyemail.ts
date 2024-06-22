@@ -2,6 +2,7 @@ type VerifyEmailContext = {
   sentAt: number
   emailSent: boolean
   resendWindow: number
+  coolDown: boolean
 }
 
 type VerifyEmailEvent =
@@ -14,6 +15,7 @@ export default createMachine<VerifyEmailContext, VerifyEmailEvent>({
     sentAt: 0,
     emailSent: false,
     resendWindow: 60000,
+    coolDown: false
   },
   id: "emailVerification",
   initial: "pending",
@@ -25,9 +27,7 @@ export default createMachine<VerifyEmailContext, VerifyEmailEvent>({
         },
         RESEND_EMAIL: {
           target: "sending",
-          cond: {
-            type: "canResend",
-          },
+          cond: "canResend",
         },
       },
     },
@@ -35,7 +35,7 @@ export default createMachine<VerifyEmailContext, VerifyEmailEvent>({
       invoke: {
         id: "sendEmail",
         onDone: {
-          target: "verified",
+          target: "cooldown",
         },
         onError: {
           target: "failed",
@@ -43,27 +43,35 @@ export default createMachine<VerifyEmailContext, VerifyEmailEvent>({
         src: "sendEmail",
       },
     },
-    verified: {},
     failed: {
       on: {
         RESEND_EMAIL: {
           target: "sending",
-          cond: {
-            type: "canResend",
-          },
-        },
-      },
+          cond: "canResend"
+        }
+      }
     },
-  },
+    cooldown: {
+      invoke: {
+        id: "setCoolDown",
+        src: "setCoolDown"
+      },
+      after: {
+        60000: { target: "pending", actions: "resetCoolDown" }
+      }
+    }
+  }
 }).withConfig({
+  actions: {
+    updateEmailSent: assign({ emailSent: true }),
+    setCoolDown: assign({ coolDown: true }),
+    resetCoolDown: assign({ coolDown: false })
+  },
   guards: {
     canResend: function (context, event) {
       const now = Date.now();
-      return !context.emailSent || now - context.sentAt >= context.resendWindow;
-    },
-  },
-  // NOTE: The following service will be handled through the component
-  // services: {
-  //   sendEmail: sendEmail,
-  // },
+      const cooldownEndTime = context.sentAt + context.resendWindow;
+      return !(context.emailSent || now < cooldownEndTime || context.coolDown);
+    }
+  }
 });

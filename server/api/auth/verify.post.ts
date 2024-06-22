@@ -1,40 +1,43 @@
-import nodemailer from 'nodemailer'
-import firebaseServer from '@/server/utils/firebase-server'
+import { FirebaseServer, sgMail } from '@/server/utils/firebase-server'
 import { getAuth } from 'firebase-admin/auth'
 
 export default defineEventHandler(async (event) => {
-  firebaseServer()
-  const { email } = await readBody(event)
+  FirebaseServer()
+  console.log('getting email...')
+  const { email, locale } = await readBody(event)
+
+  console.log('email value is => ', email)
   if (email) {
-    const transport = nodemailer.createTransport({
-      host: "sandbox.smtp.mailtrap.io",
-      port: 2525,
-      auth: {
-        user: "bd59b7b77e07a4",
-        pass: "65045b7b3cf08d"
-      },
-      debug: true,
-    });
+    // const client = new MailtrapClient({ token: TOKEN });
+    console.log('generating ver link...')
     const actionCodeSettings = {
       url: `https://staging.egab.co/auth/journalist`,
       handleCodeInApp: true
     }
 
     const actionLink = await getAuth().generateEmailVerificationLink(email, actionCodeSettings)
+    console.log('action link is => ', actionLink)
 
     const msg = {
       to: email,
       from: 'clientsupport@egab.co',
       subject: "Welcome to Egab's community portal",
-      html: `verification link => ${actionLink}`
-    } as any;
+      templateId: 'd-50e19c53eca241ac8c094dd97d68b8a8',
+      dynamicTemplateData: {
+        username: email,
+        actionLink,
+        english: locale === 'en'
+      }
+    };
 
-    try {
-      await transport.sendMail(msg)
+    console.log('sending msg...')
+    await sgMail.send(msg).then(() => {
+      console.log('sent email successfully')
       return true
-    } catch (error) {
-      throw createError({ statusCode: 401, statusMessage: error.message })
-    }
+    }).catch((error) => {
+      console.log('error')
+      throw createError({ statusCode: error.code, statusMessage: error.message })
+    })
   } else {
     throw createError({ statusCode: 401, statusMessage: 'Email is not there!' })
   }

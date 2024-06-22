@@ -1,9 +1,13 @@
 import {initializeApp, getApps, cert } from 'firebase-admin/app'
+import sgmail from "@sendgrid/mail";
 
-const { firebaseServiceAccount } = useRuntimeConfig()
+const { firebaseServiceAccount, sgMailKey } = useRuntimeConfig()
+sgmail.setApiKey(sgMailKey)
+
+export const sgMail = sgmail
+
 const data = firebaseServiceAccount
-
-export default function FirebaseServer() {
+export function FirebaseServer() {
   let app
 
   if (getApps().length === 0) {

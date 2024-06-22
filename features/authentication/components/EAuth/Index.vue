@@ -39,7 +39,7 @@ export default defineComponent({
 <template>
   <v-card
     data-test="auth-wrapper"
-    class="rounded-xl mx-auto"
+    class="rounded-xl"
     :class="mobile ? '' : 'px-6'"
     width="600"
   >
@@ -58,10 +58,6 @@ export default defineComponent({
         @error="err = $event"
       />
       <!-- SECTION ./Subheader with social media login -->
-
-      <!--      <v-alert v-if="err" data-test="err" type="err">-->
-      <!--        {{ err }}-->
-      <!--      </v-alert>-->
 
       <!-- SECTION: Form -->
       <!--

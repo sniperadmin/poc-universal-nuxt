@@ -6,12 +6,13 @@ const { state, send } = useMachine(verifyemailMachine, {
   services: {
     sendEmail: async (context, event) => {
       //  Handle verification through server
-      const res = await $fetch('/api/auth/verify', { method: 'post', body: { email: event.value } })
-      if (!res) {
-        return Promise.reject('Something wrong happened!')
-      }
-      context.emailSent = true
-      return Promise.resolve('Email link sent')
+      await $fetch('/api/auth/verify', { method: 'post', body: { email: event.value } })
+        .then(() => {
+          context.emailSent = true
+          return Promise.resolve()
+        }).catch(() => {
+          return Promise.reject()
+        })
     }
   }
 })
@@ -30,10 +31,23 @@ const signOutUser = async () => {
 <template>
   <pre>
     Verify email address here
-    {{ state.context }}
+    pending: {{ state.matches('pending') }}
+    sending: {{ state.matches('sending') }}
+    failed: {{ state.matches('failed') }}
+    cooldown: {{ state.matches('cooldown') }}
   </pre>
-  <v-btn :loading="state.matches('sending')" :text="state.matches('pending') ? 'Send' : 'Resend'" @click="handleSend" />
-  <v-btn v-if="status === 'authenticated'" :loading="state.matches('sending')" @click="signOutUser">logout</v-btn>
+  <v-btn :loading="state.matches('sending')"
+    :text="state.matches('pending') ? 'Send' : 'Resend'"
+    :disabled="state.matches('cooldown')"
+    @click="handleSend"
+  />
+  <v-btn v-if="status === 'authenticated'"
+    :loading="state.matches('sending')"
+    :disabled="state.matches('cooldown')"
+    @click="signOutUser"
+  >
+    logout
+  </v-btn>
 </template>
 
 <style scoped>

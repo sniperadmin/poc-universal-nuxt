@@ -1,4 +1,4 @@
-import FirebaseServer from '~/server/utils/firebase-server'
+import { FirebaseServer } from '~/server/utils/firebase-server'
 import { getFirestore } from 'firebase-admin/firestore'
 
 export default defineEventHandler(async () => {

@@ -187,6 +187,7 @@ export default defineComponent({
     @click="action ? action() : $emit('click', $event)"
   >
     <v-icon
+      v-if="icon"
       :left="!(fab || icon) && $i18n.locale === 'en'"
       :right="!(fab || icon) && $i18n.locale === 'ar'"
       :icon="icon"

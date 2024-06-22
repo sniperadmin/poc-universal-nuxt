@@ -12,6 +12,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     strapiToken: import.meta.env.STRAPI_STAGING_TOKEN,
+    sgMailKey: import.meta.env.SG_MAIL_KEY,
     serverBaseUrl: import.meta.env.STRAPI_BASE_URL,
     firebaseIdentityEndpoint: import.meta.env.FIREBASE_IDENTITY_ENDPOINT,
     firebaseTokenVerifyURL: import.meta.env.FIREBASE_TOKEN_VER,
